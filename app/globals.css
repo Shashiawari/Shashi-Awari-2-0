@@ -1,0 +1,78 @@
+@font-face {
+  font-family: modernsans;
+  src: url(./fonts/ModernSans-Light.otf);
+}
+
+@font-face {
+  font-family: lemonl;
+  src: url(./fonts/LEMONMILK-Light.otf);
+}
+@font-face {
+  font-family: lemonr;
+  src: url(./fonts/LEMONMILK-Regular.otf);
+}
+
+@font-face {
+  font-family: alumi;
+  src: url(./fonts/AlumniSansCollegiateOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: clash1;
+  src: url(./fonts/ClashDisplay-Medium.otf);
+}
+
+@font-face {
+  font-family: clash2;
+  src: url(./fonts/ClashDisplay-Semibold.otf);
+}
+
+@font-face {
+  font-family: clash3;
+  src: url(./fonts/ClashDisplay-Bold.otf);
+}
+
+h1 {
+  font-size: 84px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+p {
+  font-size: 16px;
+}
+
+* {
+  cursor: none;
+}
+
+::selection {
+  color: red;
+  background: yellow;
+}
+
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+.navbar{
+  padding: 0px;
+}

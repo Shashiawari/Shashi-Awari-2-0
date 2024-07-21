@@ -1,0 +1,175 @@
+.content h2,
+h3,
+h4 {
+  font-family: modernsans;
+}
+.content p {
+  font-family: modernsans;
+}
+
+.content {
+  padding: 30px;
+}
+
+@media (max-width: 500px) {
+  .content {
+    padding: 0;
+  }
+}
+
+.section2 {
+  margin-top: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+
+.sec-2 {
+  width: 60%;
+  background-color: rgba(243, 1, 1, 0.127);
+}
+
+@media (max-width: 1000px) {
+  .sec-2 {
+    width: 100%;
+  }
+  .section2 {
+    margin-top: 30px;
+  }
+}
+.section3 {
+  height: 60vh;
+  padding: 300px;
+  margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.sec-3 {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+.quest {
+  perspective: 500px;
+  margin-bottom: 100px;
+}
+.quest h1 {
+  font-size: 300px;
+}
+#spinner {
+  text-align: center;
+  animation-name: spin, depth;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+@keyframes depth {
+  0% {
+    text-shadow: 0 0 rgb(245, 244, 244);
+  }
+  25% {
+    text-shadow: 1px 0 rgb(249, 249, 249), 2px 0 rgb(255, 255, 255),
+      3px 0 rgb(243, 242, 242), 4px 0 rgb(252, 252, 252),
+      5px 0 rgb(237, 237, 237);
+  }
+  50% {
+    text-shadow: 0 0 rgb(245, 243, 243);
+  }
+  75% {
+    text-shadow: -1px 0 rgb(242, 240, 240), -2px 0 rgb(253, 249, 249),
+      -3px 0 rgb(255, 255, 255), -4px 0 rgb(255, 255, 255), -5px 0 black;
+  }
+  100% {
+    text-shadow: 0 0 rgb(255, 255, 255);
+  }
+}
+@keyframes rot {
+  0% {
+    transform: rotatex(0deg);
+  }
+  50% {
+    transform: rotatex(90deg);
+    transform: rotatez(80deg);
+  }
+  100% {
+    transform: rotatex(100deg);
+    transform: rotatez(180deg);
+  }
+}
+
+.section4 {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.intext {
+  fill: rgb(255, 255, 255);
+}
+
+.fillit {
+  stroke-width: 15px;
+  stroke: rgba(255, 255, 255, 0.512);
+}
+#scale1 {
+  stroke-width: 15px;
+  animation: scale infinite 3s;
+  stroke: rgba(255, 255, 255, 0.512);
+}
+
+@keyframes scale {
+  from {
+    stroke: rgba(255, 255, 255, 0.512);
+  }
+  to {
+    stroke: rgba(0, 0, 0, 0.512);
+  }
+}
+
+@media (max-width: 1000px) {
+  .section4 svg {
+    height: 500px !important;
+    width: 500px !important;
+  }
+  .section3 {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .section4 svg {
+    height: 300px !important;
+    width: 300px !important;
+  }
+  .section3 {
+    padding: 0;
+  }
+}
+
+@media (max-width: 412px) {
+  .section4 svg {
+    height: 200px !important;
+    width: 300px !important;
+  }
+}

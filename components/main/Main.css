@@ -1,0 +1,48 @@
+.outmain {
+  overflow: hidden;
+  width: 80%;
+  border-radius: 50px;
+  margin-top: 0;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.log {
+  position: relative;
+  height: 70vh;
+  font-family: clash2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(0px);
+  mix-blend-mode: difference;
+  flex-direction: column;
+}
+
+.log h1 {
+  font-family: clash3;
+  color: white;
+  font-size: 128px;
+  text-transform: uppercase;
+}
+
+.log h5 {
+  font-family: clash2;
+  font-size: 38px;
+  text-transform: capitalize;
+  color: rgb(132, 132, 132);
+}
+
+@media (max-width: 1000px) {
+  .log h1 {
+    font-size: 40px;
+    word-spacing: 0;
+  }
+  .log h5 {
+    font-size: 15px;
+    margin-top: 10px;
+    color: grey;
+  }
+}

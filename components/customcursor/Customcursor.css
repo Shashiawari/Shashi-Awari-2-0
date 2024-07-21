@@ -1,0 +1,8 @@
+.custom-cursor {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    mix-blend-mode: difference !important;
+    pointer-events: none; /* Ensure cursor doesn't interfere with content */
+    z-index: 9999; /* Ensure cursor is above other content */
+  }

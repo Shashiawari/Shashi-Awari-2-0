@@ -1,0 +1,77 @@
+.foot {
+  background-color: rgba(0, 0, 0, 0.83);
+  backdrop-filter: blur(10px);
+  padding: 50px;
+  text-align: center;
+  color: white;
+  overflow-x: hidden;
+  z-index: 999 !important;
+  font-family: modernsans !important;
+}
+
+.foot p {
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 30px;
+  color: white;
+}
+
+.motion {
+  display: flex;
+  flex-direction: row;
+}
+
+.inline-flex {
+  font-family: modernsans !important;
+  font-size: 10px;
+  display: inline-flex;
+  white-space: nowrap;
+
+  width: 800%;
+  font-weight: bolder;
+  overflow-x: hidden;
+}
+
+.foot a {
+  text-decoration: none;
+  color: white;
+}
+
+.ic {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ic a{
+  display: flex;
+  border: 2px solid rgb(72, 72, 72);
+  padding: 0;
+  border-radius: 30px;
+  margin: 10px;
+}
+.ic svg {
+  margin: 30px;
+  border-radius: 20px;
+  padding: 2px;
+  height: 50px;
+}
+
+.foot a:hover{
+  text-decoration: underline;
+}
+.bi-instagram:hover {
+ transform:translate(scale(12px));
+  background-color: rgb(234, 0, 90);
+}
+
+.bi-github:hover {
+  background-color: rgb(60, 60, 60);
+}
+.bi-twitter:hover {
+  background-color: rgb(0, 94, 234);
+}
+
+.foot h1,p{
+  font-family: modernsans !important;
+}

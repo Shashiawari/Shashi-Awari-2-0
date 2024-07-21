@@ -1,0 +1,138 @@
+.navbar {
+  padding: 50px;
+  transition: 0.1s;
+  z-index: 999;
+  overflow: hidden;
+}
+
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: 0.5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: 0.8s;
+}
+
+#bar1,
+#bar3 {
+  width: 70%;
+}
+
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle {
+  transition-duration: 0.5s;
+  transform: rotate(180deg);
+}
+nav .nav-link {
+  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: lemonr;
+  width: 100%;
+  border-radius: 50px;
+  border: 2px solid rgb(0, 0, 0);
+
+  text-align: center;
+  color: white;
+  mix-blend-mode: difference;
+}
+.navbar-nav {
+  display: flex;
+  gap: 60px;
+  padding-left: 20px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 30px;
+}
+@media (max-width: 990px) {
+  .navbar-nav{
+    display: flex;
+    gap: 0px !important;
+  }
+  .navbar{
+   padding: 2px;
+   margin-top: 30px;
+  }
+}
+
+.navbar-brand {
+  font-family: mai;
+  color: white;
+}
+
+.active {
+  z-index: -1;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  color: black !important;
+}
+
+.hover:hover {
+  color: white;
+  border: 2px solid white;
+}
+
+@media (max-width: 540px) {
+  .navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-item {
+    text-align: center;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media (max-width:340px) {
+ 
+  .navbar-brand img{
+    height: 30px;
+  }
+}
+
+
