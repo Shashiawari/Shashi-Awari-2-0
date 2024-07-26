@@ -39,10 +39,14 @@ const Projects = () => {
         <div className="row">
           <div className="col-lg-4 col-12  ">
             <div className="card">
-              <img
-                src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1715751501/e179651c-7c9b-4095-8c89-1ff3d7a03095.png"
-                alt="japease"
-              ></img>
+            <video
+            src="jap.mp4"
+            alt="japease"
+            muted
+            autoPlay
+            loop
+            style={{ width: "100%", height: "auto" }}
+          ></video>
               <h4>japese</h4>
               <p>
                 Japease is an online job search website  helps students and
@@ -73,10 +77,14 @@ const Projects = () => {
           </div>
           <div className="col-lg-4 col-12 ">
             <div className="card">
-              <img
-                src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1715751260/53297d93-898f-427b-b955-bc73a979a6b3.png"
-                alt="japease"
-              ></img>
+            <video
+            src="food.mp4"
+            alt="japease"
+            muted
+            autoPlay
+            loop
+            style={{ width: "100%", height: "auto" }}
+          ></video>
               <h4>Next level food</h4>
               <p>
                 Next Level Food: Share and discover delicious recipes with
@@ -107,10 +115,14 @@ const Projects = () => {
           </div>
           <div className="col-lg-4 col-12 ">
             <div className="card">
-              <img
-                src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1717211482/a53e622a-2dfe-424f-9b3b-6138f30f34aa.png"
-                alt="japease"
-              ></img>
+             <video
+            src="nex.mp4"
+            alt="japease"
+            muted
+            autoPlay
+            loop
+            style={{ width: "100%", height: "auto" }}
+          ></video>
               <h4>NexGen</h4>
               <p>
                 NexGen is an online service offering personalized developer

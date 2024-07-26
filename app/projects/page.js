@@ -14,11 +14,14 @@ const page = () => {
           </div>
           <div className="col-12 col-lg-6" style={{}}>
             <h3 className="mx-3 ">NexGen</h3>
-            <img
-              src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1717211482/a53e622a-2dfe-424f-9b3b-6138f30f34aa.png"
-              className="img-fluid mx-1"
-              alt="japease"
-            ></img>
+            <video
+            src="nex.mp4"
+            alt="japease"
+            muted
+            autoPlay
+            loop
+            style={{ width: "100%", height: "auto" }}
+          ></video>
             <h4 className="mx-3 ">Technologies Used: Next.js</h4>
             <p className="mx-3">
               NexGen is an innovative platform where users can create custom
@@ -29,7 +32,7 @@ const page = () => {
               website creation process while maintaining high standards of
               quality and functionality.
             </p>
-            <Link href={"https://nexgen2.onrender.com/"}>
+            <Link href={"https://nexxgenn.netlify.app/"}>
               <button className="animated-button">
                 <svg
                   viewBox="0 0 24 24"
@@ -54,11 +57,14 @@ const page = () => {
         <div className="row d-flex justify-content-center align-items-center">
           <div className="col-12 col-lg-6 order-1 order-lg-0">
             <h3 className="mx-3 ">JapEase</h3>
-            <img
-              src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1715751501/e179651c-7c9b-4095-8c89-1ff3d7a03095.png"
-              className="img-fluid mx-1"
-              alt="japease"
-            ></img>
+            <video
+            src="jap.mp4"
+            alt="japease"
+            muted
+            autoPlay
+            loop
+            style={{ width: "100%", height: "auto" }}
+          ></video>
             <h4 className="mx-3 ">
               Technologies Used: React.js, Node.js, HTML, CSS, JavaScript, API
             </h4>
@@ -101,11 +107,14 @@ const page = () => {
           </div>
           <div className="col-12 col-lg-6 ">
             <h3 className="mx-3 ">UIfry</h3>
-            <img
-              src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1717772398/fe5c813f-89af-44aa-9072-b4ac902db5ec.png"
-              className="img-fluid mx-1"
-              alt="japease"
-            ></img>
+            <video
+            src="uifry.mp4"
+            alt="japease"
+            muted
+            autoPlay
+            loop
+            style={{ width: "100%", height: "auto" }}
+          ></video>
             <h4 className="mx-3 ">Technologies Used: HTML, CSS, JavaScript</h4>
             <p className="mx-3">
               UIFry is a front-end design project focused on creating visually
@@ -140,11 +149,14 @@ const page = () => {
         <div className="row d-flex- justify-content-center align-items-center">
           <div className="col-12 col-lg-6 order-1 order-lg-0">
             <h3 className="mx-3 ">SnapGen</h3>
-            <img
-              src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1717773602/2080156f-d81a-4651-92ac-4404b5d2c03d.png"
-              className="img-fluid mx-1"
-              alt="japease"
-            ></img>
+            <video
+            src="snapg.mp4"
+            alt="japease"
+            muted
+            autoPlay
+            loop
+            style={{ width: "100%", height: "auto" }}
+          ></video>
             <h4 className="mx-3 ">
               Technologies Used:Node.js, HTML, CSS, JavaScript, API
             </h4>
@@ -187,11 +199,14 @@ const page = () => {
           </div>
           <div className="col-12 col-lg-6 ">
             <h3 className="mx-3 ">Next Level Food</h3>
-            <img
-              src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1715751260/53297d93-898f-427b-b955-bc73a979a6b3.png"
-              className="img-fluid mx-1"
-              alt="japease"
-            ></img>
+            <video
+            src="food.mp4"
+            alt="japease"
+            muted
+            autoPlay
+            loop
+            style={{ width: "100%", height: "auto" }}
+          ></video>
             <h4 className="mx-3 ">Technologies Used: React,sqlite</h4>
             <p className="mx-3">
               Next Level Food is a web application that enables users to share
