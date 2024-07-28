@@ -22,15 +22,24 @@
 }
 
 .log h1 {
+
   font-family: clash3;
   color: white;
   font-size: 128px;
   text-transform: uppercase;
+  z-index: 1;
+}
+
+.pk{
+  position: absolute;
+  margin-bottom: 100px;
 }
 
 .log h5 {
+
   font-family: clash2;
   font-size: 38px;
+  z-index: 1;
   text-transform: capitalize;
   color: rgb(132, 132, 132);
 }
@@ -44,5 +53,8 @@
     font-size: 15px;
     margin-top: 10px;
     color: grey;
+  }
+  .pk{
+    width: 100% !important;
   }
 }
