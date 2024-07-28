@@ -66,7 +66,7 @@ const Page = () => {
       </div>
       <div  className="about-content text-center 	d-md-none	d-lg-none d-sm-block d-flex justify-content-center align-items-center flex-column " style={{height:"100vh"}}>
       <h2 style={{fontSize:"114px"}}>Hello!!</h2>
-      <p>I am glad you're here Let's know about me more</p>
+      <p>I am glad you're here Let's know more about me</p>
       <h2 style={{fontSize:"50px",color:"black"}} className="ttr">Welcome !!!</h2>
       </div>
       <div className="c-2 mt-5  ">
