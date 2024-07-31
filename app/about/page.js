@@ -74,7 +74,7 @@ const Page = () => {
         <div className="row p-5 d-flex justify-content-center align-items-center">
           <div className="col-12 col-lg-6">
             <img
-              src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1721542815/Screenshot_20240705_052102_Snapchat_1_r_wetjcs.jpg"
+              src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1722391606/a_dlcoef.jpg"
               className="img-fluid"
             ></img>
           </div>
