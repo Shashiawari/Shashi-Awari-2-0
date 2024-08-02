@@ -167,9 +167,25 @@ h4 {
   }
 }
 
-@media (max-width: 412px) {
-  .section4 svg {
-    height: 200px !important;
-    width: 300px !important;
+
+.ssvg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  
+}
+.ssvg svg{
+  width: 70%;
+  height: 100%;
+}
+
+@media (max-width: 1000px) {
+  .ssvg svg {
+    height: 100% !important;
+    width: 100% !important;
+    padding: 0;
   }
 }
