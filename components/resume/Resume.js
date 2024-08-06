@@ -3,7 +3,7 @@ import  "./resume.css"
 const Resume = () => {
   return (
     <div className="resume">
-    <a href="/resume.pdf" download >
+    <a href="/Resume.pdf" download >
       <button className="Download-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
