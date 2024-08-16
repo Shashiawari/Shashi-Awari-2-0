@@ -66,19 +66,14 @@ const Page = () => {
       </div>
       <div  className="about-content text-center 	d-md-none	d-lg-none d-sm-block d-flex justify-content-center align-items-center flex-column " style={{height:"100vh"}}>
       <h2 style={{fontSize:"114px"}}>Hello!!</h2>
-      <p>I am glad you're here Let's know more about me</p>
+      <p>I am glad you're here Let's know about me more</p>
       <h2 style={{fontSize:"50px",color:"black"}} className="ttr">Welcome !!!</h2>
       </div>
       <div className="c-2 mt-5  ">
         <h3>All I Ever Did In My Life Is</h3>
-        <div className="row p-5 d-flex justify-content-center align-items-center">
-          <div className="col-12 col-lg-6">
-            <img
-              src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1722391606/a_dlcoef.jpg"
-              className="img-fluid"
-            ></img>
-          </div>
-          <div className="col-12 col-lg-6 ">
+        <div className="row fd p-5 d-flex justify-content-center align-items-center">
+         
+          <div className="col-12 ">
             <h4 className="highlight " >
               <span>code</span>
               <span>,</span>

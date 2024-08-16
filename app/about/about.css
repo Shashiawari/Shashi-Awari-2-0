@@ -210,6 +210,7 @@
   display: inline-block;
   margin-right: 5px;
   animation: fillColor 2s infinite;
+  text-align: center;
 }
 
 @keyframes fillColor {
@@ -219,7 +220,7 @@
   }
   50% {
       color: white;
-      background-color: black;
+      background-color: transparent;
   }
 }
 
@@ -387,4 +388,11 @@ background-color: #00000000;
 
 .ttr{
   -webkit-text-stroke: 2px #fff;
+}
+
+.fd{
+  background-image: url("https://res.cloudinary.com/dq7brjjnz/image/upload/v1722391606/a_dlcoef.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
