@@ -7,9 +7,9 @@ const page = () => {
   return (
     <div className="proj">
       <Navbar />
-      <div className="container">
-        <div className="row  d-flex- justify-content-center align-items-center">
-          <div  className="col-12  col-lg-6">
+      <div className="container llm">
+        <div className="row block1 d-flex- justify-content-center align-items-center">
+          <div  className="col-12  col-lg-6 ">
             <h1 style={{marginBottom:"0px",padding:"0px"}} className="h11 text-center">01</h1>
           </div>
           <div className="col-12 col-lg-6" style={{}}>
@@ -54,7 +54,7 @@ const page = () => {
             </Link>
           </div>
         </div>
-        <div className="row d-flex justify-content-center align-items-center">
+        <div className="row block2 d-flex justify-content-center align-items-center">
           <div className="col-12 col-lg-6 order-1 order-lg-0">
             <h3 className="mx-3 ">JapEase</h3>
             <video
@@ -101,7 +101,7 @@ const page = () => {
             <h1 className="h11 text-center">02</h1>
           </div>
         </div>
-        <div className="row d-flex- justify-content-center align-items-center">
+        <div className="row block1 d-flex- justify-content-center align-items-center">
           <div className="col-12 col-lg-6">
             <h1 className="h11 text-center">03</h1>
           </div>
@@ -146,7 +146,7 @@ const page = () => {
             </Link>
           </div>
         </div>
-        <div className="row d-flex- justify-content-center align-items-center">
+        <div className="row block2 d-flex- justify-content-center align-items-center">
           <div className="col-12 col-lg-6 order-1 order-lg-0">
             <h3 className="mx-3 ">SnapGen</h3>
             <video
@@ -193,7 +193,7 @@ const page = () => {
             <h1 className="h11 ">04</h1>
           </div>
         </div>
-        <div className="row d-flex- justify-content-center align-items-center">
+        <div className="row  d-flex- justify-content-center align-items-center">
           <div className="col-12 col-lg-6">
             <h1 className="h11 text-center">05</h1>
           </div>

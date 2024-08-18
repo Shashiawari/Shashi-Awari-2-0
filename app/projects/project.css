@@ -145,3 +145,10 @@
   transform: scale(1.1);
   background-color: black;
 }
+
+
+@media (max-width:1000px) {
+  .proj video {
+    margin: 0px;
+  }
+}

@@ -4,7 +4,7 @@ const Content = () => {
   return (
     <div className="  text-white content">
       <div className="container-fluid">
-        <div className="row d-flex align-items-center p-2">
+        <div className="row d-flex align-items-center p-2 block ">
           <div className=" col-12 col-lg-4   d-flex justify-content-center ">
             <svg
               width="376"
@@ -189,7 +189,7 @@ const Content = () => {
               </defs>
             </svg>
           </div>
-          <div className="col-12 col-lg-8   "z>
+          <div className="col-12 col-lg-8  ">
             <h1 style={{ fontFamily: "modernsans", fontSize: "84px" }}>
               Hello!
             </h1>
@@ -210,7 +210,7 @@ const Content = () => {
           </div>
         </div>
       </div>
-      <section className="text-center section2  ">
+      <section className="text-center section2 block1 ">
         <div className="sec-2  p-5  ">
           <h2>What Can I Offer you?</h2>
           <h4>Let's figure it out!</h4>
@@ -226,7 +226,7 @@ const Content = () => {
           </p>
         </div>
       </section>
-      <section className="section3 container-fluid  ">
+      <section className="section3 container-fluid block2  ">
         <div className="sec-3 row d-flex justify-content-center align-items-center ">
           <div className="col-12 col-md-6   order-sm-1 order-md-1">
             <h1 className="text-center" style={{fontFamily:"alumi",lineHeight:"190px",fontSize:"250px",letterSpacing:"10px"}}>Why Me?</h1>
@@ -245,7 +245,7 @@ const Content = () => {
           </div>
         </div>
       </section>
-          <section className="ssvg">
+          <section className="ssvg block">
           <h2 className="my-5 text-center">Lets look at my skills!</h2>
           <svg
           xmlns="http://www.w3.org/2000/svg"
