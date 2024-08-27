@@ -11,9 +11,10 @@
 }
 
 .outmain {
-  overflow: hidden;
   width: 80%;
+
   border-radius: 50px;
+  
   margin-top: 0;
 }
 .center {
@@ -31,6 +32,7 @@
   backdrop-filter: blur(0px);
   mix-blend-mode: difference;
   flex-direction: column;
+ 
 }
 
 .log h1 {
@@ -55,15 +57,24 @@
   text-transform: capitalize;
   color: rgb(132, 132, 132);
 }
+.mainvid{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  z-index: -99;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  object-fit: cover;
+}
 
 @media (max-width: 1000px) {
-  .log h1 {
-    font-size: 40px;
-    word-spacing: 0;
+  .log svg {
+  margin-top: 60px;
   }
   .log h5 {
     font-size: 15px;
-    margin-top: 10px;
+    margin-top: 30px;
     color: grey;
   }
   .pk{
