@@ -1,6 +1,6 @@
 .navbar {
   padding: 50px;
-  transition: 0.1s;
+  transition: all  0.3s ease;
   z-index: 999;
   overflow: hidden;
 }
@@ -71,8 +71,6 @@ nav .nav-link {
   font-family: lemonr;
   width: 100%;
   border-radius: 50px;
-  border: 2px solid rgb(0, 0, 0);
-
   text-align: center;
   color: white;
   mix-blend-mode: difference;
@@ -80,11 +78,6 @@ nav .nav-link {
 .navbar-nav {
   display: flex;
   gap: 60px;
-  padding-left: 20px;
-  padding-right: 50px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 30px;
 }
 @media (max-width: 990px) {
   .navbar-nav{
