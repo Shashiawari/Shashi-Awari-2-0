@@ -1,6 +1,6 @@
 .navbar {
   padding: 50px;
-  transition: 0.1s;
+
   z-index: 999;
   overflow: hidden;
 }
@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  transition-duration: 0.5s;
+
 }
 
 .bars {
@@ -65,26 +65,21 @@
   transform: rotate(180deg);
 }
 nav .nav-link {
-  padding: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
   font-family: lemonr;
   width: 100%;
   border-radius: 50px;
-  border: 2px solid rgb(0, 0, 0);
-
   text-align: center;
   color: white;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
   mix-blend-mode: difference;
+ 
 }
 .navbar-nav {
   display: flex;
   gap: 60px;
-  padding-left: 20px;
-  padding-right: 50px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 30px;
+
 }
 @media (max-width: 990px) {
   .navbar-nav{
@@ -111,7 +106,7 @@ nav .nav-link {
 
 .hover:hover {
   color: white;
-  border: 2px solid white;
+ border-bottom: 2px solid white;
 }
 
 @media (max-width: 540px) {

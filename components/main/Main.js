@@ -19,6 +19,7 @@ const Main = () => {
   }, []);
   return (
     <div className=" center ">
+    <div className="boxblur"></div>
       <div className="outmain ">
       <video
             src="dj.mp4"
@@ -27,6 +28,7 @@ const Main = () => {
             loop
            className="mainvid"
           ></video>
+        
         <div className="log d-flex">
         <div id="lineDrawing">
         <svg

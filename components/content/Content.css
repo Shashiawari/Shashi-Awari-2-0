@@ -20,25 +20,17 @@ h4 {
 .section2 {
   margin-top: 150px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(10px);
   z-index: 999;
 }
 
-.sec-2 {
-  width: 60%;
-  background-color: rgba(243, 1, 1, 0.127);
+.section2 h1{
+  font-family: modernsans;
+  margin-bottom: 50px;
 }
 
 @media (max-width: 1000px) {
-  .sec-2 {
-    width: 100%;
-  }
-  .section2 {
-    margin-top: 30px;
-  }
+
+
 }
 .section3 {
   height: 60vh;
@@ -49,6 +41,7 @@ h4 {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-bottom: 100px !important;
 }
 .sec-3 {
   width: 60%;
@@ -145,6 +138,58 @@ h4 {
   }
 }
 
+
+
+.cout{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 70vh;
+ overflow: hidden;
+
+}
+
+.motion {
+  display: flex;
+  flex-direction: row;
+}
+
+.inline-flex {
+
+  font-size: 10px;
+  display: inline-flex;
+  white-space: nowrap;
+
+  width: 800%;
+  font-weight: bolder;
+  overflow-x: hidden;
+}
+
+
+.box1{
+  position: absolute;
+  height: inherit;
+  width: 10%;
+  background-color: rgba(0, 0, 0, 0.982);
+  left: 95%;
+  filter: blur(30px);
+  z-index: 999;
+  margin-bottom: 50px;
+}
+
+.box2{
+  position: absolute;
+  height: inherit;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.982);
+  right: 95%;
+  filter: blur(30px);
+  z-index: 999;
+  margin-bottom: 50px;
+}
+
 @media (max-width: 1000px) {
   .section4 svg {
     height: 500px !important;
@@ -154,6 +199,13 @@ h4 {
     margin-top: 100px;
     margin-bottom: 100px;
     padding: 0;
+  }
+  .cout{
+    height: 40vh;
+  }
+
+  .box1{
+    left: 95%;
   }
 }
 
@@ -180,6 +232,7 @@ h4 {
 .ssvg svg{
   width: 70%;
   height: 100%;
+
 }
 
 @media (max-width: 1000px) {

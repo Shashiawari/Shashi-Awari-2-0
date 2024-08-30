@@ -12,10 +12,10 @@
 
 .outmain {
   width: 80%;
-
-  border-radius: 50px;
-  
+ 
   margin-top: 0;
+  border-radius: 50px;
+
 }
 .center {
   display: flex;
@@ -66,9 +66,40 @@
   left: 50%;
   transform: translate(-50%,-50%);
   object-fit: cover;
+  
 }
 
+.boxblur{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+
+
+ backdrop-filter: blur(10px);
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+}
+
+
+.boxblur2{
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+
+ top: 90%;
+ filter: blur(5px);
+ 
+}
+
+
+
 @media (max-width: 1000px) {
+  .outmain{
+    margin-top: 60px;
+  }
   .log svg {
   margin-top: 60px;
   }

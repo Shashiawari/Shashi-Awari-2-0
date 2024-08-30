@@ -1,10 +1,14 @@
+"use client";
 import React from "react";
 import "./Content.css";
+import Image from "next/image";
+import Imagecontainer from "../imgcontainer/Imagecontainer";
+import { motion } from "framer-motion";
 const Content = () => {
   return (
     <div className="  text-white content">
       <div className="container-fluid">
-        <div className="row d-flex align-items-center p-2 block ">
+        <div className="row d-flex align-items-center p-2 block mt-5 ">
           <div className=" col-12 col-lg-4   d-flex justify-content-center ">
             <svg
               width="376"
@@ -43,7 +47,6 @@ const Content = () => {
                   strokeMiterlimit="10"
                 />
                 <path
-               
                   d="M164.409 512.254C159.333 534.475 156.358 633.581 155.097 687.048C155.259 687.048 155.42 687.081 155.55 687.113C194.639 693.388 233.599 694.1 273.109 691.771C315.949 689.215 359.177 687.048 401.565 679.868C422.581 676.31 443.597 671.846 463.772 664.924C463.448 619.835 463.254 561.354 464.354 542.82C466.682 503.521 474.409 321.254 460.409 270.666C446.377 220.046 347.247 234.957 309.321 234.957C271.396 234.957 172.265 243.69 158.233 294.311C144.718 343.12 171.91 479.1 164.409 512.222V512.254Z"
                   fill="#CF352F"
                 />
@@ -210,49 +213,54 @@ const Content = () => {
           </div>
         </div>
       </div>
-      <section className="text-center section2 block1 ">
-        <div className="sec-2  p-5  ">
-          <h2>What Can I Offer you?</h2>
-          <h4>Let's figure it out!</h4>
-          <p>
-            With a strong foundation in Computer Science Engineering and a
-            specialization in Artificial Intelligence and Machine Learning, I
-            bring expertise in developing advanced deep learning models and
-            building innovative applications. Whether you need a robust deep
-            learning model, a user-friendly web application, or seamless
-            integration of new technologies, I have the skills and experience to
-            deliver high-quality solutions. Let's collaborate to bring your
-            digital vision to life!
-          </p>
+      <section className="text-center section2  ">
+        <h1>What can I Offer You ?</h1>
+        <div className="cout">
+          <div className="box1"></div>
+          <div className="box2"></div>
+          <div className="motion">
+            <motion.div
+              initial={{ x: "40%" }}
+              animate={{ x: "-100%" }}
+              transition={{ repeat: Infinity, ease: "linear", duration: 6000 }}
+            >
+              <div className="inline-flex my-2">
+                {Array.from({ length: 100 }, (_, index) => (
+                  <div key={index} className="cout">
+                    <Imagecontainer
+                      link={"calender.png"}
+                      text={"Projects"}
+                      className="mx-5"
+                    />
+                    <Imagecontainer
+                      link={"chitchat.png"}
+                      text={"chat Application"}
+                    />
+                    <Imagecontainer link={"fyle.png"} text={"Gsap"} />
+                    <Imagecontainer link={"genai.png"} text={"generative ai"} />
+                    <Imagecontainer link={"japan.png"} text={"applications"} />
+                    <Imagecontainer link={"ui.png"} text={"Web design"} />
+                    <Imagecontainer
+                      link={"web.png"}
+                      text={"Animation Frameworks"}
+                    />
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
-      <section className="section3 container-fluid block2  ">
-        <div className="sec-3 row d-flex justify-content-center align-items-center ">
-          <div className="col-12 col-md-6   order-sm-1 order-md-1">
-            <h1 className="text-center" style={{fontFamily:"alumi",lineHeight:"190px",fontSize:"250px",letterSpacing:"10px"}}>Why Me?</h1>
-          </div>
-          <div className="col-12 col-md-6   ">
-            <p>
-              With over five years of hands-on experience in software
-              development, I bring a blend of technical expertise and creativity
-              to every project. From spearheading innovative web applications to
-              contributing to complex machine learning models, I've consistently
-              delivered results that exceed expectations. My internship at the
-              National Institute of Technology involved crafting robust deep
-              learning models, contributing to a significant increase in
-              accuracy rates. Check out my GitHub for even more projects!
-            </p>
-          </div>
-        </div>
-      </section>
-          <section className="ssvg block">
-          <h2 className="my-5 text-center">Lets look at my skills!</h2>
-          <svg
+
+      <section className="ssvg block my-5 mb-5">
+        <h2 className=" text-center">Lets look at my skills!</h2>
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1109"
           height="652"
           fill="none"
           viewBox="0 0 1109 652"
+          className="mb-5"
         >
           <g id="comb">
             <g id="c">
@@ -439,7 +447,7 @@ const Content = () => {
             </g>
           </g>
         </svg>
-          </section>
+      </section>
     </div>
   );
 };

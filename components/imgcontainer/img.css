@@ -1,0 +1,21 @@
+.imgsc{
+  height: 416px;
+  width: 740px;
+  border-radius: 50px;
+}
+
+.clas{
+    margin-top: 20px;
+    color: #8f8f8f;
+    font-family: clash1 !important;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+@media (max-width: 1000px) {
+.imgsc{
+    height: 254px;
+    width: 453px;
+}
+
+}
