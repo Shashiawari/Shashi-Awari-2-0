@@ -20,6 +20,7 @@ const Main = () => {
   return (
     <div className=" center ">
     <div className="boxblur"></div>
+    <div className="boxblur2"></div>
       <div className="outmain ">
       <video
             src="dj.mp4"
