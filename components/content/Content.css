@@ -174,7 +174,7 @@ h4 {
   width: 10%;
   background-color: rgba(0, 0, 0, 0.982);
   left: 95%;
-  filter: blur(30px);
+  filter: blur(20px);
   z-index: 999;
   margin-bottom: 50px;
 }
@@ -185,7 +185,7 @@ h4 {
   width: 50%;
   background-color: rgba(0, 0, 0, 0.982);
   right: 95%;
-  filter: blur(30px);
+  filter: blur(20px);
   z-index: 999;
   margin-bottom: 50px;
 }
