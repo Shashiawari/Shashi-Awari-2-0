@@ -10,7 +10,10 @@ const page = () => {
     <div>
    
       <Navbar />
+      <div className="blurflex" >
+      <div className="boxblur2"></div>
       <Main />
+      </div>
       <Content />
       <Projects />
       <Resume/>
