@@ -46,6 +46,7 @@ p {
 
 * {
   cursor: none;
+  scrollbar-width: thin;
 }
 
 * {
