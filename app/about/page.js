@@ -45,50 +45,109 @@ const Page = () => {
   }, []);
 
   return (
+   
     <div>
+  
       <Navbar />
       <div className="about-content d-none d-lg-block p-3">
         <div className="racesWrapper">
           <div className="races">
-            <h2>HELLO!!</h2>
-            <h2>I AM SHASHI PREETHAM .</h2>
-            <img
-              src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1721541216/image-OjY49NQ4W-transformed_1_w3e894.png"
-              height={"500px"}
-              style={{ borderRadius: "30px" }}
-            ></img>
-            <h2>Glad You Are Here</h2>
-            <h2> Welcome </h2>
+            <h2>
+              HELLO!!{" "}
+         {" "}
+            </h2>
+            <h2>Welcome.</h2>
           </div>
         </div>
 
         <div className="space-100vh lightBG"></div>
       </div>
-      <div  className="about-content text-center 	d-md-none	d-lg-none d-sm-block d-flex justify-content-center align-items-center flex-column " style={{height:"100vh"}}>
-      <h2 style={{fontSize:"114px"}}>Hello!!</h2>
-      <p>I am glad you're here Let's know about me more</p>
-      <h2 style={{fontSize:"50px",color:"black"}} className="ttr">Welcome !!!</h2>
-      </div>
+
       <div className="c-2 mt-5  ">
-        <h3>All I Ever Did In My Life Is</h3>
+        <h3>ABOUT ME</h3>
         <div className="row fd p-5 d-flex justify-content-center align-items-center">
-         
-          <div className="col-12 ">
-            <h4 className="highlight " >
-              <span>code</span>
-              <span>,</span>
-              <span>workout</span>
-              <span>,</span>
-              <span>Eat</span>
-              <span>&amp;</span>
-              <span>sleep</span>
-            </h4>
-           
+          <div className="parent">
+            <div className="div1">
+              <h2>
+                <span>
+                  <div className="dyno"></div>
+                </span>{" "}
+                Early Morning Routine
+              </h2>
+              <p>
+                I wake up every morning with the sun, starting my day with focus
+                and clarity. These early hours are my most productive time,
+                allowing me to prioritize my tasks and set my goals for the day.
+              </p>
+              <p>
+                As soon as I get up, I spend a few moments in silence to gather
+                my thoughts and practice mindfulness. This helps me stay
+                centered and focused throughout the day. Afterward, I prepare
+                for my workout session, which not only boosts my energy but also
+                sharpens my mental clarity.
+              </p>
+              <p>
+                I believe that having a structured morning routine builds
+                discipline and sets a positive tone for the entire day. By
+                establishing these healthy habits, I stay on track, ready to
+                tackle any challenges that come my way with a refreshed mind and
+                body.
+              </p>
+            </div>
+
+            <div className="div2">
+              <h2>
+                {" "}
+                <span>
+                  <div className="dyno"></div>
+                </span>
+                Physical Fitness
+              </h2>
+              <p>
+                Fitness is a core part of who I am. Every day, I work out and go
+                for a run to maintain my physical well-being. I believe that
+                staying fit is key to achieving discipline, both physically and
+                mentally.
+              </p>
+            </div>
+
+            <div className="div3">
+              <h2>
+                {" "}
+                <span>
+                  <div className="dyno"></div>
+                </span>
+                Mental Strength
+              </h2>
+              <p>
+                I am proud of my mental toughness. By continually pushing my
+                limits, I ensure that I remain resilient and capable of handling
+                challenges with a positive mindset and unwavering determination.
+              </p>
+            </div>
+
+            <div className="div4">
+              <h2>
+                {" "}
+                <span>
+                  <div className="dyno"></div>
+                </span>
+                Creative and Innovative
+              </h2>
+              <p>
+                Creativity and innovation drive me. I love to explore new ideas,
+                solve problems in unique ways, and challenge myself to think
+                outside the box. I bring these qualities to both my personal and
+                professional endeavors.
+              </p>
+            </div>
           </div>
         </div>
       </div>
       <div className="services p-5">
-        <h1 className="mb-5" style={{borderBottom:"2px solid gray"}}>Services I Offer</h1>
+        <h1 className="mb-5" style={{ borderBottom: "2px solid gray" }}>
+          Services I Offer
+        </h1>
         <div className="row">
           <div className="col-12 col-lg-3 col-md-6">
             <div className="card">
