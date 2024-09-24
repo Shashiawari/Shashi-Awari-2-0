@@ -251,7 +251,34 @@ const Content = () => {
           </div>
         </div>
       </section>
-
+      <section>
+        <div className="sli1 d-none d-lg-block">
+          <div className="sli2">
+         <img src="nextjs.png"></img>
+         <img src="reactjs.png"></img>
+         <img src="nodejs.png"></img>
+         <img src="express.jpg"></img>
+         <img src="html.png"></img>
+         <img src="js.png"></img>
+         <img src="mongo.png"></img>
+         <img src="gsap.webp"></img>
+         <img src="mysql.png"></img>
+         <img src="CSS-Logo.png"></img>
+         <img src="framer.webp"></img>
+         <img src="nextjs.png"></img>
+         <img src="reactjs.png"></img>
+         <img src="nodejs.png"></img>
+         <img src="express.jpg"></img>
+         <img src="html.png"></img>
+         <img src="js.png"></img>
+         <img src="mongo.png"></img>
+         <img src="gsap.webp"></img>
+         <img src="mysql.png"></img>
+         <img src="CSS-Logo.png"></img>
+         <img src="framer.webp"></img>
+          </div>
+        </div>
+      </section>
       <section className="ssvg block my-5 mb-5">
         <h2 className=" text-center">Lets look at my skills!</h2>
         <svg
