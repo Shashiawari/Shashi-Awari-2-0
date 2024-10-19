@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Awari Shashi Preetham's Portfolio
 
-## Getting Started
+Welcome to my portfolio! I'm a full-stack developer and machine learning enthusiast with a passion for creating dynamic, responsive web applications and leveraging AI technologies. My portfolio showcases various projects that reflect my skills in web development, machine learning, and design.
 
-First, run the development server:
+## Live Portfolio
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can view my live portfolio here: [https://shashipreetham.netlify.app/](https://shashipreetham.netlify.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Front-end**: React.js, Next.js, Bootstrap, EJS, HTML5, CSS3, JavaScript, jQuery
+- **Back-end**: Node.js, Express.js
+- **Databases**: MongoDB, PostgreSQL
+- **Other Skills**: Machine Learning, Deep Learning, Python, Java, C
+- **Tools**: Git, Docker, Google Colab, Postman
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Projects
 
-## Learn More
+Below are some of the key projects featured on my portfolio:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Real-Time Chat Application**
+   - Built using Node.js, Express, Socket.io, and UUID for unique room codes.
+   - Features include real-time messaging, file sharing, and user authentication.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **NexGen Custom Website Builder**
+   - A cutting-edge platform developed using Next.js.
+   - Allows users to create custom websites with ease, featuring user authentication, database integration, and a visually appealing front-end design.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Deep Learning Internship Project**
+   - Developed a deep learning model with a 96% accuracy rate, hosted on Google Colab.
+   - Worked on applying fuzzy logic and LLMs for advanced ML and DL algorithms.
 
-## Deploy on Vercel
+For a complete list of my projects and contributions, please check my [GitHub](https://github.com/shashiawari).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Services
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+I offer services in the following areas:
+- Web Development
+- Machine Learning
+- Deep Learning
+- Web Design
+
+If you're interested in collaborating or need assistance with a project, feel free to reach out!
+
+## Contact
+
+- **Email**: [shashiawaripreetham@gmail.com](mailto:shashiawaripreetham@gmail.com)
+- **Phone**: +91 9704832432
+
+## License
+
+This portfolio is open source and available under the [MIT License](LICENSE).
+
+---
+
+Thank you for visiting my portfolio! I look forward to connecting and working on exciting projects together.
