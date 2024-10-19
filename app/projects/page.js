@@ -198,7 +198,7 @@ const page = () => {
             <h1 className="h11 ">04</h1>
           </div>
         </div>
-        <div className="row  d-flex- justify-content-center align-items-center">
+        <div className="row block1  d-flex- justify-content-center align-items-center">
           <div className="col-12 col-lg-6">
             <h1 className="h11 text-center">05</h1>
           </div>
@@ -242,7 +242,7 @@ const page = () => {
             </Link>
           </div>
         </div>
-        <div className="row block2 d-flex justify-content-center align-items-center">
+        <div className="row  d-flex justify-content-center align-items-center">
         <div className="col-12 col-lg-6 order-1 order-lg-0">
           <h3 className="mx-3 ">JapEase</h3>
           <video
