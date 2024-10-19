@@ -9,19 +9,24 @@ const page = () => {
       <Navbar />
       <div className="container llm">
         <div className="row block1 d-flex- justify-content-center align-items-center">
-          <div  className="col-12  col-lg-6 ">
-            <h1 style={{marginBottom:"0px",padding:"0px"}} className="h11 text-center">01</h1>
+          <div className="col-12  col-lg-6 ">
+            <h1
+              style={{ marginBottom: "0px", padding: "0px" }}
+              className="h11 text-center"
+            >
+              01
+            </h1>
           </div>
           <div className="col-12 col-lg-6" style={{}}>
             <h3 className="mx-3 ">NexGen</h3>
             <video
-            src="nex.mp4"
-            alt="japease"
-            muted
-            autoPlay
-            loop
-            style={{ width: "100%", height: "auto" }}
-          ></video>
+              src="nex.mp4"
+              alt="japease"
+              muted
+              autoPlay
+              loop
+              style={{ width: "100%", height: "auto" }}
+            ></video>
             <h4 className="mx-3 ">Technologies Used: Next.js</h4>
             <p className="mx-3">
               NexGen is an innovative platform where users can create custom
@@ -56,27 +61,26 @@ const page = () => {
         </div>
         <div className="row block2 d-flex justify-content-center align-items-center">
           <div className="col-12 col-lg-6 order-1 order-lg-0">
-            <h3 className="mx-3 ">JapEase</h3>
+            <h3 className="mx-3 ">Chit-Chat</h3>
             <video
-            src="jap.mp4"
-            alt="japease"
-            muted
-            autoPlay
-            loop
-            style={{ width: "100%", height: "auto" }}
-          ></video>
+              src="chit.mp4"
+              alt="japease"
+              muted
+              autoPlay
+              loop
+              style={{ width: "100%", height: "auto" }}
+            ></video>
             <h4 className="mx-3 ">
-              Technologies Used: React.js, Node.js, HTML, CSS, JavaScript, API
+              Technologies Used: Node.js, HTML, CSS, JavaScript.
             </h4>
             <p className="mx-3">
-              JapEase is a React.js application designed to provide a seamless
-              experience for students seeking real-time job opportunities. The
-              project emphasizes data fetching and dynamic UI updates to ensure
-              a responsive and user-friendly interface. The application
-              integrates various APIs to offer a comprehensive job search and
-              application platform.
+              Chit Chat is a real-time messaging app built with Node.js,
+              Express, and Socket.io. It offers private chat rooms using UUID
+              for secure conversations, along with instant messaging and file
+              sharing, all in a simple, user-friendly interface. Perfect for
+              quick and seamless communication.
             </p>
-            <Link href={"https://japease2.onrender.com/"}>
+            <Link href={"https://chit-chat-5e9g.onrender.com/"}>
               <button className="animated-button">
                 <svg
                   viewBox="0 0 24 24"
@@ -101,30 +105,31 @@ const page = () => {
             <h1 className="h11 text-center">02</h1>
           </div>
         </div>
+
         <div className="row block1 d-flex- justify-content-center align-items-center">
           <div className="col-12 col-lg-6">
             <h1 className="h11 text-center">03</h1>
           </div>
           <div className="col-12 col-lg-6 ">
-            <h3 className="mx-3 ">UIfry</h3>
+            <h3 className="mx-3 ">GenAI</h3>
             <video
-            src="uifry.mp4"
-            alt="japease"
-            muted
-            autoPlay
-            loop
-            style={{ width: "100%", height: "auto" }}
-          ></video>
-            <h4 className="mx-3 ">Technologies Used: HTML, CSS, JavaScript</h4>
+              src="gen.mp4"
+              alt="japease"
+              muted
+              autoPlay
+              loop
+              style={{ width: "100%", height: "auto" }}
+            ></video>
+            <h4 className="mx-3 ">
+              Technologies Used: Nextjs,HTML,CSS,JavaScript
+            </h4>
             <p className="mx-3">
-              UIFry is a front-end design project focused on creating visually
-              appealing and user-friendly website interfaces. The project
-              involves coding sophisticated layouts and interactive elements
-              using HTML, CSS, and JavaScript. UIFry demonstrates a strong
-              understanding of web design principles and the ability to
-              translate design concepts into functional web pages.
+              enn AI is a platform that uses Generative AI to create dynamic
+              content like text and images. It's designed for easy interaction,
+              offering a seamless experience for developers and creators looking
+              to explore AI's potential.
             </p>
-            <Link href={"https://uifry.onrender.com/"}>
+            <Link href={"https://main--genn-ai.netlify.app/"}>
               <button className="animated-button">
                 <svg
                   viewBox="0 0 24 24"
@@ -150,13 +155,13 @@ const page = () => {
           <div className="col-12 col-lg-6 order-1 order-lg-0">
             <h3 className="mx-3 ">SnapGen</h3>
             <video
-            src="snapg.mp4"
-            alt="japease"
-            muted
-            autoPlay
-            loop
-            style={{ width: "100%", height: "auto" }}
-          ></video>
+              src="snapg.mp4"
+              alt="japease"
+              muted
+              autoPlay
+              loop
+              style={{ width: "100%", height: "auto" }}
+            ></video>
             <h4 className="mx-3 ">
               Technologies Used:Node.js, HTML, CSS, JavaScript, API
             </h4>
@@ -200,13 +205,13 @@ const page = () => {
           <div className="col-12 col-lg-6 ">
             <h3 className="mx-3 ">Next Level Food</h3>
             <video
-            src="food.mp4"
-            alt="japease"
-            muted
-            autoPlay
-            loop
-            style={{ width: "100%", height: "auto" }}
-          ></video>
+              src="food.mp4"
+              alt="japease"
+              muted
+              autoPlay
+              loop
+              style={{ width: "100%", height: "auto" }}
+            ></video>
             <h4 className="mx-3 ">Technologies Used: React,sqlite</h4>
             <p className="mx-3">
               Next Level Food is a web application that enables users to share
@@ -237,6 +242,53 @@ const page = () => {
             </Link>
           </div>
         </div>
+        <div className="row block2 d-flex justify-content-center align-items-center">
+        <div className="col-12 col-lg-6 order-1 order-lg-0">
+          <h3 className="mx-3 ">JapEase</h3>
+          <video
+          src="jap.mp4"
+          alt="japease"
+          muted
+          autoPlay
+          loop
+          style={{ width: "100%", height: "auto" }}
+        ></video>
+          <h4 className="mx-3 ">
+            Technologies Used: React.js, Node.js, HTML, CSS, JavaScript, API
+          </h4>
+          <p className="mx-3">
+            JapEase is a React.js application designed to provide a seamless
+            experience for students seeking real-time job opportunities. The
+            project emphasizes data fetching and dynamic UI updates to ensure
+            a responsive and user-friendly interface. The application
+            integrates various APIs to offer a comprehensive job search and
+            application platform.
+          </p>
+          <Link href={"https://japease2.onrender.com/"}>
+            <button className="animated-button">
+              <svg
+                viewBox="0 0 24 24"
+                className="arr-2"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+              </svg>
+              <span className="text">Live Site</span>
+              <span className="circle"></span>
+              <svg
+                viewBox="0 0 24 24"
+                className="arr-1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+              </svg>
+            </button>
+          </Link>
+        </div>
+        <div className="col-12 col-lg-6 order-0 order-lg-1 text-center">
+          <h1 className="h11 text-center">06</h1>
+        </div>
+      </div>
       </div>
       <div className="text-center t my-5">
         <h4 style={{ textTransform: "capitalize" }}>
