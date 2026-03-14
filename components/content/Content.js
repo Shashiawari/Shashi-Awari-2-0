@@ -202,7 +202,9 @@ const Content = () => {
             </svg>
           </div>
           <div className="col-12 col-lg-8  ">
-            <h1 className="content-intro-title">Hello!</h1>
+            <h1 className="content-intro-title">
+              <span className="content-intro-titleTyping">Hello!</span>
+            </h1>
             <p>
               {" "}
               I am Awari Shashi Preetham, a Computer Science Engineer with a
