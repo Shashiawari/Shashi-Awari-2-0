@@ -133,7 +133,8 @@
   background: #060606;
 }
 
-.projectCardMedia video {
+.projectCardMedia video,
+.projectCardMedia img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -318,7 +319,8 @@
     transform: translate3d(0.85rem, 0.55rem, 0);
   }
 
-  .projectCard:hover .projectCardMedia video {
+  .projectCard:hover .projectCardMedia video,
+  .projectCard:hover .projectCardMedia img {
     transform: scale(1.03);
   }
 
@@ -451,6 +453,7 @@
   .projectCard,
   .projectCard::before,
   .projectCardMedia video,
+  .projectCardMedia img,
   .projectGithubLink,
   .projectGithubLink svg,
   .proj .animated-button,
