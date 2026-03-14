@@ -1,67 +1,15 @@
-"use client";
 import Navbar from "@/components/navbar/Navbar";
-import React, { useEffect } from "react";
+import React from "react";
 import "./about.css";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "@/components/footer/Footer";
 import Link from "next/link";
-
-gsap.registerPlugin(ScrollTrigger);
+import AboutHero from "@/components/about/AboutHero";
 
 const Page = () => {
-  useEffect(() => {
-    const races = document.querySelector(".races");
-
-    if (races) {
-      const getScrollAmount = () => {
-        const racesWidth = races.scrollWidth;
-        const viewportWidth = window.innerWidth;
-        return -(racesWidth - viewportWidth);
-      };
-
-      const tween = gsap.to(races, {
-        x: getScrollAmount(),
-        duration: 3,
-        ease: "none",
-      });
-
-      ScrollTrigger.create({
-        trigger: ".racesWrapper",
-        start: "top 20%",
-        end: () => `+=${races.scrollWidth - window.innerWidth}`,
-        pin: true,
-        animation: tween,
-        scrub: 1,
-        invalidateOnRefresh: true,
-        markers: false,
-      });
-
-      return () => {
-        tween.kill();
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      };
-    }
-  }, []);
-
   return (
-   
     <div>
-  
       <Navbar />
-      <div className="about-content d-none d-lg-block p-3">
-        <div className="racesWrapper">
-          <div className="races">
-            <h2>
-              HELLO!!{" "}
-         {" "}
-            </h2>
-            <h2>Welcome.</h2>
-          </div>
-        </div>
-
-        <div className="space-100vh lightBG"></div>
-      </div>
+      <AboutHero />
 
       <div className="c-2 mt-5  ">
         <h3>ABOUT ME</h3>
@@ -155,6 +103,8 @@ const Page = () => {
                 className="img-fluid"
                 src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1721545212/924b0793-457c-406a-b658-01e411026772.png"
                 alt="Web Development"
+                loading="lazy"
+                decoding="async"
               />
               <h3>Web Development</h3>
               <p>I can build your dream website.</p>
@@ -198,6 +148,8 @@ const Page = () => {
                 className="img-fluid"
                 src="https://atriainnovation.com/uploads/2023/11/portada-9.jpg"
                 alt="Machine Learning"
+                loading="lazy"
+                decoding="async"
               />
               <h3>Machine Learning</h3>
               <p>I can develop intelligent systems for your needs.</p>
@@ -237,6 +189,8 @@ const Page = () => {
                 className="img-fluid"
                 src="https://miro.medium.com/v2/resize:fit:1024/1*86dDGzwyawUu_MpEO2im1g.png"
                 alt="Deep Learning"
+                loading="lazy"
+                decoding="async"
               />
               <h3>Deep Learning</h3>
               <p>I can implement advanced neural networks for complex tasks.</p>
@@ -276,6 +230,8 @@ const Page = () => {
                 className="img-fluid"
                 src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2022/01/104228210.jpg?auto=format&q=60&w=1280&h=960&fit=crop&crop=faces"
                 alt="Web Design"
+                loading="lazy"
+                decoding="async"
               />
               <h3>Web Design</h3>
               <p>I can create stunning and user-friendly designs.</p>

@@ -5,17 +5,6 @@
   margin: 5px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .about-content {
   overflow: hidden;
   overflow-x: hidden !important;
@@ -38,7 +27,7 @@
 }
 
 .races h2 {
-  font-family: "Staatliches", cursive;
+  font-family: var(--font-numeric);
   font-size: 30vw;
   flex-shrink: 0;
   padding-right: 0.3em;
@@ -46,6 +35,7 @@
   color: white;
   -webkit-text-stroke: 6px #4a4848;
   margin: 0;
+  letter-spacing: 0.06em;
 }
 
 .races h2:last-of-type {
@@ -56,13 +46,13 @@
 
 .c-2 h3 {
   margin-top: 100px;
-  font-family: clash2;
+  font-family: var(--font-ui);
   color: white;
   font-size: 50px;
   word-spacing: 5px;
   margin: 20px;
   text-align: center;
-
+  letter-spacing: 0.18em;
   border-bottom: 2px solid #888888;
 }
 
@@ -96,11 +86,17 @@
 }
 .parent h2 {
   font-weight: 900;
-  font-family: modernsans !important;
+  font-family: var(--font-heading) !important;
   font-size: 30px !important;
   display: flex;
   flex-direction: row;
   gap: 10px;
+  letter-spacing: 0.03em;
+}
+
+.parent p {
+  font-family: var(--font-body);
+  line-height: 1.75;
 }
 /* Default Layout for Desktop */
 .div1 {
@@ -162,7 +158,12 @@
   width: 30px;
   transition: all 0.3s ease;
   animation: dyno infinite 3s ease-in-out;
-  background: linear-gradient(142deg, rgba(124,17,255,1) 29%, rgba(196,73,217,1) 59%, rgba(219,49,49,1) 96%);
+  background: linear-gradient(
+    142deg,
+    rgba(124, 17, 255, 1) 29%,
+    rgba(196, 73, 217, 1) 59%,
+    rgba(219, 49, 49, 1) 96%
+  );
 }
 
 @keyframes dyno {
@@ -201,22 +202,22 @@
   .div4 {
     grid-area: 4 / 1 / 5 / 2;
   }
-  .parent{
+  .parent {
     padding: 10px;
   }
 }
-.hand{
-transition: 0.3 s ease;
+.hand {
+  transition: 0.3 s ease;
   animation: hand 2s ease infinite;
 }
 @keyframes hand {
-  0%{
+  0% {
     transform: rotate(0deg);
   }
-  50%{
+  50% {
     transform: rotate(30deg);
   }
-  100%{
+  100% {
     transform: rotate(0deg);
   }
 }
@@ -244,30 +245,37 @@ transition: 0.3 s ease;
 }
 
 .services h1 {
-  font-family: clash2;
+  font-family: var(--font-ui);
   font-size: 50px;
   text-align: center;
   color: white;
+  letter-spacing: 0.16em;
 }
 
 .services .card {
   background-color: #00000000;
+  display: flex;
+  gap: 5px;
 }
 .services a {
   text-decoration: none;
 }
 
 .services p {
-  font-family: clash1 !important;
+  font-family: var(--font-body) !important;
   text-align: start;
 }
 
 .services img {
   border-radius: 30px;
+
+  transition: all 0.3s ease;
+}
+.services img:hover {
+  padding: 10px;
 }
 
 .animated-button {
-  margin-top: 10px;
   position: relative;
   display: flex;
   align-items: center;
@@ -284,6 +292,9 @@ transition: 0.3 s ease;
   cursor: pointer;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  font-family: var(--font-ui-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .animated-button svg {
@@ -356,13 +367,15 @@ transition: 0.3 s ease;
 }
 
 .services h3 {
-  font-family: clash2;
+  font-family: var(--font-heading);
   color: white;
+  letter-spacing: 0.04em;
 }
 .services p,
-li {
+.services li {
   color: white;
-  font-family: clash1;
+  font-family: var(--font-body);
+  line-height: 1.7;
 }
 
 @media (max-width: 1000px) {

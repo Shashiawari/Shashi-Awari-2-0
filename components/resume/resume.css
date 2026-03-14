@@ -7,8 +7,10 @@
 
 .resume a{
     text-decoration: none;
-    font-family: modernsans;
+    font-family: var(--font-ui-light);
     font-weight: bolder;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 .Download-button {

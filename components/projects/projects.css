@@ -1,9 +1,12 @@
+.projects{
+  margin-top: 140px;
+}
 .projects video{
     border-radius: 30px;
 }
 
 .projects .card{
-    margin-top: 70px;
+    margin-top: 100px;
     background-color: rgba(240, 248, 255, 0);
 }
 
@@ -11,18 +14,23 @@
     color: white;
     margin-top: 30px;
     text-transform: capitalize;
+    font-family: var(--font-heading);
+    letter-spacing: 0.04em;
 }
 
 .projects p{
     color: white;
     margin-top: 10px;
+    font-family: var(--font-body);
+    line-height: 1.7;
 }
 
 .projects a{
     color: white;
-    font-family: modernsans;
+    font-family: var(--font-ui-light);
     text-decoration: none;
     font-weight: 900;
+    letter-spacing: 0.12em;
 }
 
 .projects svg{
@@ -47,6 +55,9 @@
     cursor: pointer;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    font-family: var(--font-ui-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
   
   .animated-button svg {
@@ -118,7 +129,12 @@
     opacity: 1;
   }
   
-  .d{
-    display: flex;
-    justify-content: space-between;
-  }
+.d{
+  display: flex;
+  justify-content: space-between;
+}
+
+.projects-title {
+  font-family: var(--font-ui);
+  letter-spacing: 0.16em;
+}

@@ -1,27 +1,61 @@
 "use client";
 // CustomCursor.js
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import "./Customcursor.css";
+
 const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const cursorRef = useRef(null);
+  const frameRef = useRef(null);
 
   useEffect(() => {
-    const moveCursor = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    const cursor = cursorRef.current;
+
+    if (!cursor || window.matchMedia("(pointer: coarse)").matches) {
+      return undefined;
+    }
+
+    let currentX = 0;
+    let currentY = 0;
+    let targetX = 0;
+    let targetY = 0;
+
+    const render = () => {
+      currentX += (targetX - currentX) * 0.35;
+      currentY += (targetY - currentY) * 0.35;
+      cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+
+      const settled =
+        Math.abs(targetX - currentX) < 0.1 && Math.abs(targetY - currentY) < 0.1;
+
+      if (settled) {
+        frameRef.current = null;
+        return;
+      }
+
+      frameRef.current = requestAnimationFrame(render);
     };
 
-    window.addEventListener("mousemove", moveCursor);
+    const moveCursor = (e) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+
+      if (!frameRef.current) {
+        frameRef.current = requestAnimationFrame(render);
+      }
+    };
+
+    window.addEventListener("mousemove", moveCursor, { passive: true });
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
+      if (frameRef.current) {
+        cancelAnimationFrame(frameRef.current);
+      }
     };
   }, []);
 
   return (
-    <div
-      className="custom-cursor"
-      style={{ left: `${position.x}px`, top: `${position.y}px` }}
-    >
+    <div ref={cursorRef} className="custom-cursor">
       {/* SVG or any custom cursor content goes here */}
       <svg
         width="20"

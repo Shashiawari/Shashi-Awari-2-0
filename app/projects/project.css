@@ -1,155 +1,468 @@
-.h11 {
-  font-family: alumi;
-  font-size: 700px;
-  line-height: 10px;
-  color: rgb(255, 255, 255);
+.projectPage {
+  overflow-x: clip;
+   
 }
 
-.container{}
-@media (max-width: 1000px) {
-  .h11 {
-    line-height: 400px;
-    font-size: 400px;
-  }
-
-  .proj {
-    overflow: hidden;
-  }
-
-  .navbar {
-    padding-left: 0;
-    padding: 0;
-  }
-  .container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-  }
+.projectGridSection {
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0 clamp(4rem, 8vw, 6rem);
 }
-.proj h3 {
-  font-family: modernsans;
+
+.projectGridContainer {
+     max-width: 90%;
+  position: relative;
+}
+
+.projectGridIntro {
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: clamp(2rem, 4vw, 3.25rem);
+}
+
+.projectGridEyebrow {
+  margin: 0 0 0.8rem;
+  color: rgba(0, 0, 0, 0.74);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.projectGridIntro h1 {
+  margin: 0 0 0.9rem;
   color: white;
-  font-weight: 900;
-  letter-spacing: 3px;
-}
-.proj h4 {
-  font-family: modernsans;
-  color: white;
-}
-.proj p {
-  font-family: modernsans;
-  color: white;
+  font-family: var(--font-heading);
+  font-size: clamp(2.9rem, 7vw, 5.6rem);
+  letter-spacing: 0.08em;
+  line-height: 0.94;
+  text-transform: uppercase;
+  text-wrap: balance;
 }
 
-.proj video {
-  border-radius: 15px;
-  margin: 10px;
+.projectGridLead {
+  max-width: 48rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.projectGridStat {
+  flex: 0 0 auto;
+  min-width: 12rem;
+  padding: 1.2rem 1.35rem;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  border-radius: 1.4rem;
+  background:black;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+.projectGridStat span {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: white;
+  font-family: var(--font-numeric);
+  font-size: clamp(2.9rem, 5vw, 4.6rem);
+  line-height: 0.88;
+}
+
+.projectGridStat p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-ui-light);
+  font-size: 0.92rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.projectCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 1.8vw, 1.5rem);
+  align-items: stretch;
+}
+
+.projectCard {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 1.8rem;
+  background:
+    black;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(1.2rem);
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease;
+  animation: projectCardReveal 650ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--card-index) * 90ms);
  
 }
 
-.proj a {
+.projectCard::before {
+  content: "";
+  position: absolute;
+  top: -4.5rem;
+  left: -2.25rem;
+  width: 11rem;
+  height: 11rem;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 70%);
+  opacity: 0.18;
+  pointer-events: none;
+  transition:
+    transform 260ms ease,
+    opacity 260ms ease;
+}
+
+.projectCardMedia {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.3rem;
+  background: #060606;
+}
+
+.projectCardMedia video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.001);
+  transition: transform 420ms ease;
+}
+
+.projectCardNumber {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.5rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.56);
+  color: white;
+  font-family: var(--font-numeric);
+  font-size: clamp(1.6rem, 2vw, 2.15rem);
+  line-height: 1;
+}
+
+.projectCardBody {
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.projectCardKicker {
+  margin: 0 0 0.5rem;
+  color: rgba(255, 255, 255, 0.62);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.projectCard h3 {
+  margin: 0 0 0.75rem;
+  color: white;
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  letter-spacing: 0.06em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.projectCardTech {
+  margin: 0 0 0.95rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: var(--font-ui-light);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  word-break: break-word;
+}
+
+.projectCardDescription {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-body);
+  line-height: 1.8;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.projectCardButton {
+  margin-top: auto;
+  align-self: flex-start;
   text-decoration: none;
 }
 
-.animated-button {
-  margin-top: 10px;
+.projectMore {
+  padding: 0 1.25rem clamp(4rem, 7vw, 5.5rem);
+}
+
+.projectMore h4 {
+  margin-bottom: 0.9rem;
+  color: white;
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  letter-spacing: 0.06em;
+  text-transform: capitalize;
+}
+
+.projectGithubLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.projectGithubLink svg {
+  transition: transform 220ms ease;
+}
+
+.proj .animated-button {
+  margin-top: 1.35rem;
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 16px 36px;
-  border: 4px solid;
-  border-color: transparent;
-  font-size: 16px;
-  background-color: inherit;
+  padding: 0.95rem 2.15rem;
+  border: 4px solid transparent;
   border-radius: 100px;
-  font-weight: 600;
+  background-color: inherit;
   color: white;
   box-shadow: 0 0 0 2px rgb(88, 88, 88);
   cursor: pointer;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  font-family: var(--font-ui-light);
+  font-size: 0.96rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.animated-button svg {
+.proj .animated-button svg {
   position: absolute;
   width: 24px;
   fill: rgb(247, 247, 247);
-  z-index: 9;
+  z-index: 1;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.animated-button .arr-1 {
+.proj .animated-button .arr-1 {
   right: 16px;
 }
 
-.animated-button .arr-2 {
+.proj .animated-button .arr-2 {
   left: -25%;
 }
 
-.animated-button .circle {
+.proj .animated-button .circle {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
-  background-color: rgb(255, 255, 255);
   border-radius: 50%;
+  background-color: rgb(255, 255, 255);
   opacity: 0;
+  transform: translate(-50%, -50%);
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.animated-button .text {
+.proj .animated-button .text {
   position: relative;
   z-index: 1;
   transform: translateX(-12px);
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.animated-button:hover {
-  box-shadow: 0 0 0 12px transparent;
-  color: #212121;
-  border-radius: 12px;
+@media (hover: hover) and (pointer: fine) {
+  .projectCard:hover {
+    transform: translateY(-0.45rem);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 30px 75px rgba(0, 0, 0, 0.36);
+  }
+
+  .projectCard:hover::before {
+    opacity: 0.28;
+    transform: translate3d(0.85rem, 0.55rem, 0);
+  }
+
+  .projectCard:hover .projectCardMedia video {
+    transform: scale(1.03);
+  }
+
+  .projectGithubLink:hover {
+    transform: translateY(-0.2rem);
+    border-color: rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .projectGithubLink:hover svg {
+    transform: scale(1.08);
+  }
+
+  .proj .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
+
+  .proj .animated-button:hover .arr-1 {
+    right: -25%;
+  }
+
+  .proj .animated-button:hover .arr-2 {
+    left: 16px;
+  }
+
+  .proj .animated-button:hover .text {
+    transform: translateX(12px);
+  }
+
+  .proj .animated-button:hover svg {
+    fill: #212121;
+  }
+
+  .proj .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }
 }
 
-.animated-button:hover .arr-1 {
-  right: -25%;
-}
-
-.animated-button:hover .arr-2 {
-  left: 16px;
-}
-
-.animated-button:hover .text {
-  transform: translateX(12px);
-}
-
-.animated-button:hover svg {
-  fill: #212121;
-}
-
-.animated-button:active {
-  scale: 0.95;
+.proj .animated-button:active {
+  scale: 0.96;
   box-shadow: 0 0 0 4px greenyellow;
 }
 
-.animated-button:hover .circle {
-  width: 220px;
-  height: 220px;
-  opacity: 1;
+@keyframes projectCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(1.2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.t {
-  transition: all 0.3s;
-}
-.t svg:hover {
-  transform: scale(1.1);
-  background-color: black;
+@media (max-width: 1199px) {
+  .projectCardsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
+@media (max-width: 991px) {
+  .projectGridIntro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-@media (max-width:1000px) {
-  .proj video {
-    margin: 0px;
+  .projectGridStat {
+    width: min(100%, 18rem);
+  }
+
+  .projectCardsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .projectGridSection {
+    padding-bottom: 4.2rem;
+  }
+
+  .projectCardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectCard {
+    padding: 0.9rem;
+    border-radius: 1.45rem;
+  }
+
+  .projectCardMedia {
+    border-radius: 1rem;
+  }
+
+  .projectCardDescription {
+    -webkit-line-clamp: 6;
+  }
+}
+
+@media (max-width: 480px) {
+  .projectGridLead {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .projectCard h3 {
+    font-size: 1.45rem;
+  }
+
+  .projectCardTech {
+    font-size: 0.84rem;
+  }
+
+  .projectCardDescription {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .proj .animated-button {
+    padding: 0.9rem 2rem;
+    font-size: 0.88rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectCard,
+  .projectCard::before,
+  .projectCardMedia video,
+  .projectGithubLink,
+  .projectGithubLink svg,
+  .proj .animated-button,
+  .proj .animated-button svg,
+  .proj .animated-button .circle,
+  .proj .animated-button .text {
+    transition: none;
+  }
+
+  .projectCard {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

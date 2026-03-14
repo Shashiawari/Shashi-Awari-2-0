@@ -1,9 +1,14 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
-import 'bootstrap/dist/css/bootstrap.css';
-import BootstrapClient from "@/components/BootstrapClient";
-import CustomCursor from "@/components/customcursor/Cutomcursor";
-const inter = Inter({ subsets: ["latin"] });
+import "bootstrap/dist/css/bootstrap.css";
+import dynamic from "next/dynamic";
+
+const BootstrapClient = dynamic(() => import("@/components/BootstrapClient"), {
+  ssr: false,
+});
+const CustomCursor = dynamic(
+  () => import("@/components/customcursor/Cutomcursor"),
+  { ssr: false }
+);
 
 export const metadata = {
   title: "Shashi Awari",
@@ -13,10 +18,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-    
-      <body style={{background:"black"}}>
-      <CustomCursor/>
-      {children}<BootstrapClient/></body>
+      <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+      </head>
+      <body>
+        <CustomCursor />
+        {children}
+        <BootstrapClient />
+      </body>
     </html>
   );
 }

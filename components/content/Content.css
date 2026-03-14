@@ -1,14 +1,22 @@
 .content h2,
-h3,
-h4 {
-  font-family: modernsans;
+.content h3,
+.content h4 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.03em;
 }
 .content p {
-  font-family: modernsans;
+  font-family: var(--font-body);
+  line-height: 1.8;
 }
 
 .content {
   padding: 30px;
+}
+
+.content-intro-title {
+  font-family: var(--font-display);
+  font-size: 84px;
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 500px) {
@@ -24,8 +32,10 @@ h4 {
 }
 
 .section2 h1 {
-  font-family: modernsans;
+  font-family: var(--font-ui);
   margin-bottom: 50px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1000px) {
@@ -151,6 +161,25 @@ h4 {
   flex-direction: row;
 }
 
+.content-marquee {
+  display: flex;
+  overflow: hidden;
+}
+
+.content-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: content-marquee 300s linear infinite;
+  will-change: transform;
+}
+
+.content-marquee-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  white-space: nowrap;
+}
+
 .inline-flex {
   font-size: 10px;
   display: inline-flex;
@@ -260,6 +289,22 @@ h4 {
   }
   to {
     transform: translateX(-20%);
+  }
+}
+
+@keyframes content-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content-marquee-track {
+    animation: none;
   }
 }
 

@@ -1,5 +1,4 @@
 .log svg {
-
   width: 100%;
   height: 100%;
 }
@@ -8,7 +7,18 @@
   stroke: #fff;
   stroke-width: 1px;
 }
+.bimg{
+  background-image: url("https://res.cloudinary.com/dq7brjjnz/image/upload/v1727917576/2_pp7jqh.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
 
+.blk{
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.337);
+}
 .outmain {
   overflow: hidden;
   width: 80%;
@@ -16,16 +26,19 @@
   border-radius: 50px;
 }
 .center {
+  
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-position: center;
+  background-size: cover;
 }
 .log {
   overflow: hidden !important;
   position: relative;
   height: 70vh;
-  font-family: clash2;
+  font-family: var(--font-display);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +48,7 @@
 }
 
 .log h1 {
-  font-family: clash3;
+  font-family: var(--font-display);
   color: white;
   font-size: 128px;
   text-transform: uppercase;
@@ -48,11 +61,12 @@
 }
 
 .log h5 {
-  font-family: clash2;
-  font-size: 38px;
+  font-family: var(--font-ui-light);
+  font-size: 30px;
   z-index: 1;
   text-transform: capitalize;
   color: rgb(132, 132, 132);
+  letter-spacing: 0.18em;
 }
 .mainvid {
   position: absolute;
@@ -66,17 +80,10 @@
 }
 
 .boxblur {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0);
-
-  backdrop-filter: blur(10px);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.475);
+  z-index: 999;
+  backdrop-filter: blur(12px);
 }
-
 
 @media (max-width: 1000px) {
   .outmain {
@@ -93,10 +100,10 @@
   .pk {
     width: 100% !important;
   }
-  .boxblur{
+  .boxblur {
     overflow: hidden !important;
   }
-  .boxblur2{
+  .boxblur2 {
     border: 100px solid rgb(0, 0, 0);
     overflow: hidden;
     width: 100% !important;

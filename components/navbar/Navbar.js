@@ -1,54 +1,60 @@
 import React from "react";
+import Link from "next/link";
 import "./Navbar.css";
 import NavLink from "./list";
 
+const navItems = [
+  { href: "/", label: "home" },
+  { href: "/about", label: "about" },
+  { href: "/projects", label: "projects" },
+  { href: "/contact", label: "contact" },
+];
+
 const Navbar = () => {
   return (
-    <div>
-      <nav className="navbar navbar-expand-md">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            <img
-              src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1698510114/Picture1_xekuhi.png"
-              height={"50px"}
-              alt="Brand"
-            ></img>
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <input type="checkbox" id="checkbox" />
-            <label htmlFor="checkbox" className="toggle">
-              <div className="bars" id="bar1"></div>
-              <div className="bars" id="bar2"></div>
-              <div className="bars" id="bar3"></div>
-            </label>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <NavLink href={"/"}>home</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink href={"/about"}>about</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink href={"/projects"}>projects</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink href={"/contact"}>contact</NavLink>
-              </li>
-            </ul>
+    <>
+      <header className="site-navbar-wrap">
+        <nav className="navbar navbar-expand-md site-navbar">
+          <div className="container-fluid site-navbar-shell">
+            <Link className="navbar-brand site-navbar-brand" href="/">
+
+              <img
+                src="https://res.cloudinary.com/dq7brjjnz/image/upload/v1698510114/Picture1_xekuhi.png"
+                alt="Shashi Awari"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              ></img>
+
+
+            </Link>
+            <button
+              className="navbar-toggler site-navbar-toggle collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-line"></span>
+              <span className="navbar-toggler-line"></span>
+              <span className="navbar-toggler-line"></span>
+            </button>
+            <div className="collapse navbar-collapse site-navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav ms-auto site-navbar-links">
+                {navItems.map((item) => (
+                  <li className="nav-item" key={item.href}>
+                    <NavLink href={item.href}>{item.label}</NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
-    </div>
+        </nav>
+      </header>
+      <div className="navbar-spacer" aria-hidden="true"></div>
+    </>
   );
 };
 

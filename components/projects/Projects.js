@@ -4,12 +4,12 @@ import Link from "next/link";
 
 const Projects = () => {
   return (
-    <div className="projects mx-4 my-5">
+    <div className="projects mx-4 my-5 mt-5">
       <div className="container">
         <div className="d-flex d">
           <h1
+            className="projects-title"
             style={{
-              fontFamily: "modernsans",
               textTransform: "uppercase",
               color: "white",
               fontSize: "32px",
