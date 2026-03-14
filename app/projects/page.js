@@ -2,7 +2,16 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import { createPageMetadata } from "@/lib/seo";
 import "./project.css";
+
+export const metadata = createPageMetadata({
+  title: "Projects",
+  description:
+    "Explore projects by Shashi Preetham Awari, also known as Shashi Awari, including full-stack apps, AI work, APIs, machine learning ideas, and interactive web experiences.",
+  path: "/projects",
+  keywords: ["Shashi Awari projects", "Shashi Preetham Awari portfolio projects"],
+});
 
 // Edit this list to add, remove, or reorder projects.
 const projects = [
