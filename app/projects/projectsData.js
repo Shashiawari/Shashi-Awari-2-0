@@ -193,7 +193,7 @@ const rawProjects = [
   description:
     "Second Brain AI is a personal knowledge management platform that allows users to upload documents, ingest websites, and interact with their data using AI. It supports multiple AI providers and enables seamless switching between models without losing conversation context.",
   href: "https://frontend-nine-ashen-8v3tcyasob.vercel.app/", 
-  featured: false,
+  featured: true,
   eyebrow: "AI Knowledge System",
   caseStudy: {
     content: [
