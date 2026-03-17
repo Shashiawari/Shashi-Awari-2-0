@@ -186,6 +186,207 @@ const rawProjects = [
     },
   },
   {
+  title: "Second Brain AI",
+  mediaSrc: "secai.webm",
+  technologies:
+    "Next.js, React, FastAPI, Supabase, PostgreSQL, Vector Embeddings, AI APIs",
+  description:
+    "Second Brain AI is a personal knowledge management platform that allows users to upload documents, ingest websites, and interact with their data using AI. It supports multiple AI providers and enables seamless switching between models without losing conversation context.",
+  href: "https://frontend-nine-ashen-8v3tcyasob.vercel.app/", 
+  featured: false,
+  eyebrow: "AI Knowledge System",
+  caseStudy: {
+    content: [
+      {
+        type: "intro",
+        paragraphs: [
+          "Second Brain AI is a platform designed to solve the growing problem of fragmented knowledge and inefficient interaction with AI tools. Users often store information across documents, websites, and notes, making it difficult to retrieve insights quickly.",
+          "Additionally, most AI platforms restrict users to a single provider, limiting experimentation and flexibility. Switching between providers often results in losing conversation context, forcing users to restart discussions.",
+          "Second Brain AI introduces a unified system where users can store knowledge, interact with it using AI, and seamlessly switch between multiple AI providers without losing context."
+        ]
+      },
+      {
+        title: "Problem the Project Solves",
+        paragraphs: ["Modern AI workflows suffer from multiple inefficiencies:"],
+        list: [
+          "AI provider lock-in limiting flexibility",
+          "Loss of conversation context when switching models",
+          "Scattered knowledge across documents and websites",
+          "Difficulty retrieving specific insights from large documents",
+          "Repeatedly explaining the same context to different AI models"
+        ],
+        footer: [
+          "Second Brain AI solves these issues by combining knowledge management with flexible AI integration.",
+          "It allows users to switch models freely while preserving the conversation flow."
+        ]
+      },
+      {
+        title: "Core Idea",
+        paragraphs: ["The platform is built around three core concepts:"],
+        list: [
+          "Personal Knowledge Base: Store documents and web content in one place",
+          "Context-Aware AI Chat: Interact with stored knowledge using natural language",
+          "Provider Flexibility: Switch between AI models without losing context"
+        ],
+        footer: ["This creates a seamless and powerful AI-assisted thinking system."]
+      },
+      {
+        title: "System Workflow",
+        paragraphs: ["The workflow of the system is structured as follows:"],
+        list: [
+          "User signs up and logs in",
+          "User uploads documents or adds website URLs",
+          "Content is processed and indexed into vector embeddings",
+          "User starts a chat or selects a document",
+          "AI retrieves relevant context using semantic search",
+          "User can switch AI providers at any time",
+          "Conversation context is preserved across provider switches",
+          "User receives accurate, context-aware responses"
+        ],
+        footer: ["The system ensures continuity and efficiency in AI interactions."]
+      },
+      {
+        title: "Platform Features",
+        subsections: [
+          {
+            title: "Knowledge Base Management",
+            paragraphs: ["Users can manage their knowledge efficiently."],
+            list: [
+              "Upload documents (PDF, TXT, MD)",
+              "Add website URLs",
+              "View and manage stored documents",
+              "Delete documents with automatic context cleanup"
+            ],
+            footer: ["All data is indexed for fast retrieval."]
+          },
+          {
+            title: "AI Chat System",
+            paragraphs: ["The platform provides an advanced chat experience."],
+            list: [
+              "Multi-thread chat history",
+              "Chat search functionality",
+              "Markdown-style responses",
+              "Typing animations for AI replies",
+              "Persistent conversations"
+            ]
+          },
+          {
+            title: "Document-Scoped Chat",
+            paragraphs: ["Users can interact with specific documents."],
+            list: [
+              "Click a document to start a scoped chat",
+              "AI automatically understands document context",
+              "Focused and accurate responses",
+              "Ability to switch back to global context"
+            ]
+          },
+          {
+            title: "Multi-Provider AI System",
+            paragraphs: ["One of the key innovations of the platform."],
+            list: [
+              "Add multiple AI providers",
+              "Configure API keys and endpoints",
+              "Switch models directly during conversations",
+              "Support for cloud, private, and local LLMs"
+            ],
+            footer: [
+              "Unlike traditional platforms, users are not locked into a single provider."
+            ]
+          },
+          {
+            title: "Context Preservation System",
+            paragraphs: [
+              "A major innovation of the platform is maintaining conversation continuity."
+            ],
+            list: [
+              "Conversation history is preserved across provider switches",
+              "No need to re-explain previous context",
+              "Seamless transition between models",
+              "Improved productivity for developers and researchers"
+            ],
+            footer: [
+              "This solves a critical problem in multi-model experimentation workflows."
+            ]
+          }
+        ]
+      },
+      {
+        title: "Technical Architecture",
+        paragraphs: ["The platform uses a modern scalable architecture."],
+        subsections: [
+          {
+            title: "Frontend",
+            paragraphs: ["The frontend is built using modern web technologies."],
+            list: [
+              "Next.js",
+              "React",
+              "Responsive UI design",
+              "Interactive chat interface"
+            ]
+          },
+          {
+            title: "Backend",
+            paragraphs: ["The backend is powered by FastAPI."],
+            list: [
+              "REST API endpoints",
+              "Chat processing pipeline",
+              "Document ingestion and parsing",
+              "Provider routing system"
+            ]
+          },
+          {
+            title: "Database & Storage",
+            paragraphs: ["Data is managed using Supabase and PostgreSQL."],
+            list: [
+              "User authentication",
+              "Chat history storage",
+              "Document metadata",
+              "Vector embeddings for semantic search"
+            ]
+          },
+          {
+            title: "AI & Retrieval",
+            paragraphs: ["The system uses advanced retrieval techniques."],
+            list: [
+              "Vector embeddings for semantic search",
+              "Lexical fallback search",
+              "Context assembly for accurate responses",
+              "Document-prioritized retrieval for scoped chats"
+            ]
+          }
+        ]
+      },
+      {
+        title: "Security & Reliability",
+        paragraphs: ["The system includes multiple safeguards:"],
+        list: [
+          "Secure authentication with Supabase",
+          "Encrypted API key storage",
+          "Protected routes",
+          "Rate limit handling",
+          "Error handling and fallback mechanisms"
+        ]
+      },
+      {
+        title: "Unique Aspects of the Project",
+        paragraphs: [
+          "Second Brain AI introduces a unique combination of flexibility and intelligence."
+        ],
+        list: [
+          "Multi-provider AI support",
+          "Context preservation across model switching",
+          "Document-scoped AI conversations",
+          "Semantic + lexical hybrid search",
+          "Personal AI-powered knowledge system"
+        ],
+        footer: [
+          "This makes it a powerful tool for developers, researchers, and knowledge workers."
+        ]
+      }
+    ]
+  }
+},
+  {
     title: "Defungi CNN",
     mediaSrc: "fungi.png",
     technologies: "Python, TensorFlow, CNN, Deep Learning",
