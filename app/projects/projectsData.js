@@ -9,7 +9,7 @@ const withPublicAssetPath = (value) => {
 const rawProjects = [
   {
     title: "FindH",
-    mediaSrc: "findh.png",
+    mediaSrc: "findh.webm",
     technologies:
       "Next.js, React, Node.js, Express.js, Supabase, PostgreSQL, Framer Motion, GSAP",
     description:
