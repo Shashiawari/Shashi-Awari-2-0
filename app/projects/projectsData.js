@@ -14,7 +14,7 @@ const rawProjects = [
       "Next.js, React, Node.js, Express.js, Supabase, PostgreSQL, Framer Motion, GSAP",
     description:
       "FindH is a rental verification platform that connects tenants with nearby agents who can physically verify properties. Users can book agents to inspect listings, upload verification documents, and receive admin-approved reports privately through a secure multi-role workflow.",
-    href: "https://frontend-nine-ashen-8v3tcyasob.vercel.app/",
+    href: "https://findh.vercel.app/",
     featured: true,
     eyebrow: "Flagship Full-Stack Case Study",
     caseStudy: {
@@ -192,7 +192,7 @@ const rawProjects = [
     "Next.js, React, FastAPI, Supabase, PostgreSQL, Vector Embeddings, AI APIs",
   description:
     "Second Brain AI is a personal knowledge management platform that allows users to upload documents, ingest websites, and interact with their data using AI. It supports multiple AI providers and enables seamless switching between models without losing conversation context.",
-  href: "https://frontend-nine-ashen-8v3tcyasob.vercel.app/", 
+  href: "https://2ndbrain-ai.vercel.app/", 
   featured: false,
   eyebrow: "AI Knowledge System",
   caseStudy: {
