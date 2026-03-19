@@ -2,11 +2,8 @@ import React from "react";
 import Link from "next/link";
 import "./Navbar.css";
 import NavLink from "./list";
-import dynamic from "next/dynamic";
 
-const TranslateButton = dynamic(() => import("../TranslateButton"), {
-  ssr: false,
-});
+
 
 const navItems = [
   { href: "/", label: "home" },
@@ -35,7 +32,7 @@ const Navbar = () => {
             </Link>
 
             <div className="d-flex align-items-center gap-2 site-navbar-controls">
-              <TranslateButton />
+              
               <button
                 className="navbar-toggler site-navbar-toggle collapsed"
                 type="button"
