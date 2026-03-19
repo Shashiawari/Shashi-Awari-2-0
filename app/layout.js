@@ -3,13 +3,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import dynamic from "next/dynamic";
 import { rootMetadata } from "@/lib/seo";
 
-const BootstrapClient = dynamic(() => import("@/components/BootstrapClient"), {
-  ssr: false,
-});
-const CustomCursor = dynamic(
-  () => import("@/components/customcursor/Cutomcursor"),
-  { ssr: false }
-);
+import CustomCursor from "@/components/customcursor/Cutomcursor";
+import BootstrapClient from "@/components/BootstrapClient";
 
 export const metadata = rootMetadata;
 
