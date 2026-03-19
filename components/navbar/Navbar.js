@@ -2,6 +2,11 @@ import React from "react";
 import Link from "next/link";
 import "./Navbar.css";
 import NavLink from "./list";
+import dynamic from "next/dynamic";
+
+const TranslateButton = dynamic(() => import("../TranslateButton"), {
+  ssr: false,
+});
 
 const navItems = [
   { href: "/", label: "home" },
@@ -28,19 +33,23 @@ const Navbar = () => {
 
 
             </Link>
-            <button
-              className="navbar-toggler site-navbar-toggle collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-line"></span>
-              <span className="navbar-toggler-line"></span>
-              <span className="navbar-toggler-line"></span>
-            </button>
+
+            <div className="d-flex align-items-center gap-2 site-navbar-controls">
+              <TranslateButton />
+              <button
+                className="navbar-toggler site-navbar-toggle collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-line"></span>
+                <span className="navbar-toggler-line"></span>
+                <span className="navbar-toggler-line"></span>
+              </button>
+            </div>
             <div className="collapse navbar-collapse site-navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ms-auto site-navbar-links">
                 {navItems.map((item) => (
