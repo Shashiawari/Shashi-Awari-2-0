@@ -1,18 +1,21 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import "./Navbar.css";
 import NavLink from "./list";
-
-
-
-const navItems = [
-  { href: "/", label: "home" },
-  { href: "/about", label: "about" },
-  { href: "/projects", label: "projects" },
-  { href: "/contact", label: "contact" },
-];
+import { useLanguage } from "@/components/lib/LanguageContext";
 
 const Navbar = () => {
+  const { t, toggleLanguage, isGerman } = useLanguage();
+  
+  const navItems = [
+    { href: "/", label: t("navbar.home", "home") },
+    { href: "/about", label: t("navbar.about", "about") },
+    { href: "/projects", label: t("navbar.projects", "projects") },
+    { href: "/contact", label: t("navbar.contact", "contact") },
+  ];
+
   return (
     <>
       <header className="site-navbar-wrap">
@@ -32,6 +35,15 @@ const Navbar = () => {
             </Link>
 
             <div className="d-flex align-items-center gap-2 site-navbar-controls">
+              {/* Mobile translation button - visible only on mobile */}
+              <button
+                onClick={toggleLanguage}
+                className="navbar-translate-btn d-md-none"
+                aria-label={isGerman ? "Switch to English" : "Auf Deutsch umschalten"}
+                title={isGerman ? "Switch to English" : "Auf Deutsch umschalten"}
+              >
+                {isGerman ? "EN" : "DE"}
+              </button>
               
               <button
                 className="navbar-toggler site-navbar-toggle collapsed"

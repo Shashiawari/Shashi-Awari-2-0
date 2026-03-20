@@ -1,8 +1,13 @@
+"use client";
+
 import React from "react";
 import "./projects.css";
 import Link from "next/link";
+import { useLanguage } from "@/components/lib/LanguageContext";
 
 const Projects = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="projects mx-4 my-5 mt-5">
       <div className="container">
@@ -15,11 +20,11 @@ const Projects = () => {
               fontSize: "32px",
             }}
           >
-            projects
+            {t("projects.title", "projects")}
           </h1>
           <p>
             <Link href={"/projects"}>
-              More{" "}
+              {t("projects.more", "More")}{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -47,11 +52,9 @@ const Projects = () => {
             loop
             style={{ width: "100%", height: "auto" }}
           ></video>
-              <h4>japese</h4>
+              <h4>{t("projects.japease", "japese")}</h4>
               <p>
-                Japease is an online job search website  helps students and
-                graduates find and apply for internships and jobs easily, using
-                integrated APIs to streamline the process.
+                {t("projects.japeaseDesc", "Japease is an online job search website helps students and graduates find and apply for internships and jobs easily, using integrated APIs to streamline the process.")}
               </p>
               <Link href={"/projects"}>
                 <button className="animated-button">
@@ -62,7 +65,7 @@ const Projects = () => {
                   >
                     <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                   </svg>
-                  <span className="text">Read More</span>
+                  <span className="text">{t("projects.readMore", "Read More")}</span>
                   <span className="circle"></span>
                   <svg
                     viewBox="0 0 24 24"
@@ -85,11 +88,9 @@ const Projects = () => {
             loop
             style={{ width: "100%", height: "auto" }}
           ></video>
-              <h4>Next level food</h4>
+              <h4>{t("projects.nextLevelFood", "Next level food")}</h4>
               <p>
-                Next Level Food: Share and discover delicious recipes with
-                fellow food enthusiasts worldwide. Join us to elevate your
-                cooking experience!
+                {t("projects.nextLevelFoodDesc", "Next Level Food: Share and discover delicious recipes with fellow food enthusiasts worldwide. Join us to elevate your cooking experience!")}
               </p>
               <Link href={"/projects"}>
                 <button className="animated-button">
@@ -100,7 +101,7 @@ const Projects = () => {
                   >
                     <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                   </svg>
-                  <span className="text">Read More</span>
+                  <span className="text">{t("projects.readMore", "Read More")}</span>
                   <span className="circle"></span>
                   <svg
                     viewBox="0 0 24 24"
@@ -123,11 +124,9 @@ const Projects = () => {
             loop
             style={{ width: "100%", height: "auto" }}
           ></video>
-              <h4>NexGen</h4>
+              <h4>{t("projects.nexGen", "NexGen")}</h4>
               <p>
-                NexGen is an online service offering personalized developer
-                assistance 24/7 for individuals and businesses seeking to create
-                websites or online platforms.
+                {t("projects.nexGenDesc", "NexGen is an online service offering personalized developer assistance 24/7 for individuals and businesses seeking to create websites or online platforms.")}
               </p>
               <Link href={"/projects"}>
                 <button className="animated-button">
@@ -138,7 +137,7 @@ const Projects = () => {
                   >
                     <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                   </svg>
-                  <span className="text">Read More</span>
+                  <span className="text">{t("projects.readMore", "Read More")}</span>
                   <span className="circle"></span>
                   <svg
                     viewBox="0 0 24 24"

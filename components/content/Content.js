@@ -1,19 +1,23 @@
+"use client";
+
 import React from "react";
 import "./Content.css";
 import Imagecontainer from "../imgcontainer/Imagecontainer";
 import SkillsHoneycomb from "./SkillsHoneycomb";
-
-const offerItems = [
-  { link: "calender.png", text: "Projects" },
-  { link: "chitchat.png", text: "chat Application" },
-  { link: "fyle.png", text: "Gsap" },
-  { link: "genai.png", text: "generative ai" },
-  { link: "japan.png", text: "applications" },
-  { link: "ui.png", text: "Web design" },
-  { link: "web.png", text: "Animation Frameworks" },
-];
+import { useLanguage } from "@/components/lib/LanguageContext";
 
 const Content = () => {
+  const { t } = useLanguage();
+  
+  const offerItems = [
+    { link: "calender.png", text: t("content.projects", "Projects") },
+    { link: "chitchat.png", text: t("content.chatApplication", "chat Application") },
+    { link: "fyle.png", text: t("content.gsap", "Gsap") },
+    { link: "genai.png", text: t("content.generativeAi", "generative ai") },
+    { link: "japan.png", text: t("content.applications", "applications") },
+    { link: "ui.png", text: t("content.webDesign", "Web design") },
+    { link: "web.png", text: t("content.animationFrameworks", "Animation Frameworks") },
+  ];
   return (
     <div className="  text-white content">
       <div className="container-fluid">
@@ -203,27 +207,17 @@ const Content = () => {
           </div>
           <div className="col-12 col-lg-8  ">
             <h1 className="content-intro-title">
-              <span className="content-intro-titleTyping">Hello!</span>
+              <span className="content-intro-titleTyping">{t("content.hello", "Hello!")}</span>
             </h1>
             <p>
               {" "}
-              I am Awari Shashi Preetham, a Computer Science Engineer with a
-              specialization in Artificial Intelligence and Machine Learning.
-              Proficient in languages like C, Java, Python, and JavaScript, I
-              have developed advanced deep learning models using LSTM networks,
-              Transformers, and CNNs. My projects include JapEase, a React.js
-              job application platform, and NexGen, a custom website creation
-              platform. With experience in technologies such as Bootstrap,
-              React.js, Node.js, Express.js, and databases like MongoDB and
-              PostgreSQL, I am passionate about creating innovative solutions.
-              Explore my work and feel free to connect with me for collaboration
-              opportunities.{" "}
+              {t("content.intro", "I am Awari Shashi Preetham, a Computer Science Engineer with a specialization in Artificial Intelligence and Machine Learning. Proficient in languages like C, Java, Python, and JavaScript, I have developed advanced deep learning models using LSTM networks, Transformers, and CNNs. My projects include JapEase, a React.js job application platform, and NexGen, a custom website creation platform. With experience in technologies such as Bootstrap, React.js, Node.js, Express.js, and databases like MongoDB and PostgreSQL, I am passionate about creating innovative solutions. Explore my work and feel free to connect with me for collaboration opportunities.")}{" "}
             </p>
           </div>
         </div>
       </div>
       <section className="text-center section2  ">
-        <h1>What can I Offer You ?</h1>
+        <h1>{t("content.whatCanIOffer", "What can I Offer You ?")}</h1>
         <div className="cout">
           <div className="box1"></div>
           <div className="box2"></div>
@@ -277,7 +271,7 @@ const Content = () => {
         </div>
       </section>
       <section className="ssvg block my-5 mb-5">
-        <h2 className=" text-center mb-5">Lets look at my skills!</h2>
+        <h2 className=" text-center mb-5">{t("content.letsLookAtSkills", "Lets look at my skills!")}</h2>
         <SkillsHoneycomb />
         {false && (
         <svg

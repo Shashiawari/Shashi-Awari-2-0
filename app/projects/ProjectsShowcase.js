@@ -1,8 +1,275 @@
 "use client";
 
-import React, { useEffect, useId, useState } from "react";
+import React, { useEffect, useId, useState, useMemo } from "react";
 import Link from "next/link";
-import { projects } from "./projectsData";
+import { projects as rawProjects } from "./projectsData";
+import { useLanguage } from "@/components/lib/LanguageContext";
+import { translations } from "@/data/de";
+
+// Map project titles to translation keys
+const projectKeyMap = {
+  "FindH": "findh",
+  "Second Brain AI": "secondBrain",
+  "Defungi CNN": "defungi",
+  "Detect GPT": "detectGpt",
+  "GenAI": "genai",
+  "Chit-Chat": "chitChat",
+  "JapEase": "japease",
+  "SnapGen": "snapgen",
+  "NexGen": "nexgen",
+  "Next Level Food": "nextLevelFood",
+  "Micro Course Converter": "microCourse"
+};
+
+// Get translated project data
+const getTranslatedProject = (project, isGerman) => {
+  if (!isGerman) return project;
+  
+  const key = projectKeyMap[project.title];
+  if (!key) return project;
+  
+  const trans = translations.projectData?.[key];
+  if (!trans) return project;
+  
+  // Return translated project with German description
+  return {
+    ...project,
+    description: trans.description || project.description,
+    technologies: trans.technologies || project.technologies,
+    eyebrow: trans.eyebrow || project.eyebrow,
+  };
+};
+
+// Get translated case study content for FindH
+const getFindhCaseStudyContent = () => {
+  const t = translations.projectData.findh.caseStudy;
+  return [
+    {
+      type: "intro",
+      paragraphs: t.intro.paragraphs
+    },
+    {
+      title: t.problemTitle,
+      paragraphs: [t.problemParagraph],
+      list: t.problemList,
+      footer: t.problemFooter
+    },
+    {
+      title: t.coreIdeaTitle,
+      paragraphs: [t.coreIdeaParagraph],
+      list: t.coreIdeaList,
+      footer: [t.coreIdeaFooter]
+    },
+    {
+      title: t.workflowTitle,
+      paragraphs: [t.workflowParagraph],
+      list: t.workflowList,
+      footer: [t.workflowFooter]
+    },
+    {
+      title: t.featuresTitle,
+      subsections: [
+        {
+          title: t.propertyListings.title,
+          paragraphs: [t.propertyListings.paragraph],
+          list: t.propertyListings.list,
+          footer: [t.propertyListings.footer]
+        },
+        {
+          title: t.agentDiscovery.title,
+          paragraphs: t.agentDiscovery.paragraphs,
+          list: t.agentDiscovery.list
+        },
+        {
+          title: t.agentVerification.title,
+          paragraphs: [t.agentVerification.paragraph],
+          list: t.agentVerification.list,
+          footer: [t.agentVerification.footer]
+        },
+        {
+          title: t.adminDashboard.title,
+          paragraphs: t.adminDashboard.paragraphs,
+          list: t.adminDashboard.list,
+          footer: [t.adminDashboard.footer]
+        },
+        {
+          title: t.privateReports.title,
+          paragraphs: [t.privateReports.paragraph],
+          list: t.privateReports.list,
+          footer: [t.privateReports.footer]
+        },
+        {
+          title: t.bookingSystem.title,
+          paragraphs: [t.bookingSystem.paragraph],
+          list: t.bookingSystem.list,
+          footer: [t.bookingSystem.footer]
+        }
+      ]
+    },
+    {
+      title: t.technicalTitle,
+      paragraphs: [t.technicalParagraph],
+      subsections: [
+        {
+          title: t.frontend.title,
+          paragraphs: t.frontend.paragraphs,
+          list: t.frontend.list,
+          footer: [t.frontend.footer]
+        },
+        {
+          title: t.backend.title,
+          paragraphs: t.backend.paragraphs,
+          list: t.backend.list,
+          footer: [t.backend.footer]
+        },
+        {
+          title: t.database.title,
+          paragraphs: t.database.paragraphs,
+          list: t.database.list,
+          footer: [t.database.footer]
+        },
+        {
+          title: t.fileStorage.title,
+          paragraphs: t.fileStorage.paragraphs,
+          list: t.fileStorage.list,
+          footer: [t.fileStorage.footer]
+        }
+      ]
+    },
+    {
+      title: t.securityTitle,
+      paragraphs: [t.securityParagraph],
+      list: t.securityList,
+      footer: [t.securityFooter]
+    },
+    {
+      title: t.uniqueTitle,
+      paragraphs: t.uniqueParagraphs,
+      list: t.uniqueList,
+      footer: [t.uniqueFooter]
+    }
+  ];
+};
+
+// Get translated case study content for Second Brain AI
+const getSecondBrainCaseStudyContent = () => {
+  const t = translations.projectData.secondBrain.caseStudy;
+  return [
+    {
+      type: "intro",
+      paragraphs: t.intro.paragraphs
+    },
+    {
+      title: t.problemTitle,
+      paragraphs: [t.problemParagraph],
+      list: t.problemList,
+      footer: t.problemFooter
+    },
+    {
+      title: t.coreIdeaTitle,
+      paragraphs: [t.coreIdeaParagraph],
+      list: t.coreIdeaList,
+      footer: [t.coreIdeaFooter]
+    },
+    {
+      title: t.workflowTitle,
+      paragraphs: [t.workflowParagraph],
+      list: t.workflowList,
+      footer: [t.workflowFooter]
+    },
+    {
+      title: t.featuresTitle,
+      subsections: [
+        {
+          title: t.knowledgeBase.title,
+          paragraphs: [t.knowledgeBase.paragraph],
+          list: t.knowledgeBase.list,
+          footer: [t.knowledgeBase.footer]
+        },
+        {
+          title: t.chatSystem.title,
+          paragraphs: [t.chatSystem.paragraph],
+          list: t.chatSystem.list
+        },
+        {
+          title: t.documentChat.title,
+          paragraphs: [t.documentChat.paragraph],
+          list: t.documentChat.list
+        },
+        {
+          title: t.multiProvider.title,
+          paragraphs: [t.multiProvider.paragraph],
+          list: t.multiProvider.list,
+          footer: [t.multiProvider.footer]
+        },
+        {
+          title: t.contextPreservation.title,
+          paragraphs: [t.contextPreservation.paragraph],
+          list: t.contextPreservation.list,
+          footer: [t.contextPreservation.footer]
+        }
+      ]
+    },
+    {
+      title: t.technicalTitle,
+      paragraphs: [t.technicalParagraph],
+      subsections: [
+        {
+          title: t.frontend.title,
+          paragraphs: [t.frontend.paragraph],
+          list: t.frontend.list
+        },
+        {
+          title: t.backend.title,
+          paragraphs: [t.backend.paragraph],
+          list: t.backend.list
+        },
+        {
+          title: t.databaseStorage.title,
+          paragraphs: [t.databaseStorage.paragraph],
+          list: t.databaseStorage.list
+        },
+        {
+          title: t.aiRetrieval.title,
+          paragraphs: [t.aiRetrieval.paragraph],
+          list: t.aiRetrieval.list
+        }
+      ]
+    },
+    {
+      title: t.securityTitle,
+      paragraphs: [t.securityParagraph],
+      list: t.securityList
+    },
+    {
+      title: t.uniqueTitle,
+      paragraphs: [t.uniqueParagraph],
+      list: t.uniqueList,
+      footer: [t.uniqueFooter]
+    }
+  ];
+};
+
+// Get translated case study for a project
+const getTranslatedCaseStudy = (project, isGerman) => {
+  if (!isGerman || !project.caseStudy) return project.caseStudy;
+  
+  if (project.title === "FindH") {
+    return {
+      ...project.caseStudy,
+      content: getFindhCaseStudyContent()
+    };
+  }
+  
+  if (project.title === "Second Brain AI") {
+    return {
+      ...project.caseStudy,
+      content: getSecondBrainCaseStudyContent()
+    };
+  }
+  
+  return project.caseStudy;
+};
 
 const ArrowIcon = ({ className }) => (
   <svg
@@ -46,7 +313,7 @@ const ProjectMedia = ({ project, eager = false }) => {
   );
 };
 
-const ProjectCard = ({ project, index, onOpenCaseStudy }) => {
+const ProjectCard = ({ project, index, onOpenCaseStudy, t }) => {
   const number = String(index + 1).padStart(2, "0");
   const isFeatured = Boolean(project.featured);
   const isInteractive = Boolean(project.caseStudy);
@@ -86,14 +353,14 @@ const ProjectCard = ({ project, index, onOpenCaseStudy }) => {
     >
       <div className="projectCardMedia">
         <span className="projectCardNumber">{number}</span>
-        {isFeatured ? <span className="projectCardBadge">Complex Build</span> : null}
+        {isFeatured ? <span className="projectCardBadge">{t("projectsPage.complexBuild", "Complex Build")}</span> : null}
         <ProjectMedia project={project} eager={isFeatured} />
       </div>
 
       <div className="projectCardBody">
-        <p className="projectCardKicker">{project.eyebrow ?? "Featured Project"}</p>
+        <p className="projectCardKicker">{project.eyebrow ?? t("projectsPage.featuredProject", "Featured Project")}</p>
         <h3>{project.title}</h3>
-        <p className="projectCardTech">Technologies Used: {project.technologies}</p>
+        <p className="projectCardTech">{t("projectsPage.techUsed", "Technologies Used")}: {project.technologies}</p>
         <p className="projectCardDescription">{project.description}</p>
 
         {project.highlights?.length ? (
@@ -116,7 +383,7 @@ const ProjectCard = ({ project, index, onOpenCaseStudy }) => {
                 }}
               >
                 <ArrowIcon className="arr-2" />
-                <span className="text">Case Study</span>
+                <span className="text">{t("projectsPage.caseStudy", "Case Study")}</span>
                 <span className="circle"></span>
                 <ArrowIcon className="arr-1" />
               </button>
@@ -129,7 +396,7 @@ const ProjectCard = ({ project, index, onOpenCaseStudy }) => {
                 onClick={stopEvent}
               >
                 <ArrowIcon className="arr-2" />
-                <span className="text">Live Site</span>
+                <span className="text">{t("projectsPage.liveSite", "Live Site")}</span>
                 <span className="circle"></span>
                 <ArrowIcon className="arr-1" />
               </Link>
@@ -142,7 +409,7 @@ const ProjectCard = ({ project, index, onOpenCaseStudy }) => {
               rel="noreferrer"
             >
               <ArrowIcon className="arr-2" />
-              <span className="text">Live Site</span>
+              <span className="text">{t("projectsPage.liveSite", "Live Site")}</span>
               <span className="circle"></span>
               <ArrowIcon className="arr-1" />
             </Link>
@@ -153,7 +420,7 @@ const ProjectCard = ({ project, index, onOpenCaseStudy }) => {
   );
 };
 
-const ProjectCaseStudyModal = ({ project, onClose }) => {
+const ProjectCaseStudyModal = ({ project, onClose, t }) => {
   const titleId = useId();
   const descriptionId = useId();
 
@@ -211,7 +478,7 @@ const ProjectCaseStudyModal = ({ project, onClose }) => {
             <p className="projectModalEyebrow">{project.eyebrow}</p>
             <div className="projectCaseTitleRow">
               <h2 id={titleId}>{project.title}</h2>
-              <span className="projectCaseStatus">Complex Build</span>
+              <span className="projectCaseStatus">{t("projectsPage.complexBuild", "Complex Build")}</span>
             </div>
             <p id={descriptionId} className="projectModalLead">
               {caseStudy.summary}
@@ -226,19 +493,19 @@ const ProjectCaseStudyModal = ({ project, onClose }) => {
                 rel="noreferrer"
               >
                 <ArrowIcon className="arr-2" />
-                <span className="text">Live Site</span>
+                <span className="text">{t("projectsPage.liveSite", "Live Site")}</span>
                 <span className="circle"></span>
                 <ArrowIcon className="arr-1" />
               </Link>
 
               <button type="button" className="projectModalSecondaryButton" onClick={onClose}>
-                Close
+                {t("projectsPage.close", "Close")}
               </button>
             </div>
           </div>
 
           <div className="projectModalMediaFrame">
-            <span className="projectModalTag">Featured Full-Stack Project</span>
+            <span className="projectModalTag">{t("projectsPage.featuredFullStack", "Featured Full-Stack Project")}</span>
             <ProjectMedia project={project} eager />
           </div>
         </div>
@@ -305,6 +572,21 @@ const ProjectCaseStudyModal = ({ project, onClose }) => {
 
 const ProjectsShowcase = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const { t, isGerman } = useLanguage();
+
+  // Translate projects based on current language
+  const projects = useMemo(() => {
+    return rawProjects.map(project => getTranslatedProject(project, isGerman));
+  }, [isGerman]);
+
+  // When opening case study, translate its content too
+  const handleOpenCaseStudy = (project) => {
+    const translatedCaseStudy = getTranslatedCaseStudy(project, isGerman);
+    setSelectedProject({
+      ...project,
+      caseStudy: translatedCaseStudy
+    });
+  };
 
   return (
     <>
@@ -312,14 +594,14 @@ const ProjectsShowcase = () => {
         <div className="container projectGridContainer">
           <div className="projectGridIntro">
             <div>
-              <p className="projectGridEyebrow">Selected Work</p>
-              <h1>Projects</h1>
-              <p className="projectGridLead">Make sure to view and visit them.</p>
+              <p className="projectGridEyebrow">{t("projectsPage.selectedWork", "Selected Work")}</p>
+              <h1>{t("projects.title", "Projects")}</h1>
+              <p className="projectGridLead">{t("projectsPage.visitThem", "Make sure to view and visit them.")}</p>
             </div>
 
             <div className="projectGridStat">
               <span>{String(projects.length).padStart(2, "0")}</span>
-              <p>Projects and counting</p>
+              <p>{t("projectsPage.projectsAndCounting", "Projects and counting")}</p>
             </div>
           </div>
 
@@ -329,14 +611,15 @@ const ProjectsShowcase = () => {
                 key={project.title}
                 project={project}
                 index={index}
-                onOpenCaseStudy={setSelectedProject}
+                onOpenCaseStudy={handleOpenCaseStudy}
+                t={t}
               />
             ))}
           </div>
         </div>
       </section>
 
-      <ProjectCaseStudyModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+      <ProjectCaseStudyModal project={selectedProject} onClose={() => setSelectedProject(null)} t={t} />
     </>
   );
 };

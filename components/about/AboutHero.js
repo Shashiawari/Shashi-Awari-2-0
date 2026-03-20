@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useLanguage } from "@/components/lib/LanguageContext";
 
 const AboutHero = () => {
   const heroRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     let cleanup = () => {};
@@ -65,8 +67,8 @@ const AboutHero = () => {
     <div ref={heroRef} className="about-content d-none d-lg-block p-3">
       <div className="racesWrapper">
         <div className="races">
-          <h2>HELLO!!</h2>
-          <h2>Welcome.</h2>
+          <h2>{t("about.hello", "HELLO!!")}</h2>
+          <h2>{t("about.welcome", "Welcome.")}</h2>
         </div>
       </div>
 

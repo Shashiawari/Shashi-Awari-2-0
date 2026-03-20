@@ -5,6 +5,7 @@ import { rootMetadata } from "@/lib/seo";
 
 import CustomCursor from "@/components/customcursor/Cutomcursor";
 import BootstrapClient from "@/components/BootstrapClient";
+import LanguageWrapper from "@/components/lib/LanguageWrapper";
 
 export const metadata = rootMetadata;
 
@@ -16,9 +17,11 @@ export default function RootLayout({ children }) {
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
       </head>
       <body>
-        <CustomCursor />
-        {children}
-        <BootstrapClient />
+        <LanguageWrapper>
+          <CustomCursor />
+          {children}
+          <BootstrapClient />
+        </LanguageWrapper>
       </body>
     </html>
   );

@@ -1,6 +1,12 @@
+"use client";
+
 import React from "react";
 import  "./resume.css"
+import { useLanguage } from "@/components/lib/LanguageContext";
+
 const Resume = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="resume">
     <a href="/resume.pdf" download >
@@ -16,7 +22,7 @@ const Resume = () => {
             fill="black"
           ></path>
         </svg>
-        <span>Download Resume</span>
+        <span>{t("resume.downloadResume", "Download Resume")}</span>
       </button>
       </a>
     </div>

@@ -1,37 +1,42 @@
+"use client";
+
 import "./foot.css";
 import React from "react";
 import Link from "next/link";
 import Copyright from "./Copyright";
-
-const footerGroups = [
-  {
-    title: "The Good",
-    links: [
-      { label: "Home", href: "/" },
-      { label: "About", href: "/about" },
-      { label: "Projects", href: "/projects" },
-      { label: "Contact", href: "/contact" },
-    ],
-  },
-  {
-    title: "The Boring",
-    links: [
-      { label: "Email", href: "mailto:shashiawaripreetham@gmail.com" },
-      { label: "Call", href: "tel:+919704832432" },
-      { label: "GitHub", href: "https://github.com/Shashiawari" },
-    ],
-  },
-  {
-    title: "The Cool",
-    links: [
-      { label: "Instagram", href: "https://www.instagram.com/shashi__awari/" },
-      { label: "GitHub", href: "https://github.com/Shashiawari" },
-      { label: "Contact Me", href: "/contact" },
-    ],
-  },
-];
+import { useLanguage } from "@/components/lib/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
+  const footerGroups = [
+    {
+      title: t("footer.theGood", "The Good"),
+      links: [
+        { label: t("footer.home", "Home"), href: "/" },
+        { label: t("footer.about", "About"), href: "/about" },
+        { label: t("footer.projects", "Projects"), href: "/projects" },
+        { label: t("footer.contact", "Contact"), href: "/contact" },
+      ],
+    },
+    {
+      title: t("footer.theBoring", "The Boring"),
+      links: [
+        { label: t("footer.email", "Email"), href: "mailto:shashiawaripreetham@gmail.com" },
+        { label: t("footer.call", "Call"), href: "tel:+919704832432" },
+        { label: t("footer.github", "GitHub"), href: "https://github.com/Shashiawari" },
+      ],
+    },
+    {
+      title: t("footer.theCool", "The Cool"),
+      links: [
+        { label: t("footer.instagram", "Instagram"), href: "https://www.instagram.com/shashi__awari/" },
+        { label: t("footer.github", "GitHub"), href: "https://github.com/Shashiawari" },
+        { label: t("footer.contactMe", "Contact Me"), href: "/contact" },
+      ],
+    },
+  ];
+
   return (
     <div className="foot mt-5">
       <div className="footer-shell">
@@ -62,7 +67,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-brand-wrap">
-          <p className="footer-brand-label">FULL-STACK DEVELOPER | AI & MACHINE LEARNING</p>
+          <p className="footer-brand-label">{t("footer.brandLabel", "FULL-STACK DEVELOPER | AI & MACHINE LEARNING")}</p>
           <h1 className="footer-big-brand">Shashi Preetham Awari</h1>
         </div>
 

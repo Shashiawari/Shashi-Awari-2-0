@@ -46,6 +46,8 @@
   font-family: var(--font-body);
   font-size: 1.02rem;
   line-height: 1.85;
+  hyphens: auto;
+  word-wrap: break-word;
 }
 
 .projectGridStat {
@@ -267,6 +269,8 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
   line-clamp: 5;
+  hyphens: auto;
+  word-wrap: break-word;
 }
 
 .projectCardHighlights {
@@ -589,6 +593,8 @@
   font-family: var(--font-body);
   font-size: 1.08rem;
   line-height: 1.85;
+  hyphens: auto;
+  word-wrap: break-word;
 }
 
 .projectModalOverview {

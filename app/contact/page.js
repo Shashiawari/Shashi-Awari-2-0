@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./contact.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import { useLanguage } from "@/components/lib/LanguageContext";
 
 const Page = () => {
   const [name, setName] = useState("");
@@ -11,6 +12,7 @@ const Page = () => {
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { t } = useLanguage();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -21,7 +23,7 @@ const Page = () => {
     setLoading(true);
 
     if (!email || !query || !name) {
-      setErrors(["All fields are necessary."]);
+      setErrors([t("contact.allFieldsRequired", "All fields are necessary.")]);
       setLoading(false);
       return;
     }
@@ -42,11 +44,11 @@ const Page = () => {
         setSent(true);
         setLoading(false);
       } else {
-        setErrors(["Could not send email. Please try again later."]);
+        setErrors([t("contact.couldNotSend", "Could not send email. Please try again later.")]);
         setLoading(false);
       }
     } catch (error) {
-      setErrors(["Could not send email. Please try again later."]);
+      setErrors([t("contact.couldNotSend", "Could not send email. Please try again later.")]);
       setLoading(false);
     }
   }
@@ -58,14 +60,14 @@ const Page = () => {
       <div className="container d-flex justify-content-center">
         <form className="form" onSubmit={handleSubmit}>
           <div className="cards my-5">
-            <h2 className="signup mt-5">Contact Me</h2>
+            <h2 className="signup mt-5">{t("contact.title", "Contact Me")}</h2>
             <div className="inputBox1">
               <input
                 type="text"
                 required="required"
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <span className="user">Email</span>
+              <span className="user">{t("contact.email", "Email")}</span>
             </div>
 
             <div className="inputBox">
@@ -74,7 +76,7 @@ const Page = () => {
                 required="required"
                 onChange={(e) => setName(e.target.value)}
               />
-              <span>Name</span>
+              <span>{t("contact.name", "Name")}</span>
             </div>
 
             <div className="inputBox">
@@ -83,11 +85,11 @@ const Page = () => {
                 required="required"
                 onChange={(e) => setQuery(e.target.value)}
               />
-              <span>Query</span>
+              <span>{t("contact.query", "Query")}</span>
             </div>
             {sent && (
               <p className="text-center my-4" style={{ textTransform: "capitalize" }}>
-                Sent successfully!
+                {t("contact.sentSuccess", "Sent successfully!")}
               </p>
             )}
             {errors.length > 0 &&
@@ -96,9 +98,9 @@ const Page = () => {
                   {error}
                 </p>
               ))}
-            {loading && <p>Loading.....</p>}
+            {loading && <p>{t("contact.loading", "Loading.....")}</p>}
             <button type="submit" className="enter">
-              Send
+              {t("contact.send", "Send")}
             </button>
           </div>
         </form>
