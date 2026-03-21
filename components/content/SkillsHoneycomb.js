@@ -33,10 +33,10 @@ const skills = [
   "NLP",
   "TENSORFLOW",
   "DL",
-  "DEEP LEARNING",
+  "LSTM",
   "CNN",
-  "JAVA",
-  "C",
+  "Transformers",
+  "others JAVA",
 ];
 
 const layoutPatterns = [
