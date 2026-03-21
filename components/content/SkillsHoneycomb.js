@@ -1,25 +1,42 @@
 import React from "react";
 import "./SkillsHoneycomb.css";
 
+const highlightedSkills = new Set(["FRONT END", "BACK END", "ML", "DL"]);
+
 // Edit this one list to add, remove, or rename skills.
 const skills = [
-  "C",
-  "PYTHON",
-  "JAVA",
-  "MACHINE LEARNING",
-  "DEEP LEARNING",
+  "FRONT END",
   "HTML",
   "CSS",
   "JAVA SCRIPT",
-  "JQUERY",
-  "EJS",
-  "NODE JS",
   "REACT JS",
   "NEXT JS",
-  "MYSQL",
-  "MONGO DB",
+  "BOOTSTRAP",
+  "GSAP",
+  "FRAMER MOTION",
+  "JQUERY",
+  "EJS",
+  "BACK END",
+  "NODE JS",
+  "EXPRESS JS",
+  "FASTAPI",
+  "SOCKET.IO",
+  "SUPABASE",
   "POSTGRE SQL",
+  "MONGO DB",
   "NOSQL",
+  "MYSQL",
+  "SQLITE",
+  "ML",
+  "PYTHON",
+  "MACHINE LEARNING",
+  "NLP",
+  "TENSORFLOW",
+  "DL",
+  "DEEP LEARNING",
+  "CNN",
+  "JAVA",
+  "C",
 ];
 
 const layoutPatterns = [
@@ -31,17 +48,30 @@ const layoutPatterns = [
 
 const createSkillRows = (items, pattern) => {
   const rows = [];
-  let index = 0;
+  let currentRow = [];
   let patternIndex = 0;
 
-  while (index < items.length) {
+  items.forEach((skill) => {
     const rowSize = pattern[patternIndex % pattern.length];
+    const shouldStartNewRow = highlightedSkills.has(skill) && currentRow.length > 0;
 
-    const rowItems = items.slice(index, index + rowSize);
-    rows.push(rowItems);
+    if (shouldStartNewRow) {
+      rows.push(currentRow);
+      currentRow = [];
+      patternIndex++;
+    }
 
-    index += rowSize;
-    patternIndex++;
+    currentRow.push(skill);
+
+    if (currentRow.length === rowSize) {
+      rows.push(currentRow);
+      currentRow = [];
+      patternIndex++;
+    }
+  });
+
+  if (currentRow.length > 0) {
+    rows.push(currentRow);
   }
 
   return rows;
@@ -57,7 +87,8 @@ const SkillsHoneycombLayout = ({ items, layoutName, pattern }) => {
         {rows.map((row, rowIndex) => (
           <div
             key={`${layoutName}-row-${rowIndex}`}
-            className={`skillsHoneycombRow ${pattern[rowIndex % pattern.length] !== pattern[0]
+            className={`skillsHoneycombRow ${highlightedSkills.has(row[0]) ? "skillsHoneycombRow--sectionStart" : ""
+              } ${pattern[rowIndex % pattern.length] !== pattern[0]
                 ? "skillsHoneycombRow--offset"
                 : ""
               }`}
@@ -70,7 +101,7 @@ const SkillsHoneycombLayout = ({ items, layoutName, pattern }) => {
               return (
                 <div
                   key={`${layoutName}-${rowIndex}-${skill}`}
-                  className="skillsHex"
+                  className={`skillsHex${highlightedSkills.has(skill) ? " skillsHex--highlighted" : ""}`}
                   role="listitem"
                   style={{ "--skill-index": currentSkillIndex }}
                 >

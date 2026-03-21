@@ -10,7 +10,7 @@
   overflow-x: hidden !important;
 }
 .about-content h2 {
-  font-family: clash3 !important;
+ font-family: var(--font-display) !important;
   font-size: 328px;
   color: white;
 }

@@ -41,6 +41,9 @@ const Page = () => {
       if (res.ok) {
         const form = event.target;
         form.reset();
+        setName("");
+        setEmail("");
+        setQuery("");
         setSent(true);
         setLoading(false);
       } else {
@@ -63,7 +66,7 @@ const Page = () => {
             <h2 className="signup mt-5">{t("contact.title", "Contact Me")}</h2>
             <div className="inputBox1">
               <input
-                type="text"
+                type="email"
                 required="required"
                 onChange={(e) => setEmail(e.target.value)}
               />

@@ -44,7 +44,7 @@ export default function StartupGate({ children }) {
 
   return (
     <div className={`app-startup-root${isReady ? " is-ready" : ""}`}>
-      <div className="app-startup-content">{children}</div>
+      {children}
       <div className="app-startup-overlay" aria-hidden={isReady}>
         <Loading />
       </div>

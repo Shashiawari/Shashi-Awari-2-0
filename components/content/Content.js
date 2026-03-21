@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Content.css";
 import Imagecontainer from "../imgcontainer/Imagecontainer";
 import SkillsHoneycomb from "./SkillsHoneycomb";
@@ -8,6 +8,8 @@ import { useLanguage } from "@/components/lib/LanguageContext";
 
 const Content = () => {
   const { t } = useLanguage();
+  const introTitle = t("content.hello", "Let's build the future.");
+  const [typedTitle, setTypedTitle] = useState("");
   
   const offerItems = [
     { link: "calender.png", text: t("content.projects", "Projects") },
@@ -18,6 +20,47 @@ const Content = () => {
     { link: "ui.png", text: t("content.webDesign", "Web design") },
     { link: "web.png", text: t("content.animationFrameworks", "Animation Frameworks") },
   ];
+
+  useEffect(() => {
+    let timeoutId;
+    let currentIndex = 0;
+    let deleting = false;
+
+    const tick = () => {
+      if (!deleting) {
+        currentIndex += 1;
+        setTypedTitle(introTitle.slice(0, currentIndex));
+
+        if (currentIndex === introTitle.length) {
+          deleting = true;
+          timeoutId = window.setTimeout(tick, 1300);
+          return;
+        }
+
+        timeoutId = window.setTimeout(tick, 85);
+        return;
+      }
+
+      currentIndex -= 1;
+      setTypedTitle(introTitle.slice(0, currentIndex));
+
+      if (currentIndex === 0) {
+        deleting = false;
+        timeoutId = window.setTimeout(tick, 420);
+        return;
+      }
+
+      timeoutId = window.setTimeout(tick, 45);
+    };
+
+    setTypedTitle("");
+    timeoutId = window.setTimeout(tick, 320);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [introTitle]);
+
   return (
     <div className="  text-white content">
       <div className="container-fluid">
@@ -207,11 +250,14 @@ const Content = () => {
           </div>
           <div className="col-12 col-lg-8  ">
             <h1 className="content-intro-title">
-              <span className="content-intro-titleTyping">{t("content.hello", "Hello!")}</span>
+              <span className="content-intro-titleTyping">
+                {typedTitle}
+                <span className="content-intro-titleCursor" aria-hidden="true"></span>
+              </span>
             </h1>
             <p>
               {" "}
-              {t("content.intro", "I am Awari Shashi Preetham, a Computer Science Engineer with a specialization in Artificial Intelligence and Machine Learning. Proficient in languages like C, Java, Python, and JavaScript, I have developed advanced deep learning models using LSTM networks, Transformers, and CNNs. My projects include JapEase, a React.js job application platform, and NexGen, a custom website creation platform. With experience in technologies such as Bootstrap, React.js, Node.js, Express.js, and databases like MongoDB and PostgreSQL, I am passionate about creating innovative solutions. Explore my work and feel free to connect with me for collaboration opportunities.")}{" "}
+              {t("content.intro", "I am Awari Shashi Preetham, and I completed my bachelor's in Artificial Intelligence and Machine Learning. I am currently pursuing my master's in Applied Computer Science at Schmalkalden University of Applied Sciences in Germany. I enjoy building thoughtful digital products at the intersection of full-stack development, AI, and real-world problem solving. My work spans platforms like FindH, Second Brain AI, and other interactive web experiences built with React.js, Next.js, Node.js, Express.js, PostgreSQL, and MongoDB. Dive into my projects to see how I turn ideas into polished, working systems, and feel free to connect if you'd like to collaborate on something meaningful.")}{" "}
             </p>
           </div>
         </div>

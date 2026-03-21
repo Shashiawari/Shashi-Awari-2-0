@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useLanguage } from "@/components/lib/LanguageContext";
-
+import "./about.css";
 const AboutHero = () => {
   const heroRef = useRef(null);
   const { t } = useLanguage();
@@ -68,7 +68,7 @@ const AboutHero = () => {
       <div className="racesWrapper">
         <div className="races">
           <h2>{t("about.hello", "HELLO!!")}</h2>
-          <h2>{t("about.welcome", "Welcome.")}</h2>
+          <h2>{t("about.welcome", "Beyond the screen.")}</h2>
         </div>
       </div>
 

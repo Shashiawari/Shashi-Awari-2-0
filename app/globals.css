@@ -82,12 +82,7 @@ body{
 }
 
 .app-startup-root {
-  position: relative;
-  min-height: 100dvh;
-}
-
-.app-startup-content {
-  min-height: 100dvh;
+  display: contents;
 }
 
 .app-startup-overlay {

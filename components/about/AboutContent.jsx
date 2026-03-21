@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useLanguage } from "@/components/lib/LanguageContext";
-
+import "./about.css";
 const AboutContent = () => {
   const { t } = useLanguage();
 

@@ -18,8 +18,8 @@ export const translations = {
 
   // Content (Home page intro)
   content: {
-    hello: "Hallo!",
-    intro: "Ich bin Awari Shashi Preetham, ein Informatik-Ingenieur mit Spezialisierung auf Künstliche Intelligenz und Maschinelles Lernen. Versiert in Sprachen wie C, Java, Python und JavaScript, habe ich fortgeschrittene Deep-Learning-Modelle mit LSTM-Netzwerken, Transformern und CNNs entwickelt. Meine Projekte umfassen JapEase, eine React.js-Jobsuchplattform, und NexGen, eine Plattform zur individuellen Website-Erstellung. Mit Erfahrung in Technologien wie Bootstrap, React.js, Node.js, Express.js und Datenbanken wie MongoDB und PostgreSQL bin ich leidenschaftlich daran interessiert, innovative Lösungen zu schaffen. Entdecken Sie meine Arbeit und kontaktieren Sie mich gerne für Kooperationsmöglichkeiten.",
+    hello: "Lassen Sie uns die Zukunft bauen.",
+    intro: "Ich bin Awari Shashi Preetham und habe meinen Bachelor in Künstlicher Intelligenz und Maschinellem Lernen abgeschlossen. Derzeit absolviere ich meinen Master in Applied Computer Science an der Hochschule Schmalkalden in Deutschland. Ich entwickle gerne durchdachte digitale Produkte an der Schnittstelle von Full-Stack-Entwicklung, KI und realen Problemstellungen. Meine Arbeit umfasst Plattformen wie JapEase, NexGen und weitere interaktive Web-Erlebnisse mit React.js, Next.js, Node.js, Express.js, PostgreSQL und MongoDB. Werfen Sie einen Blick auf meine Projekte, um zu sehen, wie ich Ideen in ausgereifte, funktionierende Systeme verwandle, und kontaktieren Sie mich gerne, wenn Sie gemeinsam etwas Sinnvolles aufbauen möchten.",
     whatCanIOffer: "Was kann ich Ihnen bieten?",
     letsLookAtSkills: "Schauen wir uns meine Fähigkeiten an!",
     projects: "Projekte",
@@ -86,7 +86,7 @@ export const translations = {
   about: {
     title: "ÜBER MICH",
     hello: "HALLO!!",
-    welcome: "Willkommen.",
+    welcome: "Mehr als nur Code.",
     
     // Early Morning Routine
     earlyMorningRoutine: "Frühmorgendliche Routine",
