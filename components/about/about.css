@@ -1,0 +1,46 @@
+.about-content {
+  overflow: hidden;
+  overflow-x: hidden !important;
+}
+
+.racesWrapper {
+  width: 100%;
+  min-height: clamp(18rem, 42vw, 34rem);
+  overflow: hidden;
+}
+
+.about-content h2 {
+  font-family: var(--font-display) !important;
+  font-size: 328px;
+  color: white;
+}
+
+.about-content p {
+  font-size: 20px;
+  color: white;
+}
+
+.races {
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  will-change: transform;
+}
+
+.races h2 {
+  font-family: var(--font-numeric);
+  font-size: 30vw;
+  flex-shrink: 0;
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+  color: white;
+  -webkit-text-stroke: 6px #4a4848;
+  margin: 0;
+  letter-spacing: 0.06em;
+}
+
+.races h2:last-of-type {
+  background: #e1e1ff;
+  color: black;
+}
