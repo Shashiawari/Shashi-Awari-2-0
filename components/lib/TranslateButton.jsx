@@ -8,7 +8,7 @@ import { useLanguage } from "./LanguageContext";
  * Hidden on mobile (navbar has its own button)
  */
 export default function TranslateButton() {
-  const { language, toggleLanguage, isGerman } = useLanguage();
+  const { toggleLanguage, isGerman } = useLanguage();
 
   return (
     <>
@@ -22,7 +22,6 @@ export default function TranslateButton() {
           height: 44px;
           border-radius: 50%;
           border: none;
-          background-color: ${isGerman ? "#1a73e8" : "#333"};
           color: #fff;
           font-size: 14px;
           font-weight: 600;
@@ -37,6 +36,12 @@ export default function TranslateButton() {
           transform: scale(1.1);
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
+        .translate-floating-btn--en {
+          background-color: #333;
+        }
+        .translate-floating-btn--de {
+          background-color: #1a73e8;
+        }
         @media (max-width: 767.98px) {
           .translate-floating-btn {
             display: none !important;
@@ -47,7 +52,7 @@ export default function TranslateButton() {
         onClick={toggleLanguage}
         aria-label={isGerman ? "Switch to English" : "Auf Deutsch umschalten"}
         title={isGerman ? "Switch to English" : "Auf Deutsch umschalten"}
-        className="translate-floating-btn"
+        className={`translate-floating-btn ${isGerman ? "translate-floating-btn--de" : "translate-floating-btn--en"}`}
       >
         {isGerman ? "EN" : "DE"}
       </button>

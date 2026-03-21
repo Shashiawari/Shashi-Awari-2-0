@@ -1,51 +1,11 @@
-@font-face {
-  font-family: modernsans;
-  src: url(./fonts/ModernSans-Light.otf);
-  font-display: swap;
-}
-
-@font-face {
-  font-family: lemonl;
-  src: url(./fonts/LEMONMILK-Light.otf);
-  font-display: swap;
-}
-@font-face {
-  font-family: lemonr;
-  src: url(./fonts/LEMONMILK-Regular.otf);
-  font-display: swap;
-}
-
-@font-face {
-  font-family: alumi;
-  src: url(./fonts/AlumniSansCollegiateOne-Regular.ttf);
-  font-display: swap;
-}
-
-@font-face {
-  font-family: clash1;
-  src: url(./fonts/ClashDisplay-Medium.otf);
-  font-display: swap;
-}
-
-@font-face {
-  font-family: clash2;
-  src: url(./fonts/ClashDisplay-Semibold.otf);
-  font-display: swap;
-}
-
-@font-face {
-  font-family: clash3;
-  src: url(./fonts/ClashDisplay-Bold.otf);
-  font-display: swap;
-}
-
 :root {
-  --font-body: modernsans, "Segoe UI", sans-serif;
-  --font-ui: lemonr, "Segoe UI", sans-serif;
-  --font-ui-light: lemonl, "Segoe UI", sans-serif;
-  --font-heading: clash2, "Segoe UI", sans-serif;
-  --font-display: clash3, "Segoe UI", sans-serif;
-  --font-numeric: alumi, "Segoe UI", sans-serif;
+  --font-body: "Segoe UI", sans-serif;
+  --font-ui: "Segoe UI", sans-serif;
+  --font-ui-light: "Segoe UI", sans-serif;
+  --font-heading: "Segoe UI", sans-serif;
+  --font-display: "Segoe UI", sans-serif;
+  --font-display-medium: "Segoe UI", sans-serif;
+  --font-numeric: "Segoe UI", sans-serif;
 }
 
 h1 {
@@ -121,6 +81,37 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 
+.app-startup-root {
+  position: relative;
+  min-height: 100dvh;
+}
+
+.app-startup-content {
+  min-height: 100dvh;
+}
+
+.app-startup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top center, rgba(255, 255, 255, 0.06), transparent 28%),
+    rgba(0, 0, 0, 0.98);
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 220ms ease,
+    visibility 220ms ease;
+}
+
+.app-startup-root.is-ready .app-startup-overlay {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -160,6 +151,12 @@ label {
   justify-content: center;
   align-items: center;
 }
+
+.app-startup-overlay .lsl {
+  min-height: 100dvh;
+  height: 100%;
+}
+
 .navbar{
   padding: 0px;
 }
@@ -313,5 +310,11 @@ label {
       opacity: 1;
       transform: translateX(0px);
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-startup-overlay {
+    transition: none;
   }
 }
