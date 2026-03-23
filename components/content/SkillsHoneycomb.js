@@ -31,7 +31,8 @@ const skills = [
   "PYTHON",
   "MACHINE LEARNING",
   "NLP",
-  "TENSORFLOW",
+  "TENSOR FLOW",
+  
   "DL",
   "LSTM",
   "CNN",
