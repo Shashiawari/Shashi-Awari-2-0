@@ -6,6 +6,13 @@ import "./Customcursor.css";
 const CustomCursor = () => {
   const cursorRef = useRef(null);
   const frameRef = useRef(null);
+  const stateRef = useRef({
+    currentX: -100,
+    currentY: -100,
+    targetX: -100,
+    targetY: -100,
+    visible: false,
+  });
 
   useEffect(() => {
     const cursor = cursorRef.current;
@@ -14,18 +21,22 @@ const CustomCursor = () => {
       return undefined;
     }
 
-    let currentX = 0;
-    let currentY = 0;
-    let targetX = 0;
-    let targetY = 0;
-
     const render = () => {
-      currentX += (targetX - currentX) * 0.35;
-      currentY += (targetY - currentY) * 0.35;
-      cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+      const state = stateRef.current;
+
+      state.currentX += (state.targetX - state.currentX) * 0.42;
+      state.currentY += (state.targetY - state.currentY) * 0.42;
+
+      cursor.style.transform = `translate3d(${state.currentX}px, ${state.currentY}px, 0) translate(-50%, -50%)`;
+
+      if (!state.visible) {
+        state.visible = true;
+        cursor.classList.add("is-visible");
+      }
 
       const settled =
-        Math.abs(targetX - currentX) < 0.1 && Math.abs(targetY - currentY) < 0.1;
+        Math.abs(state.targetX - state.currentX) < 0.15 &&
+        Math.abs(state.targetY - state.currentY) < 0.15;
 
       if (settled) {
         frameRef.current = null;
@@ -35,19 +46,31 @@ const CustomCursor = () => {
       frameRef.current = requestAnimationFrame(render);
     };
 
-    const moveCursor = (e) => {
-      targetX = e.clientX;
-      targetY = e.clientY;
+    const moveCursor = (event) => {
+      const state = stateRef.current;
+      state.targetX = event.clientX;
+      state.targetY = event.clientY;
 
       if (!frameRef.current) {
         frameRef.current = requestAnimationFrame(render);
       }
     };
 
-    window.addEventListener("mousemove", moveCursor, { passive: true });
+    const hideCursor = () => {
+      stateRef.current.visible = false;
+      cursor.classList.remove("is-visible");
+    };
+
+    window.addEventListener("pointermove", moveCursor, { passive: true });
+    window.addEventListener("pointerdown", moveCursor, { passive: true });
+    window.addEventListener("pointerleave", hideCursor, { passive: true });
+    document.addEventListener("visibilitychange", hideCursor, { passive: true });
 
     return () => {
-      window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener("pointermove", moveCursor);
+      window.removeEventListener("pointerdown", moveCursor);
+      window.removeEventListener("pointerleave", hideCursor);
+      document.removeEventListener("visibilitychange", hideCursor);
       if (frameRef.current) {
         cancelAnimationFrame(frameRef.current);
       }

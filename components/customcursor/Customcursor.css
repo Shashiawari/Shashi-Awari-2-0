@@ -8,7 +8,16 @@
     pointer-events: none; /* Ensure cursor doesn't interfere with content */
     z-index: 9999; /* Ensure cursor is above other content */
     will-change: transform;
+    opacity: 0;
+    transform: translate3d(-100px, -100px, 0) translate(-50%, -50%);
+    transition: opacity 120ms ease;
+    contain: layout style paint;
+    backface-visibility: hidden;
   }
+
+.custom-cursor.is-visible {
+  opacity: 1;
+}
 
 @media (pointer: coarse) {
   .custom-cursor {
