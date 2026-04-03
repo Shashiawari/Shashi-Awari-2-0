@@ -21,8 +21,10 @@
 
 <p align="center">
   👉 <b><img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/55633c15-0ea9-439b-b119-396f21bde6d1" />
-    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/671c799b-6e8f-4050-8822-56493746d805" />
+    
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/031279c1-1f63-488b-ae6d-7ef50662c2d6" />
+
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/671c799b-6e8f-4050-8822-56493746d805" />
 
  / GIF HERE</b>  
 </p>
