@@ -388,7 +388,7 @@ const rawProjects = [
 },
   {
     title: "Defungi CNN",
-    mediaSrc: "fungi.png",
+    mediaSrc: "cnn.webm",
     technologies: "Python, TensorFlow, CNN, Deep Learning",
     description:
       "Defungi CNN is a deep learning project that uses Convolutional Neural Networks to classify fungal images for medical analysis. The model processes image datasets and predicts fungal types with high accuracy, demonstrating practical computer vision and healthcare AI applications.",
