@@ -386,6 +386,237 @@ const rawProjects = [
     ]
   }
 },
+{
+  "title": "Digital Health Twin",
+  "mediaSrc": "digi.webm",
+  "technologies": "FastAPI, Python, XGBoost, Random Forest, Logistic Regression, PyTorch, ChromaDB, Sentence Transformers, Scikit-learn",
+  "description": "Digital Health Twin is an AI-powered healthcare platform that combines machine learning and retrieval-augmented generation (RAG) to predict cardiovascular risk using both physical and mental health indicators. The system generates explainable clinical insights by combining ML predictions with similar patient retrieval using vector search.",
+  "href": "https://digital-health-twin-three.vercel.app/",
+  "featured": false,
+  "eyebrow": "AI + Healthcare Case Study",
+  "caseStudy": {
+    "content": [
+      {
+        "type": "intro",
+        "paragraphs": [
+          "Digital Health Twin is an intelligent healthcare system designed to predict cardiovascular risk using both traditional clinical biomarkers and mental health indicators. Unlike standard prediction systems that only return probabilities, this platform generates explainable insights using a combination of machine learning and retrieval-augmented generation.",
+          "The platform integrates multiple machine learning models with a vector database powered retrieval system. It compares patients with similar historical profiles and produces human-readable health narratives with actionable recommendations.",
+          "The project explores the intersection of AI in healthcare, explainable machine learning, vector databases, and intelligent patient insight generation."
+        ]
+      },
+      {
+        "title": "Problem the Project Solves",
+        "paragraphs": [
+          "Traditional healthcare prediction systems often suffer from:"
+        ],
+        "list": [
+          "Lack of explainability in predictions",
+          "Ignoring mental health indicators in cardiovascular assessment",
+          "No contextual comparison with similar patient cases",
+          "Difficulty understanding ML-generated risk scores"
+        ],
+        "footer": [
+          "Digital Health Twin solves this by combining predictive AI with contextual patient retrieval and explainable insight generation."
+        ]
+      },
+      {
+        "title": "Core Idea",
+        "paragraphs": [
+          "The system combines machine learning predictions with RAG-based contextual retrieval."
+        ],
+        "list": [
+          "ML models predict cardiovascular risk probability",
+          "Vector search retrieves similar patient profiles",
+          "An Insight Engine combines both outputs",
+          "The system generates explainable clinical narratives and recommendations"
+        ],
+        "footer": [
+          "This creates a more transparent and understandable healthcare AI workflow."
+        ]
+      },
+      {
+        "title": "Platform Features",
+        "subsections": [
+          {
+            "title": "Cardiovascular Risk Prediction",
+            "paragraphs": [
+              "The platform predicts cardiovascular disease risk using multiple health indicators."
+            ],
+            "list": [
+              "Blood pressure analysis",
+              "Cholesterol analysis",
+              "ECG-related indicators",
+              "BMI evaluation",
+              "Lifestyle and mental health assessment"
+            ],
+            "footer": [
+              "Predictions are generated using ensemble machine learning models."
+            ]
+          },
+          {
+            "title": "Mental Health Integration",
+            "paragraphs": [
+              "The system incorporates synthetic mental health indicators into the prediction pipeline."
+            ],
+            "list": [
+              "Stress level analysis",
+              "Sleep quality evaluation",
+              "Anxiety score assessment",
+              "Physical activity tracking"
+            ],
+            "footer": [
+              "This enables a more holistic cardiovascular risk assessment."
+            ]
+          },
+          {
+            "title": "RAG-Based Patient Retrieval",
+            "paragraphs": [
+              "The platform uses vector search to retrieve similar patient profiles."
+            ],
+            "list": [
+              "Patient note embeddings",
+              "ChromaDB vector storage",
+              "Cosine similarity search",
+              "Top-k similar patient retrieval"
+            ],
+            "footer": [
+              "Retrieved patient context helps improve explainability."
+            ]
+          },
+          {
+            "title": "Insight Engine",
+            "paragraphs": [
+              "The Insight Engine combines machine learning outputs with retrieved patient data."
+            ],
+            "list": [
+              "Risk factor identification",
+              "Cohort comparison analysis",
+              "Narrative generation",
+              "Actionable health recommendations"
+            ],
+            "footer": [
+              "Instead of raw scores, users receive understandable clinical explanations."
+            ]
+          },
+          {
+            "title": "Interactive Dashboard",
+            "paragraphs": [
+              "The web dashboard provides a modern interface for interacting with the AI system."
+            ],
+            "list": [
+              "Risk prediction forms",
+              "AI health assistant",
+              "Insight generation panel",
+              "Real-time API responses"
+            ],
+            "footer": [
+              "The dashboard is designed with responsive glassmorphism-based UI."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Technical Architecture",
+        "paragraphs": [
+          "The project follows a modular full-stack AI architecture."
+        ],
+        "subsections": [
+          {
+            "title": "Frontend",
+            "paragraphs": [
+              "The frontend dashboard is built using standard web technologies."
+            ],
+            "list": [
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "Responsive dashboard UI"
+            ],
+            "footer": [
+              "The interface focuses on simplicity and usability."
+            ]
+          },
+          {
+            "title": "Backend",
+            "paragraphs": [
+              "The backend is powered by FastAPI and serves all AI endpoints."
+            ],
+            "list": [
+              "FastAPI",
+              "REST API architecture",
+              "Pydantic schema validation",
+              "Asynchronous request handling"
+            ],
+            "footer": [
+              "The API exposes prediction, RAG, and insight generation endpoints."
+            ]
+          },
+          {
+            "title": "Machine Learning",
+            "paragraphs": [
+              "Multiple machine learning models are trained for cardiovascular risk prediction."
+            ],
+            "list": [
+              "XGBoost",
+              "Random Forest",
+              "Logistic Regression",
+              "PyTorch Neural Network"
+            ],
+            "footer": [
+              "XGBoost is used as the primary prediction model."
+            ]
+          },
+          {
+            "title": "RAG Pipeline",
+            "paragraphs": [
+              "The retrieval system uses embeddings and vector search."
+            ],
+            "list": [
+              "Sentence Transformers",
+              "all-MiniLM-L6-v2 embeddings",
+              "ChromaDB vector database",
+              "Semantic patient retrieval"
+            ],
+            "footer": [
+              "The RAG pipeline enables contextual healthcare responses."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Security and Reliability",
+        "paragraphs": [
+          "The system includes multiple reliability and validation mechanisms."
+        ],
+        "list": [
+          "Validated API schemas using Pydantic",
+          "Structured ML prediction workflows",
+          "Persistent vector database storage",
+          "Modular backend architecture"
+        ],
+        "footer": [
+          "These mechanisms improve system reliability and maintainability."
+        ]
+      },
+      {
+        "title": "Unique Aspects of the Project",
+        "paragraphs": [
+          "Digital Health Twin differs from traditional healthcare prediction systems because it combines predictive AI with explainable retrieval-based reasoning."
+        ],
+        "list": [
+          "Fusion of ML and RAG in healthcare",
+          "Human-readable AI-generated clinical narratives",
+          "Mental health integration in cardiovascular prediction",
+          "Similarity-based patient analysis",
+          "Explainable recommendation generation"
+        ],
+        "footer": [
+          "The project demonstrates how AI systems can become more transparent, contextual, and understandable in healthcare applications."
+        ]
+      }
+    ]
+  }
+},
   {
     title: "Defungi CNN",
     mediaSrc: "cnn.webm",
