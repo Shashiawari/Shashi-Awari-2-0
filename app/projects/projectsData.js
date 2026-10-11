@@ -187,7 +187,7 @@ const rawProjects = [
   },
   {
   title: "Second Brain AI",
-  mediaSrc: "secai.webm",
+  mediaSrc: "Secai.webm",
   technologies:
     "Next.js, React, FastAPI, Supabase, PostgreSQL, Vector Embeddings, AI APIs",
   description:

@@ -138,3 +138,10 @@
   font-family: var(--font-ui);
   letter-spacing: 0.16em;
 }
+
+.homeProjects .projects-title { color: white; text-transform: uppercase; font-size: 2rem; }
+.homeProjects .row { margin-top: 2.5rem; }
+.homeProjects .card { height: 100%; margin-top: 0; border: 0; }
+.homeProjects .homeProjectMedia { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border-radius: 30px; }
+.homeProjects .card p { text-align: left; hyphens: none; margin-bottom: 1.5rem; }
+.homeProjects .card .animated-button { margin-top: auto; align-self: flex-start; }

@@ -6,12 +6,13 @@ import "./Navbar.css";
 import NavLink from "./list";
 import { useLanguage } from "@/components/lib/LanguageContext";
 
-const Navbar = () => {
+const Navbar = ({ overlay = false }) => {
   const { t, toggleLanguage, isGerman } = useLanguage();
   
   const navItems = [
     { href: "/", label: t("navbar.home", "home") },
     { href: "/about", label: t("navbar.about", "about") },
+    { href: "/#education", label: t("navbar.education", "education") },
     { href: "/projects", label: t("navbar.projects", "projects") },
     { href: "/contact", label: t("navbar.contact", "contact") },
   ];
@@ -71,7 +72,7 @@ const Navbar = () => {
           </div>
         </nav>
       </header>
-      <div className="navbar-spacer" aria-hidden="true"></div>
+      {!overlay && <div className="navbar-spacer" aria-hidden="true"></div>}
     </>
   );
 };

@@ -1,0 +1,20 @@
+.education { margin-block: clamp(5rem, 8vw, 8rem); color: white; }
+.education h2 { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2rem; }
+.education-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.education-card { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(1.5rem, 3vw, 2.5rem); border: 1px solid #333; border-radius: 1.5rem; background: linear-gradient(135deg, #15111d, #080808); }
+.education-card h3 { font-family: var(--font-heading); font-size: clamp(1.2rem, 2vw, 1.6rem); line-height: 1.4; }
+.education-card p { font-family: var(--font-body); line-height: 1.7; text-align: left; }
+.education-date { color: #c9b7f5; font-size: 0.9rem; }
+.education-status { margin-top: auto; padding-top: 1rem; color: #ddd; font-size: 0.9rem; }
+@media (max-width: 700px) { .education-grid { grid-template-columns: 1fr; } }
+
+.education-card .experience-topic {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #c9b7f5;
+  margin-block: 0.5rem 1rem;
+}
+.education-card > p:last-child { margin-bottom: 0; }
+
+#education { scroll-margin-top: 8rem; }

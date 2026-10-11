@@ -298,8 +298,8 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 0.85rem;
-  margin-top: 1rem;
-  padding-top: 1.35rem;
+  margin-top: auto;
+  padding-top: 2rem;
   align-items: center;
 }
 
@@ -1068,4 +1068,27 @@
     opacity: 1;
     transform: none;
   }
+}
+
+.projectCard { scroll-margin-top: 9rem; }
+.projectCardMedia { flex-shrink: 0; }
+.projectCardDescription { text-align: left; hyphens: none; }
+.projectGithubCaption { display: block; margin-top: 0.65rem; font-size: 0.8rem; color: #bbb; }
+/* Share content tracks across each row so wrapping never offsets adjacent cards. */
+@supports (grid-template-rows: subgrid) {
+  .projectCardsGrid { row-gap: 1rem; }
+  .projectCard {
+    display: grid;
+    grid-row: span 7;
+    grid-template-rows: subgrid;
+    gap: 0;
+    padding-bottom: 2rem;
+  }
+  .projectCardBody { display: grid; grid-row: span 6; grid-template-rows: subgrid; }
+  .projectCardKicker { grid-row: 1; }
+  .projectCard h3 { grid-row: 2; }
+  .projectCardTech { grid-row: 3; }
+  .projectCardDescription { grid-row: 4; }
+  .projectCardHighlights { grid-row: 5; }
+  .projectCardActions { grid-row: 6; align-self: end; }
 }

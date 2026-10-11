@@ -367,3 +367,36 @@
     padding: 0;
   }
 }
+
+/* Give the introduction breathing room below the hero. */
+.content { padding-top: clamp(5rem, 9vw, 9rem); }
+.content-intro-row { row-gap: 2rem; }
+.content-intro-row p { max-width: none; width: 100%; text-align: left; hyphens: none; }
+.content-intro-title { margin-bottom: 1.5rem; }
+
+/* Scale the full heading to its column; typing never changes the line count. */
+.content-intro-copy { container-type: inline-size; }
+.content-intro-copy .content-intro-title {
+  display: block;
+  width: 100%;
+  font-size: clamp(1rem, 6.5cqi, 5.25rem);
+  line-height: 1.15;
+  min-height: 1.15em;
+}
+.content-intro-copy .content-intro-titleTyping {
+  white-space: nowrap;
+  text-wrap: nowrap;
+  word-break: normal;
+}
+
+/* Keep this tall section at its natural size throughout scrolling. */
+.skills-section {
+  margin-block: clamp(2.5rem, 5vw, 4rem);
+  animation: none;
+  transform: none;
+  scale: 1;
+  opacity: 1;
+}
+
+.content-intro-copy p + p { margin-top: 1.25rem; }
+.content-intro-copy strong { font-family: var(--font-ui); font-weight: 700; color: #fff; }

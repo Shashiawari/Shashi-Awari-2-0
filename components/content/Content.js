@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import "./Content.css";
-import Imagecontainer from "../imgcontainer/Imagecontainer";
 import SkillsHoneycomb from "./SkillsHoneycomb";
 import { useLanguage } from "@/components/lib/LanguageContext";
 
@@ -11,16 +10,6 @@ const Content = () => {
   const introTitle = t("content.hello", "Let's build the future.");
   const [typedTitle, setTypedTitle] = useState("");
   
-  const offerItems = [
-    { link: "calender.png", text: t("content.projects", "Projects") },
-    { link: "chitchat.png", text: t("content.chatApplication", "chat Application") },
-    { link: "fyle.png", text: t("content.gsap", "Gsap") },
-    { link: "genai.png", text: t("content.generativeAi", "generative ai") },
-    { link: "japan.png", text: t("content.applications", "applications") },
-    { link: "ui.png", text: t("content.webDesign", "Web design") },
-    { link: "web.png", text: t("content.animationFrameworks", "Animation Frameworks") },
-  ];
-
   useEffect(() => {
     let timeoutId;
     let currentIndex = 0;
@@ -64,7 +53,7 @@ const Content = () => {
   return (
     <div className="  text-white content">
       <div className="container-fluid">
-        <div className="row d-flex align-items-center p-2 block mt-5 ">
+        <div className="row d-flex align-items-center p-2 content-intro-row ">
           <div className=" col-12 col-lg-4   d-flex justify-content-center ">
             <svg
               width="376"
@@ -248,46 +237,27 @@ const Content = () => {
               </defs>
             </svg>
           </div>
-          <div className="col-12 col-lg-8  ">
-            <h1 className="content-intro-title">
-              <span className="content-intro-titleTyping">
+          <div className="col-12 col-lg-8 content-intro-copy">
+            <h1 className="content-intro-title" aria-label={introTitle}>
+              <span className="content-intro-titleTyping" aria-hidden="true">
                 {typedTitle}
                 <span className="content-intro-titleCursor" aria-hidden="true"></span>
               </span>
             </h1>
-            <p>
-              {" "}
-              {t("content.intro", "I am Awari Shashi Preetham, and I completed my bachelor's in Artificial Intelligence and Machine Learning. I am currently pursuing my master's in Applied Computer Science at Schmalkalden University of Applied Sciences in Germany. I enjoy building thoughtful digital products at the intersection of full-stack development, AI, and real-world problem solving. My work spans platforms like FindH, Second Brain AI, and other interactive web experiences built with React.js, Next.js, Node.js, Express.js, PostgreSQL, and MongoDB. Dive into my projects to see how I turn ideas into polished, working systems, and feel free to connect if you'd like to collaborate on something meaningful.")}{" "}
-            </p>
+            {[
+              t("content.aboutStudy", "I'm Shashi, an **M.Sc. student in Applied Computer Science** at Hochschule Schmalkalden, Germany. I hold a bachelor's degree in **Computer Science and Engineering, with a focus on AI and Machine Learning**. My background combines full-stack web development with hands-on work in machine learning and natural language processing."),
+              t("content.aboutResearch", "During my **research internships at NIT Warangal**, I worked with BERT and transformer-based models for text classification and language-model development. My work covered data preprocessing, training, and evaluation. I've also presented my work on **fungal image classification and sarcasm detection** at academic conferences."),
+              t("content.aboutApproach", "I work with **React, Next.js, Python, and backend APIs**, and enjoy understanding how the different parts of an application fit together. I'm interested in **software development and applied AI**, and I like learning by building, testing ideas, and working through the details. I'm currently based in Germany while continuing my master's studies."),
+            ].map((paragraph, paragraphIndex) => (
+              <p key={paragraphIndex}>
+                {paragraph.split("**").map((part, index) =>
+                  index % 2 ? <strong key={index}>{part}</strong> : part
+                )}
+              </p>
+            ))}
           </div>
         </div>
       </div>
-      <section className="text-center section2  ">
-        <h1>{t("content.whatCanIOffer", "What can I Offer You ?")}</h1>
-        <div className="cout">
-          <div className="box1"></div>
-          <div className="box2"></div>
-          <div className="content-marquee">
-            <div className="content-marquee-track">
-              {Array.from({ length: 2 }, (_, copyIndex) => (
-                <div
-                  key={copyIndex}
-                  className="content-marquee-row"
-                  aria-hidden={copyIndex === 1}
-                >
-                  {offerItems.map((item) => (
-                    <Imagecontainer
-                      key={`${copyIndex}-${item.link}`}
-                      link={item.link}
-                      text={item.text}
-                    />
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
       <section>
         <div className="sli1 d-none d-lg-block">
           <div className="sli2">
@@ -316,7 +286,7 @@ const Content = () => {
           </div>
         </div>
       </section>
-      <section className="ssvg block my-5 mb-5">
+      <section className="ssvg skills-section">
         <h2 className=" text-center mb-5">{t("content.letsLookAtSkills", "Lets look at my skills!")}</h2>
         <SkillsHoneycomb />
         {false && (

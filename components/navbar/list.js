@@ -9,6 +9,7 @@ export default function NavLink({ href, children }) {
   return (
     <Link
       href={href}
+      aria-current={isActive ? "page" : undefined}
       className={`nav-link nav-link-pill ${isActive ? "is-active" : ""}`}
     >
       {children}

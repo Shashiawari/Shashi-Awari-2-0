@@ -1,5 +1,5 @@
-import "./globals.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "./globals.css";
 import localFont from "next/font/local";
 import { rootMetadata } from "@/lib/seo";
 
@@ -20,7 +20,7 @@ const lemonLight = localFont({
   src: "./fonts/LEMONMILK-Light.otf",
   variable: "--font-ui-light",
   display: "swap",
-  preload: false,
+  preload: true,
   fallback: ["Segoe UI", "sans-serif"],
 });
 
@@ -36,7 +36,7 @@ const alumni = localFont({
   src: "./fonts/AlumniSansCollegiateOne-Regular.ttf",
   variable: "--font-numeric",
   display: "swap",
-  preload: false,
+  preload: true,
   fallback: ["Segoe UI", "sans-serif"],
 });
 
@@ -44,7 +44,7 @@ const clashMedium = localFont({
   src: "./fonts/ClashDisplay-Medium.otf",
   variable: "--font-display-medium",
   display: "swap",
-  preload: false,
+  preload: true,
   fallback: ["Segoe UI", "sans-serif"],
 });
 
@@ -70,8 +70,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <style>{`html,body{margin:0;background:#000;color:#fff}`}</style>
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        <noscript>
+          <style>{`.app-startup-content{visibility:visible!important;opacity:1!important}.app-startup-overlay{display:none!important}`}</style>
+        </noscript>
       </head>
       <body
         className={[
@@ -84,13 +88,13 @@ export default function RootLayout({ children }) {
           clashBold.variable,
         ].join(" ")}
       >
-        <LanguageWrapper>
-          <StartupGate>
+        <StartupGate>
+          <LanguageWrapper>
             <CustomCursor />
             {children}
             <BootstrapClient />
-          </StartupGate>
-        </LanguageWrapper>
+          </LanguageWrapper>
+        </StartupGate>
       </body>
     </html>
   );

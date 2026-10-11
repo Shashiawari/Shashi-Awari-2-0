@@ -460,3 +460,19 @@
 .navbar-translate-btn:active {
   transform: scale(0.95);
 }
+
+.site-navbar-links .nav-item:nth-child(5) { animation-delay: 360ms; }
+@media (min-width: 768px) and (max-width: 991px) {
+  .site-navbar-links { gap: 0.2rem; }
+  .site-navbar-links .nav-link-pill { min-width: auto; padding-inline: 0.7rem; font-size: 0.72rem; letter-spacing: 0.1em; }
+}
+
+/* Bootstrap's focus color must not turn links dark on the black navbar. */
+.site-navbar .nav-link-pill:not(.is-active),
+.site-navbar .nav-link-pill:not(.is-active):visited {
+  color: rgba(255, 255, 255, 0.78);
+}
+.site-navbar .nav-link-pill:not(.is-active):hover,
+.site-navbar .nav-link-pill:not(.is-active):focus { color: #fff; }
+.site-navbar .nav-link-pill.is-active { color: #050505; }
+.site-navbar .nav-link-pill:focus-visible { outline: 2px solid #c9b7f5; outline-offset: 3px; }

@@ -4,7 +4,8 @@ import Main from "@/components/main/Main";
 import Content from "@/components/content/Content";
 import Footer from "@/components/footer/Footer";
 import Projects from "@/components/projects/Projects";
-import Resume from "@/components/resume/Resume";
+import Education from "@/components/education/Education";
+import ProfessionalExperience from "@/components/education/ProfessionalExperience";
 import {
   personStructuredData,
   siteDescription,
@@ -28,14 +29,14 @@ const page = () => {
           {siteDescription}
         </p>
       </div>
-      <Navbar />
+      <Navbar overlay />
       <div className="blurflex">
-      <div className="boxblur2"></div>
       <Main />
       </div>
       <Content />
       <Projects />
-      <Resume/>
+      <Education />
+      <ProfessionalExperience />
       <Footer />
     </div>
   );

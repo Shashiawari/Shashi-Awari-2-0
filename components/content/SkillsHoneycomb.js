@@ -1,137 +1,101 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import "./SkillsHoneycomb.css";
 
-const highlightedSkills = new Set(["FRONT END", "BACK END", "ML", "DL"]);
-
-// Edit this one list to add, remove, or rename skills.
-const skills = [
-  "FRONT END",
-  "HTML",
-  "CSS",
-  "JAVA SCRIPT",
-  "REACT JS",
-  "NEXT JS",
-  "BOOTSTRAP",
-  "GSAP",
-  "FRAMER MOTION",
-  "JQUERY",
-  "EJS",
-  "BACK END",
-  "NODE JS",
-  "EXPRESS JS",
-  "FASTAPI",
-  "SOCKET.IO",
-  "SUPABASE",
-  "POSTGRE SQL",
-  "MONGO DB",
-  "NOSQL",
-  "MYSQL",
-  "SQLITE",
-  "ML",
-  "PYTHON",
-  "MACHINE LEARNING",
-  "NLP",
-  "TENSOR FLOW",
-  
-  "DL",
-  "LSTM",
-  "CNN",
-  "Transformers",
-  "others JAVA",
+export const skillGroups = [
+  {
+    title: "Full Stack Development",
+    areas: [
+      ["Programming Languages", ["Python", "JavaScript", "SQL", "C", "Java"]],
+      ["Frontend Development", ["React", "Next.js", "HTML", "CSS", "Bootstrap"]],
+      ["Backend Development", ["FastAPI", "Node.js", "Express.js", "REST APIs"]],
+      ["Databases", ["PostgreSQL", "MongoDB", "Supabase"]],
+    ],
+  },
+  {
+    title: "AI & Machine Learning",
+    areas: [
+      ["ML Frameworks", ["PyTorch", "TensorFlow/Keras", "scikit-learn", "XGBoost", "Hugging Face Transformers"]],
+      ["Deep Learning", ["Neural Networks", "CNNs", "Transformer Architectures", "Transfer Learning", "Model Fine-Tuning"]],
+      ["LLMs & RAG", ["LLM Integration", "Retrieval-Augmented Generation (RAG)", "Text Embeddings", "Semantic Search"]],
+    ],
+  },
 ];
 
 const layoutPatterns = [
   { name: "desktop", pattern: [6, 5] },
   { name: "laptop", pattern: [5, 4] },
   { name: "tablet", pattern: [4, 3] },
-  { name: "mobile", pattern: [3, 2] },
+  { name: "mobile", pattern: [2, 1] },
 ];
 
 const createSkillRows = (items, pattern) => {
   const rows = [];
-  let currentRow = [];
-  let patternIndex = 0;
-
-  items.forEach((skill) => {
-    const rowSize = pattern[patternIndex % pattern.length];
-    const shouldStartNewRow = highlightedSkills.has(skill) && currentRow.length > 0;
-
-    if (shouldStartNewRow) {
-      rows.push(currentRow);
-      currentRow = [];
-      patternIndex++;
-    }
-
-    currentRow.push(skill);
-
-    if (currentRow.length === rowSize) {
-      rows.push(currentRow);
-      currentRow = [];
-      patternIndex++;
-    }
-  });
-
-  if (currentRow.length > 0) {
-    rows.push(currentRow);
+  let offset = 0;
+  while (offset < items.length) {
+    const size = pattern[rows.length % pattern.length];
+    rows.push(items.slice(offset, offset + size));
+    offset += size;
   }
-
   return rows;
 };
 
-const SkillsHoneycombLayout = ({ items, layoutName, pattern }) => {
-  const rows = createSkillRows(items, pattern);
-  let skillIndex = 0;
-
+function SkillsHoneycombLayout({ group, layoutName, pattern }) {
+  const [hoveredArea, setHoveredArea] = useState(null);
+  const [focusedArea, setFocusedArea] = useState(null);
+  const activeArea = hoveredArea ?? focusedArea;
+  const cells = group.areas.flatMap(([area, items]) => [
+    { label: area, area, highlighted: true, flowIndex: 0, flowCount: items.length + 1 },
+    ...items.map((label, index) => ({ label, area, highlighted: false, flowIndex: index + 1, flowCount: items.length + 1 })),
+  ]);
+  const rows = createSkillRows(cells, pattern);
   return (
     <div className={`skillsHoneycombLayout skillsHoneycombLayout--${layoutName}`}>
-      <div className="skillsHoneycomb" role="list" aria-label="Technical skills">
+      <div className="skillsHoneycomb" role="list" aria-label={`${group.title} skills`}
+        onPointerLeave={() => setHoveredArea(null)}
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) setFocusedArea(null);
+        }}
+      >
         {rows.map((row, rowIndex) => (
-          <div
-            key={`${layoutName}-row-${rowIndex}`}
-            className={`skillsHoneycombRow ${highlightedSkills.has(row[0]) ? "skillsHoneycombRow--sectionStart" : ""
-              } ${pattern[rowIndex % pattern.length] !== pattern[0]
-                ? "skillsHoneycombRow--offset"
-                : ""
-              }`}
-            style={{ "--row-index": rowIndex }}
-          >
-            {row.map((skill) => {
-              const currentSkillIndex = skillIndex;
-              skillIndex += 1;
-
-              return (
-                <div
-                  key={`${layoutName}-${rowIndex}-${skill}`}
-                  className={`skillsHex${highlightedSkills.has(skill) ? " skillsHex--highlighted" : ""}`}
-                  role="listitem"
-                  style={{ "--skill-index": currentSkillIndex }}
-                >
-                  <div className="skillsHexInner">
-                    <span>{skill}</span>
-                  </div>
-                </div>
-              );
-            })}
+          <div key={rowIndex} className={`skillsHoneycombRow ${rowIndex % 2 ? "skillsHoneycombRow--offset" : ""}`}>
+            {row.map((skill) => (
+              <div
+                key={`${skill.area}-${skill.label}`}
+                className={`skillsHex${skill.highlighted ? " skillsHex--highlighted" : ""}${activeArea === skill.area ? " skillsHex--active" : ""}`}
+                role="listitem"
+                tabIndex={0}
+                aria-label={`${skill.label}: ${skill.area}`}
+                style={{ "--flow-index": skill.flowIndex, "--flow-count": skill.flowCount }}
+                onPointerEnter={(event) => {
+                  if (event.pointerType !== "touch") setHoveredArea(skill.area);
+                }}
+                onFocus={() => setFocusedArea(skill.area)}
+              >
+                <div className="skillsHexInner"><span>{skill.label}</span></div>
+              </div>
+            ))}
           </div>
         ))}
       </div>
     </div>
   );
-};
+}
 
-const SkillsHoneycomb = ({ items = skills }) => {
+export default function SkillsHoneycomb() {
   return (
-    <div className="skillsHoneycombViewport">
-      {layoutPatterns.map((layout) => (
-        <SkillsHoneycombLayout
-          key={layout.name}
-          items={items}
-          layoutName={layout.name}
-          pattern={layout.pattern}
-        />
+    <div className="skillsGroups">
+      {skillGroups.map((group) => (
+        <section className="skillsGroup" key={group.title} aria-label={group.title}>
+          <h3 className="skillsGroupTitle">{group.title}</h3>
+          <div className="skillsHoneycombViewport">
+            {layoutPatterns.map((layout) => (
+              <SkillsHoneycombLayout key={layout.name} group={group} layoutName={layout.name} pattern={layout.pattern} />
+            ))}
+          </div>
+        </section>
       ))}
     </div>
   );
-};
-
-export default SkillsHoneycomb;
+}

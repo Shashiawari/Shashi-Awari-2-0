@@ -22,17 +22,15 @@ const Footer = () => {
     {
       title: t("footer.theBoring", "The Boring"),
       links: [
-        { label: t("footer.email", "Email"), href: "mailto:shashiawaripreetham@gmail.com" },
+        { label: "shashiawaripreetham@gmail.com" },
         { label: t("footer.call", "Call"), href: "tel:+919704832432" },
-        { label: t("footer.github", "GitHub"), href: "https://github.com/Shashiawari" },
       ],
     },
     {
       title: t("footer.theCool", "The Cool"),
       links: [
-        { label: t("footer.instagram", "Instagram"), href: "https://www.instagram.com/shashi__awari/" },
+        { label: t("footer.linkedin", "LinkedIn"), href: "https://www.linkedin.com/in/shashipreethamawari" },
         { label: t("footer.github", "GitHub"), href: "https://github.com/Shashiawari" },
-        { label: t("footer.contactMe", "Contact Me"), href: "/contact" },
       ],
     },
   ];
@@ -51,7 +49,7 @@ const Footer = () => {
                 <p className="footer-group-title">{group.title}</p>
 
                 <div className="footer-group-links">
-                  {group.links.map((link) => (
+                  {group.links.map((link) => link.href ? (
                     <Link
                       key={`${group.title}-${link.label}`}
                       className="footer-group-link"
@@ -59,6 +57,10 @@ const Footer = () => {
                     >
                       {link.label}
                     </Link>
+                  ) : (
+                    <span key={`${group.title}-${link.label}`} className="footer-group-text">
+                      {link.label}
+                    </span>
                   ))}
                 </div>
               </div>

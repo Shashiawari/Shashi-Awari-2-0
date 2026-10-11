@@ -10,6 +10,7 @@
 export const translations = {
   // Navbar
   navbar: {
+    education: "Ausbildung",
     home: "Startseite",
     about: "Über mich",
     projects: "Projekte",
@@ -19,7 +20,9 @@ export const translations = {
   // Content (Home page intro)
   content: {
     hello: "Lassen Sie uns die Zukunft bauen.",
-    intro: "Ich bin Awari Shashi Preetham und habe meinen Bachelor in Künstlicher Intelligenz und Maschinellem Lernen abgeschlossen. Derzeit absolviere ich meinen Master in Applied Computer Science an der Hochschule Schmalkalden in Deutschland. Ich entwickle gerne durchdachte digitale Produkte an der Schnittstelle von Full-Stack-Entwicklung, KI und realen Problemstellungen. Meine Arbeit umfasst Plattformen wie JapEase, NexGen und weitere interaktive Web-Erlebnisse mit React.js, Next.js, Node.js, Express.js, PostgreSQL und MongoDB. Werfen Sie einen Blick auf meine Projekte, um zu sehen, wie ich Ideen in ausgereifte, funktionierende Systeme verwandle, und kontaktieren Sie mich gerne, wenn Sie gemeinsam etwas Sinnvolles aufbauen möchten.",
+    aboutStudy: "Ich bin Shashi und studiere **Applied Computer Science im Master** an der Hochschule Schmalkalden. Meinen Bachelor habe ich in **Computer Science and Engineering mit Schwerpunkt KI und maschinelles Lernen** abgeschlossen. Mein Hintergrund verbindet Full-Stack-Webentwicklung mit praktischer Erfahrung in Machine Learning und Sprachverarbeitung.",
+    aboutResearch: "Während meiner **Forschungspraktika am NIT Warangal** arbeitete ich mit BERT und transformerbasierten Modellen für Textklassifikation und Sprachmodellentwicklung. Dazu gehörten Datenvorverarbeitung, Training und Evaluation. Meine Arbeiten zur **Klassifikation von Pilzbildern und zur Erkennung von Sarkasmus** habe ich auch auf Fachkonferenzen vorgestellt.",
+    aboutApproach: "Ich arbeite mit **React, Next.js, Python und Backend-APIs** und verstehe gern, wie die verschiedenen Teile einer Anwendung zusammenpassen. Mich interessieren **Softwareentwicklung und angewandte KI**. Ich lerne gern, indem ich Anwendungen entwickle, Ideen teste und mich mit den Details beschäftige. Derzeit lebe ich in Deutschland und setze hier mein Masterstudium fort.",
     whatCanIOffer: "Was kann ich Ihnen bieten?",
     letsLookAtSkills: "Schauen wir uns meine Fähigkeiten an!",
     projects: "Projekte",
@@ -56,6 +59,10 @@ export const translations = {
 
   // Projects section (home page)
   projects: {
+    clickMe: "Klick mich",
+    findhSummary: "Prüfe eine Wohnung, bevor du zusagst. FindH verbindet Mieter mit lokalen Maklern, die Immobilien besichtigen und geprüfte Berichte bereitstellen.",
+    defungiSummary: "Ein Computer-Vision-Projekt, das mit einem neuronalen Faltungsnetz Pilzarten in Mikroskopaufnahmen erkennt.",
+    secondBrainSummary: "Dokumente und Websites an einem Ort: Stelle Fragen und wechsle zwischen KI-Modellen, ohne den Gesprächskontext zu verlieren.",
     title: "Projekte",
     more: "Mehr",
     readMore: "Mehr lesen",

@@ -337,6 +337,7 @@ const ProjectCard = ({ project, index, onOpenCaseStudy, t }) => {
 
   return (
     <article
+      id={project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
       className={[
         "projectCard",
         isFeatured ? "projectCardFeatured" : "",
