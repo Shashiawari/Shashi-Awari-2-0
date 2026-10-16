@@ -126,6 +126,7 @@
   border-radius: 0;
 }
 .homeHero .log {
+  mix-blend-mode: normal;
   height: auto;
   min-height: 100vh;
   min-height: 100svh;
@@ -136,11 +137,61 @@
 .homeHero #lineDrawing { width: min(913px, 80vw); }
 .homeHero .log svg { display: block; width: 100%; height: auto; margin: 0; }
 .homeHero .log h5 {
+  color: #e1dce9;
+  text-shadow: 0 2px 12px #000;
   margin: 0;
   font-size: clamp(0.7rem, 1.6vw, 1.875rem);
   line-height: 1.5;
   letter-spacing: 0.18em;
   white-space: nowrap;
+}
+.heroSocials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 0.35rem;
+}
+.homeHero .heroSocial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-width: 150px;
+  min-height: 48px;
+  padding: 0.8rem 1.35rem;
+  border: 1px solid rgba(216, 194, 255, 0.35);
+  border-radius: 14px;
+  background: rgba(14, 10, 23, 0.85);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: 0;
+  text-decoration: none;
+  box-shadow: 0 6px 24px #0003;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+.homeHero .heroSocial svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.homeHero .heroSocial svg path { fill: currentColor; stroke: none; }
+.heroSocialArrow { margin-left: 0.3rem; color: #c4acf1; }
+.homeHero .heroSocial:hover {
+  transform: translateY(-3px);
+  border-color: #e0cfff;
+  background: #35234d;
+  color: #fff;
+}
+.homeHero .heroSocial:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .homeHero .heroSocial { transition: none; }
+  .homeHero .heroSocial:hover { transform: none; }
 }
 @media (max-width: 600px) {
   .homeHero #lineDrawing { width: 90vw; }
