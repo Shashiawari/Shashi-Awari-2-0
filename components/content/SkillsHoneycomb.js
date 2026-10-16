@@ -8,7 +8,7 @@ export const skillGroups = [
     title: "Full Stack Development",
     areas: [
       ["Programming Languages", ["Python", "JavaScript", "SQL", "C", "Java"]],
-      ["Frontend Development", ["React", "Next.js", "HTML", "CSS", "Bootstrap"]],
+      ["Frontend Development", ["React", "Next.js", "HTML", "CSS"]],
       ["Backend Development", ["FastAPI", "Node.js", "Express.js", "REST APIs"]],
       ["Databases", ["PostgreSQL", "MongoDB", "Supabase"]],
     ],
@@ -25,9 +25,6 @@ export const skillGroups = [
 
 const layoutPatterns = [
   { name: "desktop", pattern: [6, 5] },
-  { name: "laptop", pattern: [5, 4] },
-  { name: "tablet", pattern: [4, 3] },
-  { name: "mobile", pattern: [2, 1] },
 ];
 
 const createSkillRows = (items, pattern) => {
@@ -35,8 +32,15 @@ const createSkillRows = (items, pattern) => {
   let offset = 0;
   while (offset < items.length) {
     const size = pattern[rows.length % pattern.length];
-    rows.push(items.slice(offset, offset + size));
-    offset += size;
+    let end = Math.min(offset + size, items.length);
+    for (let index = offset + 1; index < end; index += 1) {
+      if (items[index].highlighted && items[index].area === "Databases") {
+        end = index;
+        break;
+      }
+    }
+    rows.push(items.slice(offset, end));
+    offset = end;
   }
   return rows;
 };

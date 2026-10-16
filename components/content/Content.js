@@ -287,7 +287,11 @@ const Content = () => {
         </div>
       </section>
       <section className="ssvg skills-section">
-        <h2 className=" text-center mb-5">{t("content.letsLookAtSkills", "Lets look at my skills!")}</h2>
+        <header className="skills-section-header">
+          <p className="skills-section-eyebrow">{t("content.skillsEyebrow", "What I work with")}</p>
+          <h2 className="skills-section-title">{t("content.skillsTitle", "My Skills & Technologies")}</h2>
+          <p className="skills-section-description">{t("content.skillsDescription", "Technologies I use to build, design, and develop projects.")}</p>
+        </header>
         <SkillsHoneycomb />
         {false && (
         <svg
