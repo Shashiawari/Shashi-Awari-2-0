@@ -375,11 +375,11 @@
 .content-intro-title { margin-bottom: 1.5rem; }
 
 /* Scale the full heading to its column; typing never changes the line count. */
-.content-intro-copy { container-type: inline-size; }
+.content-intro-copy { container-type: inline-size; min-width: 0; }
 .content-intro-copy .content-intro-title {
   display: block;
   width: 100%;
-  font-size: clamp(1rem, 6.5cqi, 5.25rem);
+  font-size: clamp(1rem, var(--intro-title-size, 6.5cqi), 5.25rem);
   line-height: 1.15;
   min-height: 1.15em;
 }
@@ -387,6 +387,18 @@
   white-space: nowrap;
   text-wrap: nowrap;
   word-break: normal;
+}
+@media (max-width: 600px) {
+  .content-intro-copy .content-intro-title--long {
+    font-size: clamp(1.4rem, 7cqi, 2rem);
+    min-height: 3.45em;
+  }
+  .content-intro-copy .content-intro-title--long .content-intro-titleTyping {
+    display: block;
+    white-space: normal;
+    text-wrap: wrap;
+  }
+  .content-intro-title--long .content-intro-titleCursor { display: inline-block; }
 }
 
 /* Keep this tall section at its natural size throughout scrolling. */

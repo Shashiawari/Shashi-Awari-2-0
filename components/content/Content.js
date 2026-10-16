@@ -238,7 +238,11 @@ const Content = () => {
             </svg>
           </div>
           <div className="col-12 col-lg-8 content-intro-copy">
-            <h1 className="content-intro-title" aria-label={introTitle}>
+            <h1
+              className={`content-intro-title${introTitle.length > 28 ? " content-intro-title--long" : ""}`}
+              aria-label={introTitle}
+              style={{ "--intro-title-size": `${6.5 * Math.min(1, 21 / introTitle.length)}cqi` }}
+            >
               <span className="content-intro-titleTyping" aria-hidden="true">
                 {typedTitle}
                 <span className="content-intro-titleCursor" aria-hidden="true"></span>

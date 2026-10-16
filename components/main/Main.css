@@ -134,8 +134,9 @@
   gap: 1.5rem;
   text-align: center;
 }
-.homeHero #lineDrawing { width: min(913px, 80vw); }
+.homeHero #lineDrawing { width: min(1320px, 90vw); }
 .homeHero .log svg { display: block; width: 100%; height: auto; margin: 0; }
+.homeHero .log .heroNameMobile { display: none; }
 .homeHero .log h5 {
   color: #e1dce9;
   text-shadow: 0 2px 12px #000;
@@ -194,7 +195,9 @@
   .homeHero .heroSocial:hover { transform: none; }
 }
 @media (max-width: 600px) {
-  .homeHero #lineDrawing { width: 90vw; }
+  .homeHero #lineDrawing { width: min(86vw, 380px); }
+  .homeHero .log .heroNameDesktop { display: none; }
+  .homeHero .log .heroNameMobile { display: block; }
   .homeHero .log { padding-inline: 1rem; gap: 1rem; }
   .homeHero .log h5 { white-space: normal; max-width: 32ch; font-size: 0.75rem; }
 }

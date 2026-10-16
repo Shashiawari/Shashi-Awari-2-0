@@ -25,7 +25,7 @@ const HeroLineAnimation = () => {
         ],
         {
           duration: 3000,
-          delay: index * 80,
+          delay: (index % 19) * 80,
           easing: "ease-in-out",
           direction: "alternate",
           iterations: Infinity,

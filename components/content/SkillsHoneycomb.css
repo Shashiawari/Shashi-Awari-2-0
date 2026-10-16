@@ -40,14 +40,13 @@
   --hex-height: calc(var(--hex-width) * 1.1547);
   --hex-gap: clamp(2px, 0.5cqw, 6px);
   --hex-shape: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20115.47%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M58%204.62%20L92%2024.25%20Q100%2028.87%20100%2038.11%20V77.36%20Q100%2086.60%2092%2091.22%20L58%20110.85%20Q50%20115.47%2042%20110.85%20L8%2091.22%20Q0%2086.60%200%2077.36%20V38.11%20Q0%2028.87%208%2024.25%20L42%204.62%20Q50%200%2058%204.62%20Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E");
-  width: max-content;
+  width: calc(6 * var(--hex-width) + 5 * var(--hex-gap));
   max-width: 100%;
 }
-.skillsHoneycombRow { display: flex; gap: var(--hex-gap); }
+.skillsHoneycombRow { display: flex; justify-content: center; gap: var(--hex-gap); }
 .skillsHoneycombRow + .skillsHoneycombRow {
   margin-top: calc(var(--hex-height) * -0.25 + var(--hex-gap) * 0.866);
 }
-.skillsHoneycombRow--offset { margin-left: calc((var(--hex-width) + var(--hex-gap)) / 2); }
 .skillsHex {
   position: relative;
   flex: 0 0 var(--hex-width);

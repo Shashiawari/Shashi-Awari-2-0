@@ -6,6 +6,7 @@ import "./SkillsHoneycomb.css";
 export const skillGroups = [
   {
     title: "Full Stack Development",
+    rowPattern: [5, 6],
     areas: [
       ["Programming Languages", ["Python", "JavaScript", "SQL", "C", "Java"]],
       ["Frontend Development", ["React", "Next.js", "HTML", "CSS"]],
@@ -53,7 +54,7 @@ function SkillsHoneycombLayout({ group, layoutName, pattern }) {
     { label: area, area, highlighted: true, flowIndex: 0, flowCount: items.length + 1 },
     ...items.map((label, index) => ({ label, area, highlighted: false, flowIndex: index + 1, flowCount: items.length + 1 })),
   ]);
-  const rows = createSkillRows(cells, pattern);
+  const rows = createSkillRows(cells, group.rowPattern ?? pattern);
   return (
     <div className={`skillsHoneycombLayout skillsHoneycombLayout--${layoutName}`}>
       <div className="skillsHoneycomb" role="list" aria-label={`${group.title} skills`}
@@ -63,7 +64,7 @@ function SkillsHoneycombLayout({ group, layoutName, pattern }) {
         }}
       >
         {rows.map((row, rowIndex) => (
-          <div key={rowIndex} className={`skillsHoneycombRow ${rowIndex % 2 ? "skillsHoneycombRow--offset" : ""}`}>
+          <div key={rowIndex} className="skillsHoneycombRow">
             {row.map((skill) => (
               <div
                 key={`${skill.area}-${skill.label}`}
