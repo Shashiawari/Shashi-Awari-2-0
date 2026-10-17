@@ -1,36 +1,364 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Shashi Awari Portfolio
+Tech Used By Page, Project, and Skills Inventory
 
-## Getting Started
+1. OVERALL CORE STACK
 
-First, run the development server:
+Framework / App:
+- Next.js 14
+- React 18
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+UI / Styling / Animation:
+- CSS
+- Bootstrap 5
+- GSAP
+- Framer Motion
+- Anime.js
+- Locomotive Scroll
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Backend / API / Data:
+- Node.js
+- Next.js Route Handlers
+- Nodemailer
+- MongoDB
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Other:
+- Local fonts via next/font/local
+- JSON-LD SEO structured data
+- Multi-language content via LanguageContext / translation files
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+2. PAGE / ROUTE TECH MAP
 
-To learn more about Next.js, take a look at the following resources:
+Route: /
+File: app/page.js
+Main components:
+- Navbar
+- Main
+- Content
+- Projects
+- Resume
+- Footer
+Tech used on this page:
+- Next.js
+- React
+- Bootstrap utility classes
+- Custom CSS
+- Local video hero
+- Inline SVG logo / artwork
+- Typing text effect
+- Skills honeycomb
+- Structured data SEO script
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Route: /about
+File: app/about/page.js
+Main components:
+- Navbar
+- AboutHero
+- AboutContent
+- Footer
+Tech used on this page:
+- Next.js
+- React
+- Custom CSS
+- GSAP
+- GSAP ScrollTrigger
+- Bootstrap utility classes
+- Lazy-loaded external images
+- Link-based CTA buttons
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Route: /projects
+File: app/projects/page.js
+Main components:
+- Navbar
+- ProjectsShowcase
+- ProjectsMore
+- Footer
+Tech used on this page:
+- Next.js
+- React
+- Custom CSS
+- Next Link
+- Responsive project card grid
+- Video and image project media
+- Modal / case study UI
+- Translation support
 
-## Deploy on Vercel
+Route: /contact
+File: app/contact/page.js
+Main components:
+- Navbar
+- Contact form
+- Footer
+Tech used on this page:
+- Next.js
+- React useState
+- Custom CSS
+- Bootstrap layout classes
+- Fetch API
+- Form validation
+- Translation support
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Route: /api/mail
+File: app/api/mail/route.js
+Tech used in this API:
+- Next.js Route Handler
+- Nodemailer
+- Gmail SMTP transport
+- MongoDB
+- HTML escaping / server-side validation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Global app shell
+Files:
+- app/layout.js
+- app/globals.css
+- components/StartupGate.js
+- components/BootstrapClient.js
+Tech used globally:
+- next/font/local
+- Bootstrap CSS
+- Bootstrap JS bundle (lazy import)
+- Custom startup preloader
+- Global CSS
+- Language wrapper
+- Custom cursor
+
+
+3. HOME PAGE COMPONENT TECH DETAILS
+
+Navbar
+Files:
+- components/navbar/Navbar.js
+- components/navbar/Navbar.css
+Tech:
+- React
+- Next Link
+- Custom CSS
+- Responsive navigation
+
+Main / Hero
+Files:
+- components/main/Main.js
+- components/main/HeroLineAnimation.js
+- components/main/Main.css
+Tech:
+- React
+- Custom CSS
+- Autoplay background video
+- Inline SVG artwork
+- Hero line animation
+
+Content
+Files:
+- components/content/Content.js
+- components/content/Content.css
+- components/content/SkillsHoneycomb.js
+- components/content/SkillsHoneycomb.css
+Tech:
+- React useEffect / useState
+- Typing text effect
+- Custom CSS animations
+- Honeycomb layout
+- Skills categorization
+
+Projects preview
+Files:
+- components/projects/Projects.js
+- components/projects/projects.css
+Tech:
+- React
+- Next Link
+- Video cards
+- Custom CSS
+
+Resume
+Files:
+- components/resume/Resume.js
+- components/resume/resume.css
+Tech:
+- React
+- Download button UI
+- Resume PDF link
+
+Footer
+Files:
+- components/footer/Footer.js
+- components/footer/foot.css
+- components/footer/Copyright.js
+Tech:
+- React
+- Next Link
+- Custom footer UI
+
+
+4. ABOUT PAGE COMPONENT TECH DETAILS
+
+AboutHero
+File: components/about/AboutHero.js
+Tech:
+- React useEffect / useRef
+- GSAP
+- GSAP ScrollTrigger
+- Horizontal scroll animation
+
+AboutContent
+File: components/about/AboutContent.jsx
+Tech:
+- React
+- CSS Grid
+- Bootstrap responsive columns
+- Lazy-loaded external images
+- CTA buttons and service cards
+
+
+5. PROJECTS PAGE - PROJECT TECH BY PROJECT
+
+FindH
+- Next.js
+- React
+- Node.js
+- Express.js
+- Supabase
+- PostgreSQL
+- Framer Motion
+- GSAP
+
+Second Brain AI
+- Next.js
+- React
+- FastAPI
+- Supabase
+- PostgreSQL
+- Vector Embeddings
+- AI APIs
+
+Defungi CNN
+- Python
+- TensorFlow
+- CNN
+- Deep Learning
+
+Detect GPT
+- Python
+- NLP
+- Machine Learning
+
+GenAI
+- Next.js
+- HTML
+- CSS
+- JavaScript
+- AI API
+
+Chit-Chat
+- Node.js
+- HTML
+- CSS
+- JavaScript
+- Socket.io
+
+JapEase
+- React.js
+- Node.js
+- HTML
+- CSS
+- JavaScript
+- API
+
+SnapGen
+- Node.js
+- HTML
+- CSS
+- JavaScript
+- Unsplash API
+
+NexGen
+- Next.js
+
+Next Level Food
+- React
+- SQLite
+
+Micro Course Converter
+- Python
+- NLP
+- AI
+
+
+6. CONTACT / COMMUNICATION STACK
+
+Contact form frontend:
+- React state
+- Fetch API
+- HTML form inputs
+- Client-side validation
+
+Contact backend:
+- Nodemailer
+- Gmail SMTP
+- MongoDB storage
+- NextResponse
+
+
+7. CURRENT SKILLS SHOWN IN THE HONEYCOMB
+
+Category labels:
+- FRONT END
+- BACK END
+- ML
+- DL
+
+Front-end related:
+- HTML
+- CSS
+- JAVA SCRIPT
+- REACT JS
+- NEXT JS
+- BOOTSTRAP
+- GSAP
+- FRAMER MOTION
+- JQUERY
+- EJS
+
+Back-end / database related:
+- NODE JS
+- EXPRESS JS
+- FASTAPI
+- SOCKET.IO
+- SUPABASE
+- POSTGRE SQL
+- MONGO DB
+- NOSQL
+- MYSQL
+- SQLITE
+
+Machine Learning / AI related:
+- PYTHON
+- MACHINE LEARNING
+- NLP
+- TENSORFLOW
+- DEEP LEARNING
+- CNN
+
+Core languages:
+- JAVA
+- C
+
+
+8. FILES USED AS SOURCES FOR THIS INVENTORY
+
+- app/page.js
+- app/about/page.js
+- app/projects/page.js
+- app/contact/page.js
+- app/api/mail/route.js
+- app/projects/projectsData.js
+- app/projects/ProjectsShowcase.js
+- app/projects/ProjectsMore.jsx
+- components/main/Main.js
+- components/content/Content.js
+- components/content/SkillsHoneycomb.js
+- components/projects/Projects.js
+- components/resume/Resume.js
+- components/about/AboutHero.js
+- components/about/AboutContent.jsx
+- package.json
