@@ -290,7 +290,7 @@ const Content = () => {
           </div>
         </div>
       </section>
-      <section className="ssvg skills-section">
+      <section id="skills" className="ssvg skills-section">
         <header className="skills-section-header">
           <p className="skills-section-eyebrow">{t("content.skillsEyebrow", "What I work with")}</p>
           <h2 className="skills-section-title">{t("content.skillsTitle", "My Skills & Technologies")}</h2>

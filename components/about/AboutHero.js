@@ -68,7 +68,7 @@ const AboutHero = () => {
       <div className="racesWrapper">
         <div className="races">
           <h2>{t("about.hello", "HELLO!!")}</h2>
-          <h2>{t("about.welcome", "Beyond the screen.")}</h2>
+          <h2>{t("about.welcome", ".")}</h2>
         </div>
       </div>
 

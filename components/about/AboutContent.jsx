@@ -1,78 +1,64 @@
 "use client";
 
-import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/components/lib/LanguageContext";
-import "./about.css";
-const AboutContent = () => {
-  const { t } = useLanguage();
+import "./AboutProfile.css";
 
+const tools = [
+  ["React", "⚛", "#61dafb"], ["Next.js", "N", "#ffffff"],
+  ["Python", "Py", "#f4ce57"], ["Node.js", "JS", "#82c968"],
+  ["TensorFlow", "TF", "#ff9e48"], ["PyTorch", "PT", "#ef795f"],
+  ["PostgreSQL", "Pg", "#7db5df"], ["MongoDB", "M", "#72ce99"],
+];
+
+export default function AboutContent() {
+  const { isGerman } = useLanguage();
+  const copy = (en, de) => isGerman ? de : en;
+  const highlights = [
+    ["◇", copy("M.Sc. Student", "Masterstudent"), "Hochschule Schmalkalden, Germany"],
+    ["</>", copy("Full-Stack & AI", "Full-Stack & KI"), copy("From interfaces to intelligent systems", "Von Interfaces bis zu intelligenten Systemen")],
+    ["↗", copy("2 Research Internships", "2 Forschungspraktika"), "National Institute of Technology, Warangal"],
+    ["⌖", copy("Based in Germany", "In Deutschland"), copy("Open to internships & opportunities", "Offen für Praktika und neue Möglichkeiten")],
+  ];
   return (
-    <>
-      <div className="c-2 mt-5  ">
-        <h3>{t("about.title", "ABOUT ME")}</h3>
-        <div className="row fd p-5 d-flex justify-content-center align-items-center">
-          <div className="parent">
-            <div className="div1">
-              <h2>
-                <span>
-                  <div className="dyno"></div>
-                </span>{" "}
-                {t("about.earlyMorningRoutine", "Early Morning Routine")}
-              </h2>
-              <p>
-                {t("about.earlyMorningP1", "I wake up every morning with the sun, starting my day with focus and clarity. These early hours are my most productive time, allowing me to prioritize my tasks and set my goals for the day.")}
-              </p>
-              <p>
-                {t("about.earlyMorningP2", "As soon as I get up, I spend a few moments in silence to gather my thoughts and practice mindfulness. This helps me stay centered and focused throughout the day. Afterward, I prepare for my workout session, which not only boosts my energy but also sharpens my mental clarity.")}
-              </p>
-              <p>
-                {t("about.earlyMorningP3", "I believe that having a structured morning routine builds discipline and sets a positive tone for the entire day. By establishing these healthy habits, I stay on track, ready to tackle any challenges that come my way with a refreshed mind and body.")}
-              </p>
-            </div>
+    <section className="aboutProfile" aria-labelledby="about-profile-title">
+      <header className="aboutProfileBanner">
+        <div className="aboutProfileHeading">
+          <p className="aboutProfileEyebrow">/ 01 &nbsp; {copy("ABOUT ME", "ÜBER MICH")}</p>
+          <h1 id="about-profile-title">{copy("HELLO,", "HALLO,")}<br />{copy("I’M", "ICH BIN")} <span>SHASHI</span></h1>
+          <p className="aboutProfileTagline">{copy("A developer who turns ideas into impact", "Ein Entwickler, der Ideen Wirklichkeit werden lässt")}</p>
+        </div>
+      </header>
 
-            <div className="div2">
-              <h2>
-                {" "}
-                <span>
-                  <div className="dyno"></div>
-                </span>
-                {t("about.physicalFitness", "Physical Fitness")}
-              </h2>
-              <p>
-                {t("about.physicalFitnessDesc", "Fitness is a core part of who I am. Every day, I work out and go for a run to maintain my physical well-being. I believe that staying fit is key to achieving discipline, both physically and mentally.")}
-              </p>
-            </div>
-
-            <div className="div3">
-              <h2>
-                {" "}
-                <span>
-                  <div className="dyno"></div>
-                </span>
-                {t("about.mentalStrength", "Mental Strength")}
-              </h2>
-              <p>
-                {t("about.mentalStrengthDesc", "I am proud of my mental toughness. By continually pushing my limits, I ensure that I remain resilient and capable of handling challenges with a positive mindset and unwavering determination.")}
-              </p>
-            </div>
-
-            <div className="div4">
-              <h2>
-                {" "}
-                <span>
-                  <div className="dyno"></div>
-                </span>
-                {t("about.creativeInnovative", "Creative and Innovative")}
-              </h2>
-              <p>
-                {t("about.creativeInnovativeDesc", "Creativity and innovation drive me. I love to explore new ideas, solve problems in unique ways, and challenge myself to think outside the box. I bring these qualities to both my personal and professional endeavors.")}
-              </p>
-            </div>
+      <div className="aboutProfileGrid">
+        <div className="aboutProfilePortrait">
+          <Image src="/about.png" alt={copy("Illustration of Shashi working on a laptop", "Illustration von Shashi am Laptop")} width={1254} height={1254} />
+          <span className="aboutProfileLocation"><i />{copy("Currently in Germany", "Aktuell in Deutschland")} <span aria-hidden="true">↗</span></span>
+        </div>
+        <div className="aboutProfileIntro">
+          <p className="aboutProfileEyebrow">/ 02 &nbsp; {copy("INTRODUCTION", "VORSTELLUNG")}</p>
+          <h2>{copy("I’m a Computer Science student specializing in", "Ich studiere Informatik mit Schwerpunkt")} <span>{copy("AI and Full-Stack Development.", "KI und Full-Stack-Entwicklung.")}</span></h2>
+          <p>{copy("I enjoy building useful applications and figuring out how things work. My interests span web development, machine learning, natural language processing, and computer vision.", "Ich entwickle gerne nützliche Anwendungen und finde heraus, wie Dinge funktionieren. Meine Interessen reichen von Webentwicklung und Machine Learning bis zu Sprachverarbeitung und Computer Vision.")}</p>
+          <p>{copy("I’m currently pursuing my M.Sc. in Applied Computer Science at Hochschule Schmalkalden, Germany. I learn best by building, experimenting, and sharing ideas with others.", "Aktuell absolviere ich meinen Master in Applied Computer Science an der Hochschule Schmalkalden. Am besten lerne ich durch Entwickeln, Experimentieren und den Austausch mit anderen.")}</p>
+          <div className="aboutProfileActions">
+            <Link href="/contact" className="aboutProfilePrimary">{copy("Get in Touch", "Kontakt aufnehmen")} <span aria-hidden="true">↗</span></Link>
+            <Link href="/projects">{copy("Explore My Work", "Meine Projekte")} <span aria-hidden="true">↗</span></Link>
           </div>
         </div>
+        <div className="aboutProfileHighlights">
+          {highlights.map(([icon, title, detail]) => <div className="aboutProfileFact" key={title}><span className="aboutProfileFactIcon" aria-hidden="true">{icon}</span><div><h3>{title}</h3><p>{detail}</p></div></div>)}
+        </div>
       </div>
-    </>
-  );
-};
 
-export default AboutContent;
+      <section className="aboutProfileTools" aria-labelledby="about-tools-title">
+        <div className="aboutProfileToolsHeader">
+          <div><p className="aboutProfileEyebrow">/ 03 &nbsp; TECH STACK</p><h2 id="about-tools-title">{copy("Tools I Work With", "Meine Werkzeuge")}</h2></div>
+          <p>{copy("The technologies I use to build web applications and explore machine learning.", "Technologien, mit denen ich Webanwendungen entwickle und Machine Learning erkunde.")}</p>
+          <Link href="/#skills">{copy("View All Skills", "Alle Kenntnisse")} <span aria-hidden="true">↗</span></Link>
+        </div>
+        <ul className="aboutProfileToolGrid">{tools.map(([name, mark, color]) => <li key={name}><span style={{ color }} aria-hidden="true">{mark}</span><span>{name}</span></li>)}</ul>
+      </section>
+    </section>
+  );
+}

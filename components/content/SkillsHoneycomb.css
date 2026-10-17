@@ -130,8 +130,7 @@
   text-align: center;
   padding: clamp(1.5rem, 3vw, 2.5rem) 1rem;
   margin-bottom: clamp(2rem, 4vw, 3rem);
-  background: #0a0a0a;
-  border-bottom: 1px solid #303036;
+  background: transparent;
 }
 .content .skills-section-eyebrow {
   margin: 0 0 1rem;
