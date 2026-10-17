@@ -9,7 +9,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "About",
   description:
-    "Learn more about Shashi Preetham Awari, also known as Shashi Awari, a full-stack developer focused on discipline, fitness, creativity, web development, and AI-driven problem solving.",
+    "Learn more about Shashi Preetham Awari, also known as Shashi Awari, a master’s student in Applied Computer Science working with full-stack development, machine learning, and natural language processing.",
   path: "/about",
   keywords: ["about Shashi Preetham Awari", "about Shashi Awari"],
 });
