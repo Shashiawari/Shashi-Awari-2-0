@@ -1,364 +1,80 @@
-Shashi Awari Portfolio
-Tech Used By Page, Project, and Skills Inventory
+<div align="center">
 
-1. OVERALL CORE STACK
+# Shashi Preetham Awari
 
-Framework / App:
-- Next.js 14
-- React 18
+### Full-Stack Development · AI & Machine Learning
 
-UI / Styling / Animation:
-- CSS
-- Bootstrap 5
-- GSAP
-- Framer Motion
-- Anime.js
-- Locomotive Scroll
+A personal portfolio built with thoughtful interactions, animated visuals, and responsive layouts.
 
-Backend / API / Data:
-- Node.js
-- Next.js Route Handlers
-- Nodemailer
-- MongoDB
+<br />
 
-Other:
-- Local fonts via next/font/local
-- JSON-LD SEO structured data
-- Multi-language content via LanguageContext / translation files
+![Next.js](https://img.shields.io/badge/Next.js_14-111111?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React_18-111111?style=for-the-badge&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-111111?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![CSS](https://img.shields.io/badge/CSS-111111?style=for-the-badge&logo=css&logoColor=A78BFA)
+![MongoDB](https://img.shields.io/badge/MongoDB-111111?style=for-the-badge&logo=mongodb&logoColor=47A248)
 
+<br />
 
-2. PAGE / ROUTE TECH MAP
+**Animated SVG hero** &nbsp; / &nbsp; **Interactive honeycomb** &nbsp; / &nbsp; **English + German**
 
-Route: /
-File: app/page.js
-Main components:
-- Navbar
-- Main
-- Content
-- Projects
-- Resume
-- Footer
-Tech used on this page:
-- Next.js
-- React
-- Bootstrap utility classes
-- Custom CSS
-- Local video hero
-- Inline SVG logo / artwork
-- Typing text effect
-- Skills honeycomb
-- Structured data SEO script
+</div>
 
-Route: /about
-File: app/about/page.js
-Main components:
-- Navbar
-- AboutHero
-- AboutContent
-- Footer
-Tech used on this page:
-- Next.js
-- React
-- Custom CSS
-- GSAP
-- GSAP ScrollTrigger
-- Bootstrap utility classes
-- Lazy-loaded external images
-- Link-based CTA buttons
+---
 
-Route: /projects
-File: app/projects/page.js
-Main components:
-- Navbar
-- ProjectsShowcase
-- ProjectsMore
-- Footer
-Tech used on this page:
-- Next.js
-- React
-- Custom CSS
-- Next Link
-- Responsive project card grid
-- Video and image project media
-- Modal / case study UI
-- Translation support
+## 🛠️ Tech Stack
 
-Route: /contact
-File: app/contact/page.js
-Main components:
-- Navbar
-- Contact form
-- Footer
-Tech used on this page:
-- Next.js
-- React useState
-- Custom CSS
-- Bootstrap layout classes
-- Fetch API
-- Form validation
-- Translation support
+| Layer | Technologies | Purpose |
+| :--- | :--- | :--- |
+| **Foundation** | Next.js 14 · React 18 · JavaScript | App Router pages, reusable components, state, and server routes |
+| **Interface** | CSS · Bootstrap | Responsive grids, typography, spacing, and custom styling |
+| **Motion** | SVG · Web Animations API · CSS animations | Name-outline drawing and flowing skills highlights |
+| **Animation libraries** | GSAP · Framer Motion · Anime.js · Locomotive Scroll | Additional animation and scrolling dependencies |
+| **Communication** | Nodemailer | Contact notifications and visitor confirmation emails |
+| **Storage** | MongoDB | Optional contact-submission storage |
+| **Quality** | ESLint · Next.js metadata | Code checks and page-level SEO configuration |
 
-Route: /api/mail
-File: app/api/mail/route.js
-Tech used in this API:
-- Next.js Route Handler
-- Nodemailer
-- Gmail SMTP transport
-- MongoDB
-- HTML escaping / server-side validation
+## ✨ How I Built It
 
-Global app shell
-Files:
-- app/layout.js
-- app/globals.css
-- components/StartupGate.js
-- components/BootstrapClient.js
-Tech used globally:
-- next/font/local
-- Bootstrap CSS
-- Bootstrap JS bundle (lazy import)
-- Custom startup preloader
-- Global CSS
-- Language wrapper
-- Custom cursor
+I built the portfolio around **reusable React components**, with Next.js handling the pages and contact API. Custom CSS gives each section its own layout while keeping the dark visual style consistent.
 
+### 01 / The first impression
 
-3. HOME PAGE COMPONENT TECH DETAILS
+A looping video sits behind an **animated SVG name**. Each letter is drawn using the Web Animations API, and the name stacks vertically on mobile to stay readable.
 
-Navbar
-Files:
-- components/navbar/Navbar.js
-- components/navbar/Navbar.css
-Tech:
-- React
-- Next Link
-- Custom CSS
-- Responsive navigation
+### 02 / Skills that respond
 
-Main / Hero
-Files:
-- components/main/Main.js
-- components/main/HeroLineAnimation.js
-- components/main/Main.css
-Tech:
-- React
-- Custom CSS
-- Autoplay background video
-- Inline SVG artwork
-- Hero line animation
+The **honeycomb layout** uses CSS and rounded SVG masks. Hovering or focusing a skill activates its whole category, with a light sweep moving through the matching cells in sequence.
 
-Content
-Files:
-- components/content/Content.js
-- components/content/Content.css
-- components/content/SkillsHoneycomb.js
-- components/content/SkillsHoneycomb.css
-Tech:
-- React useEffect / useState
-- Typing text effect
-- Custom CSS animations
-- Honeycomb layout
-- Skills categorization
+### 03 / A place for the work
 
-Projects preview
-Files:
-- components/projects/Projects.js
-- components/projects/projects.css
-Tech:
-- React
-- Next Link
-- Video cards
-- Custom CSS
+Project data supplies the **media previews, descriptions, and case studies**. The About page combines a profile illustration, a personal introduction, background highlights, and a compact tools grid.
 
-Resume
-Files:
-- components/resume/Resume.js
-- components/resume/resume.css
-Tech:
-- React
-- Download button UI
-- Resume PDF link
+### 04 / A working contact flow
 
-Footer
-Files:
-- components/footer/Footer.js
-- components/footer/foot.css
-- components/footer/Copyright.js
-Tech:
-- React
-- Next Link
-- Custom footer UI
+The form uses React state for input, loading, and submission feedback. A Next.js API route handles email delivery, with optional database storage.
 
+```mermaid
+flowchart LR
+    A[Contact form] --> B[Next.js API route]
+    B --> C[Nodemailer]
+    C --> D[Owner notification]
+    C --> E[Visitor confirmation]
+    B -. Optional storage .-> F[(MongoDB)]
+```
 
-4. ABOUT PAGE COMPONENT TECH DETAILS
+### 05 / The finishing details
 
-AboutHero
-File: components/about/AboutHero.js
-Tech:
-- React useEffect / useRef
-- GSAP
-- GSAP ScrollTrigger
-- Horizontal scroll animation
+| 🌐 Language | 📱 Responsive design | ⚡ First load |
+| :--- | :--- | :--- |
+| React Context switches between English and German using translation data and localized text. | CSS media queries adapt the navigation, hero, honeycomb, and forms to different screen sizes. | Local fonts and a startup loading screen help prevent unstyled content from appearing. |
 
-AboutContent
-File: components/about/AboutContent.jsx
-Tech:
-- React
-- CSS Grid
-- Bootstrap responsive columns
-- Lazy-loaded external images
-- CTA buttons and service cards
+---
 
+<div align="center">
 
-5. PROJECTS PAGE - PROJECT TECH BY PROJECT
+**Designed & built by Shashi Preetham Awari**
 
-FindH
-- Next.js
-- React
-- Node.js
-- Express.js
-- Supabase
-- PostgreSQL
-- Framer Motion
-- GSAP
+<sub>From interface details to server-side functionality.</sub>
 
-Second Brain AI
-- Next.js
-- React
-- FastAPI
-- Supabase
-- PostgreSQL
-- Vector Embeddings
-- AI APIs
-
-Defungi CNN
-- Python
-- TensorFlow
-- CNN
-- Deep Learning
-
-Detect GPT
-- Python
-- NLP
-- Machine Learning
-
-GenAI
-- Next.js
-- HTML
-- CSS
-- JavaScript
-- AI API
-
-Chit-Chat
-- Node.js
-- HTML
-- CSS
-- JavaScript
-- Socket.io
-
-JapEase
-- React.js
-- Node.js
-- HTML
-- CSS
-- JavaScript
-- API
-
-SnapGen
-- Node.js
-- HTML
-- CSS
-- JavaScript
-- Unsplash API
-
-NexGen
-- Next.js
-
-Next Level Food
-- React
-- SQLite
-
-Micro Course Converter
-- Python
-- NLP
-- AI
-
-
-6. CONTACT / COMMUNICATION STACK
-
-Contact form frontend:
-- React state
-- Fetch API
-- HTML form inputs
-- Client-side validation
-
-Contact backend:
-- Nodemailer
-- Gmail SMTP
-- MongoDB storage
-- NextResponse
-
-
-7. CURRENT SKILLS SHOWN IN THE HONEYCOMB
-
-Category labels:
-- FRONT END
-- BACK END
-- ML
-- DL
-
-Front-end related:
-- HTML
-- CSS
-- JAVA SCRIPT
-- REACT JS
-- NEXT JS
-- BOOTSTRAP
-- GSAP
-- FRAMER MOTION
-- JQUERY
-- EJS
-
-Back-end / database related:
-- NODE JS
-- EXPRESS JS
-- FASTAPI
-- SOCKET.IO
-- SUPABASE
-- POSTGRE SQL
-- MONGO DB
-- NOSQL
-- MYSQL
-- SQLITE
-
-Machine Learning / AI related:
-- PYTHON
-- MACHINE LEARNING
-- NLP
-- TENSORFLOW
-- DEEP LEARNING
-- CNN
-
-Core languages:
-- JAVA
-- C
-
-
-8. FILES USED AS SOURCES FOR THIS INVENTORY
-
-- app/page.js
-- app/about/page.js
-- app/projects/page.js
-- app/contact/page.js
-- app/api/mail/route.js
-- app/projects/projectsData.js
-- app/projects/ProjectsShowcase.js
-- app/projects/ProjectsMore.jsx
-- components/main/Main.js
-- components/content/Content.js
-- components/content/SkillsHoneycomb.js
-- components/projects/Projects.js
-- components/resume/Resume.js
-- components/about/AboutHero.js
-- components/about/AboutContent.jsx
-- package.json
+</div>
